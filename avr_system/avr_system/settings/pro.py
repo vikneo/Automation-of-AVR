@@ -5,7 +5,7 @@ DEBUG = os.getenv("DEBUG", False)
 
 ADMINS = (("Martynov Viktor", "test@test.com"),)
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS")
+ALLOWED_HOSTS = list(os.getenv("ALLOWED_HOSTS"))
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
