@@ -15,6 +15,7 @@ python-dotenv = "^1.0.1"
 markupsafe = "^2.1.4"
 click = "^8.1.7"
 django-import-export = "^3.3.6"
+psycopg2-binary = "^2.9.9"
 
 
 [build-system]
