@@ -10,7 +10,7 @@ def path_file_logic(instance: 'File', filename: str) -> str:
     :param filename: name file
     :return: str - path to save
     """
-    return f"{isinstance.firmware.name}/logic/{filename}"
+    return f"{instance.firmware.name}/logic/{filename}"
 
 
 def path_file_description(instance: 'File', filename: str) -> str:
@@ -21,7 +21,7 @@ def path_file_description(instance: 'File', filename: str) -> str:
     :param filename: name file
     :return: str - path to save
     """
-    return f"{isinstance.firmware.name}/description/{filename}"
+    return f"{instance.firmware.name}/description/{filename}"
 
 
 class TypeAVR(models.Model):
