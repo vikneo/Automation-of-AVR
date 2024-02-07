@@ -27,7 +27,7 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', True)
+DEBUG = bool(os.getenv('DEBUG', True))
 
 ALLOWED_HOSTS = list(os.getenv("ALLOWED_HOSTS"))
 
@@ -44,7 +44,7 @@ DATABASES = {
         if DEBUG
         else {
             "ENGINE": os.getenv("ENGINE"),
-            "NAME": BASE_DIR / os.getenv("NAME"),
+            "NAME": os.getenv("NAME"),
             "USER": os.getenv("USER"),
             "PASSWORD": os.getenv("PASSWORD"),
             "HOST": os.getenv("HOST"),
@@ -62,6 +62,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'avr_type.apps.AvrTypeConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +81,7 @@ ROOT_URLCONF = "avr_system.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -130,6 +132,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = ''
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
