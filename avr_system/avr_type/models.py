@@ -31,6 +31,7 @@ class TypeAVR(models.Model):
 
     name = models.CharField(max_length=120, verbose_name='Тип АВР', db_index=True)
     slug = models.SlugField(max_length=120, verbose_name='URL')
+    access = models.BooleanField(default=True, verbose_name='Доступ')
 
     def __str__(self) -> str:
         return f"{self.name}"
@@ -60,7 +61,7 @@ class Classification(models.Model):
     signal_ozz = models.BooleanField(verbose_name='Сигнал ОЗЗ', default=False)
     comment = models.TextField(verbose_name='Примечание', default='!')
     relay = models.ForeignKey("SmartRelay", on_delete=models.CASCADE, verbose_name='Тип ПЛК')
-    access = models.BooleanField(default=True)
+    access = models.BooleanField(default=True, verbose_name='Доступ')
 
     def __str__(self) -> str:
         return f'{self.name}'
