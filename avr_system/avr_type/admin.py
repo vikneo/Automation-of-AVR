@@ -3,6 +3,12 @@ from django.contrib import admin
 from .models import SmartRelay, TypeAVR, Classification, File
 
 
+class FileTabularInline(admin.TabularInline):
+
+    model = File
+    extra = 0
+
+
 @admin.register(TypeAVR)
 class AdminTypeAVR(admin.ModelAdmin):
     """
@@ -24,6 +30,9 @@ class AdminClassification(admin.ModelAdmin):
     """
     Registers model the "Classification" to admin panel
     """
+    inlines = [
+        FileTabularInline,
+    ]
     list_display = ['name', ]
 
 
