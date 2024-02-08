@@ -60,6 +60,7 @@ class Classification(models.Model):
     signal_ozz = models.BooleanField(verbose_name='Сигнал ОЗЗ', default=False)
     comment = models.TextField(verbose_name='Примечание', default='!')
     relay = models.ForeignKey("SmartRelay", on_delete=models.CASCADE, verbose_name='Тип ПЛК')
+    access = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return f'{self.name}'
