@@ -47,6 +47,7 @@ class Classification(models.Model):
     """
     type_avr = models.ForeignKey(TypeAVR, on_delete=models.CASCADE, verbose_name='Тип АВР', related_name='type_avrs')
     name = models.CharField(max_length=100, verbose_name='Название', db_index=True)
+    slug = models.SlugField(max_length=120, verbose_name='URL')
     vnr = models.BooleanField(verbose_name='Ключ ВНР', default=False)
     temp_tp = models.BooleanField(verbose_name='Перегрев тр-ров', default=False)
     reset = models.BooleanField(verbose_name='Кнопка "Сброс"', default=False)
@@ -73,22 +74,22 @@ class SmartRelay(models.Model):
     """
     The Class description the models of "types logic relay" and choices of models.
     """
-    class TypeRelay(models.IntegerChoices):
+    class TypeRelay(models.TextChoices):
         """
         Choices of models
         """
-        PR200 = 1, 'ПР200'
-        PR205 = 2, 'ПР205'
-        PR103 = 3, 'ПР103'
-        SR3B261BD = 4, 'SR3B261BD'
-        SR2B261FU = 5, 'SR2B261FU'
-        SR2B201FU = 6, 'SR2B201FU'
-        SR2B121FU = 7, 'SR2B121FU'
-        ONI = 8, 'Oni'
-        LOGO = 9, 'LOGO!8'
+        PR200 = 'ПР200'
+        PR205 = 'ПР205'
+        PR103 = 'ПР103'
+        SR3B261BD = 'SR3B261BD'
+        SR2B261FU = 'SR2B261FU'
+        SR2B201FU = 'SR2B201FU'
+        SR2B121FU = 'SR2B121FU'
+        ONI = 'Oni'
+        LOGO = 'LOGO!8'
 
     brend = models.CharField(max_length=20, verbose_name='Бренд', db_index=True)
-    model = models.IntegerField(verbose_name='Модель', choices=TypeRelay.choices)
+    model = models.CharField(max_length=20, verbose_name='Модель', choices=TypeRelay)
     slug = models.SlugField(max_length=20, verbose_name='URL')
 
     def __str__(self) -> Any:
