@@ -5,7 +5,7 @@ from .models import Profile
 
 
 @receiver(pre_save, sender=Profile)
-def default_avetar(sender, instance, **kwargs):
+def default_avatar(sender, instance, **kwargs):
     """
     Save the default avatar for the user if no icon.
     """
