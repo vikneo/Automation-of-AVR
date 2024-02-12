@@ -9,7 +9,7 @@ from .models import Profile
 @admin.action(description="Добавить в архив")
 def added_to_archive(modeladmin: admin.ModelAdmin, request: HttpRequest, queryset: QuerySet):
     """
-    
+    Action to add a user to the archive
     """
     queryset.update(archive=True)
 
@@ -17,7 +17,7 @@ def added_to_archive(modeladmin: admin.ModelAdmin, request: HttpRequest, queryse
 @admin.action(description="Убрать с архива")
 def remove_from_archive(modeladmin: admin.ModelAdmin, request: HttpRequest, queryset: QuerySet):
     """
-    
+    Action to delete a user from the archive.
     """
     queryset.update(archive=False)
 
