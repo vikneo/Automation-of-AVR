@@ -9,6 +9,6 @@ def default_avetar(sender, instance, **kwargs):
     """
     Save the default avatar for the user if no icon.
     """
-    print('instance', instance)
-    print('kwargs', kwargs)
+    if not instance.avatar:
+        instance.avatar = 'default/avatar/avatar.jpg'
 
