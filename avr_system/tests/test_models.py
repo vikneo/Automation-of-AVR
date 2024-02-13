@@ -2,7 +2,7 @@
 The module for testing the models of the application
 """
 from django.test import TestCase
-from utilits.slugify import slugify
+from django.contrib.auth import get_user_model
 
 from random import randint
 
@@ -243,3 +243,69 @@ class ClassificationTest(TestModelMixin):
         count_five = Classification.objects.all().count()
         Classification.objects.filter(id=5).delete()
         self.assertFalse(Classification.objects.all().count() == count_five)
+
+
+class ProfileTest(TestCase):
+    """
+        Test of the "Profile" model
+    """
+    @classmethod
+    def setUpTestData(cls) -> None:
+        for idx in range(NUM_FOR_TEST):
+            user = get_user_model().objects.create_user(
+                username=f'test_user_{idx}',
+                password='test_password',
+                email=f'user_{idx}@qwe.com'
+            )
+
+            Profile.objects.create(
+                user=user,
+                phone=''.join(str(randint(0, 9)) for _ in range(12)),
+            )    
+
+    def test_user_label(self):
+        user = Profile.objects.get(id=2)
+        self.assertEqual(user._meta.get_field('user').verbose_name, 'Пользователь')
+    
+    def test_phone_lable(self):
+        phone = Profile.objects.get(id=1)
+        self.assertEqual(phone._meta.get_field('phone').verbose_name, 'Телефон')
+
+    def test_archive_label(self):
+        archive = Profile.objects.get(id=3)
+        self.assertEqual(archive._meta.get_field('archive').verbose_name, 'Архив')
+    
+    def test_avatar_lable(self):
+        avatar = Profile.objects.get(id=4)
+        self.assertEqual(avatar._meta.get_field('avatar').verbose_name, 'Фотография профиля')
+    
+    @staticmethod
+    def created_user(last_name):
+        user = get_user_model().objects.create(
+            username='one_user',
+            password='test_password',
+            last_name=last_name
+        )
+        profile = Profile.objects.create(
+            user=user,
+            phone='1234567892',
+        )
+        return profile
+
+    def test_create_user(self):
+        last_name = 'Morder'
+        profile = self.created_user(last_name)
+        self.assertEqual(last_name, profile.user.last_name)
+
+    def test_update_user(self):
+        last_name = 'Poncrat'
+        profile = self.created_user(last_name)
+        self.assertEqual(last_name, profile.user.last_name)
+    
+    def test_count_created_users(self):
+        user_count = Profile.objects.all().count()
+        self.assertEqual(user_count, NUM_FOR_TEST)
+
+    def test_deleted_user(self):
+        Profile.objects.filter(id=2).delete()
+        self.assertFalse(Profile.objects.all().count() == NUM_FOR_TEST)
