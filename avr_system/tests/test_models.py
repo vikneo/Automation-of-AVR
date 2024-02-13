@@ -15,18 +15,18 @@ from avr_type.models import (
 from users.models import Profile
 
 NUM_FOR_TEST = 5
-
+_RANGE = 15
 
 class TestModelMixin(TestCase):
     """
-    
+    Mixin for testings the models
     """
     @classmethod
     def setUpTestData(cls) -> None:
         choise = SmartRelay.TypeRelay
 
         for indx in range(NUM_FOR_TEST):
-            type_avr = ''.join(chr(randint(32, 122)) for _ in range(15))
+            type_avr = ''.join(chr(randint(32, 122)) for _ in range(_RANGE))
             
             TypeAVR.objects.create(
                 name=type_avr,
@@ -141,7 +141,7 @@ class SmartRelayTest(TestModelMixin):
 
 class ClassificationTest(TestModelMixin):
     """
-    
+    Test of the "Classification" model
     """
     def setUp(self) -> None:
         for _id in range(1, NUM_FOR_TEST + 1):
@@ -174,6 +174,7 @@ class ClassificationTest(TestModelMixin):
     def test_reset_label(self):
         reset = Classification.objects.get(id=1)
         self.assertEqual(reset._meta.get_field("reset").verbose_name, 'Кнопка "Сброс"')
+
     def test_shoice_in_label(self):
         shoice_in = Classification.objects.get(id=1)
         self.assertEqual(shoice_in._meta.get_field("shoice_in").verbose_name, 'Выбор ввода')
@@ -190,4 +191,55 @@ class ClassificationTest(TestModelMixin):
         status_box = Classification.objects.get(id=1)
         self.assertEqual(status_box._meta.get_field("status_box").verbose_name, 'Положение АВ в корзине')
 
-    #=========================================
+    def test_lamp_avr_ready_label(self):
+        lamp_avr_ready = Classification.objects.get(id=1)
+        self.assertEqual(lamp_avr_ready._meta.get_field("lamp_avr_ready").verbose_name, 'Лампа АВР готов')
+        
+    def test_lamp_avr_work_label(self):
+        lamp_avr_work = Classification.objects.get(id=1)
+        self.assertEqual(lamp_avr_work._meta.get_field("lamp_avr_work").verbose_name, 'Лампа АВР с работал')
+
+    def test_signal_ozz_label(self):
+        signal_ozz = Classification.objects.get(id=1)
+        self.assertEqual(signal_ozz._meta.get_field("signal_ozz").verbose_name, 'Сигнал ОЗЗ')
+
+    def test_comment_label(self):
+        comment = Classification.objects.get(id=1)
+        self.assertEqual(comment._meta.get_field("comment").verbose_name, 'Примечание')
+    
+    def test_access_label(self):
+        access = Classification.objects.get(id=1)
+        self.assertEqual(access._meta.get_field("access").verbose_name, 'Доступ')
+
+    @staticmethod    
+    def choise_product():
+        type_avr = TypeAVR.objects.get(id=3)
+        relay = SmartRelay.objects.get(id=2)
+        return type_avr, relay
+
+    
+    def test_created_product(self):
+        type_avr, relay = self.choise_product()
+        name = 'ВРУ'
+        avr = Classification(
+            type_avr=type_avr,
+            name=name,
+            relay=relay
+        )
+        avr.save()
+        self.assertEqual(Classification.objects.all().count(), 6)
+        self.assertEqual(name, avr.name)
+        self.assertTrue(avr.slug)
+    
+    def test_update_product(self):
+        type_avr, _ = self.choise_product()
+        name = 'РУНН'
+        avr = Classification.objects.get(type_avr=type_avr)
+        avr.name = name
+        avr.save()
+        self.assertEqual(name, avr.name)
+    
+    def test_delete_product(self):
+        count_five = Classification.objects.all().count()
+        Classification.objects.filter(id=5).delete()
+        self.assertFalse(Classification.objects.all().count() == count_five)
