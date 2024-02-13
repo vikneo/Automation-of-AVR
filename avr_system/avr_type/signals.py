@@ -3,8 +3,6 @@ from django.db.models.signals import pre_save
 
 from utilits.slugify import slugify
 
-
-
 from .models import (
     TypeAVR,
     Classification,
@@ -15,7 +13,9 @@ from .models import (
 @receiver(pre_save, sender=TypeAVR)
 def get_slugify_type_avr(instance, **kwargs) -> None:
     """
-    
+    Before saving the model, the "slug" field is checked, 
+    if the field is empty, it is filled in from the "name" 
+    field through the "slugify" module
     """
     if not instance.slug:
         instance.slug = slugify(instance.name)
@@ -23,7 +23,9 @@ def get_slugify_type_avr(instance, **kwargs) -> None:
 @receiver(pre_save, sender=SmartRelay)
 def get_slugify_smart_relay(instance, **kwargs) -> None:
     """
-    
+    Before saving the model, the "slug" field is checked, 
+    if the field is empty, it is filled in from the "model" 
+    field through the "slugify" module
     """
     if not instance.slug:
         instance.slug = slugify(instance.model)
