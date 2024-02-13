@@ -17,9 +17,6 @@ def get_slugify_type_avr(instance, **kwargs):
     """
     
     """
-    print('Зашли в метод pre_save')
     if not instance.slug:
-        print('Поле slug - пустое')
         instance.slug = slugify(instance.name)
-    print('Поле slug - не пустое')
     
