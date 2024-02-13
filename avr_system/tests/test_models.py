@@ -29,7 +29,6 @@ class TypeAvrTest(TestCase):
             
             TypeAVR.objects.create(
                 name=type_avr,
-                # slug = slugify(type_avr),
                 access = True if indx % 3 != 0 else False,
             )
 
@@ -38,12 +37,12 @@ class TypeAvrTest(TestCase):
         self.assertEqual(name._meta.get_field('name').verbose_name, "Тип АВР")
     
     def test_slug_label(self):
-        name = TypeAVR.objects.get(id=1)
-        self.assertEqual(name._meta.get_field('slug').verbose_name, "URL")
+        slug = TypeAVR.objects.get(id=1)
+        self.assertEqual(slug._meta.get_field('slug').verbose_name, "URL")
 
     def test_access_label(self):
-        name = TypeAVR.objects.get(id=1)
-        self.assertEqual(name._meta.get_field('access').verbose_name, "Доступ")
+        access = TypeAVR.objects.get(id=1)
+        self.assertEqual(access._meta.get_field('access').verbose_name, "Доступ")
     
     def  test_count_created_type_avr(self):
         count = TypeAVR.objects.all().count()
@@ -58,3 +57,50 @@ class TypeAvrTest(TestCase):
         access.access = False
         access.save()
         self.assertEqual(TypeAVR.objects.filter(access=True).count(), 2)
+    
+    def test_created_by_slug(self):
+        slug = TypeAVR.objects.get(id=3)
+        self.assertTrue(slug.slug)
+
+
+class SmartRelayTest(TestCase):
+    """
+    Test of the "SmartRelay" model
+    """
+    @classmethod
+    def setUpTestData(cls) -> None:
+        choise = SmartRelay.TypeRelay
+        for relay in choise:
+            SmartRelay.objects.create(
+                brend=relay,
+                model=relay
+            )
+    
+    def test_brend_label(self):
+        brend = SmartRelay.objects.get(id=1)
+        self.assertEqual(brend._meta.get_field("brend").verbose_name, 'Бренд')
+
+    def test_brend_field(self):
+        brend = SmartRelay.objects.get(id=1)
+        self.assertTrue(brend.brend)
+
+    def test_model_label(self):
+        model = SmartRelay.objects.get(id=1)
+        self.assertEqual(model._meta.get_field("model").verbose_name, 'Модель')
+    
+    def test_model_field(self):
+        model = SmartRelay.objects.get(id=1)
+        self.assertTrue(model.model)
+
+    def test_slug_label(self):
+        slug = SmartRelay.objects.get(id=1)
+        self.assertEqual(slug._meta.get_field("slug").verbose_name, 'URL')
+
+    def test_slug_field(self):
+        slug = SmartRelay.objects.get(id=1)
+        self.assertTrue(slug.slug)
+
+    def test_count_created_relay(self):
+        count = SmartRelay.objects.all().count()
+        self.assertEqual(count, 9)
+        
