@@ -23,7 +23,7 @@ class MainPage(ListView):
 
 class TypeAvrDetail(DetailView):
     """
-    
+    The system_avr class for viewing and displaying detailed information.
     """
     template_name = 'index/detail_system.html'
     context_object_name = 'system'

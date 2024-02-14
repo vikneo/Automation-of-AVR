@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+{% load static i18n %}
+
+{% block title %} <title>{{ title }}</title> {% endblock %}
+
+{% block content %}
+{% for system in systems %}
+{% if system.access %}
+<p>
+    <a href="{% url 'system:detail_system' system.slug %}">{{ system }}</a>
+</p>
+{% endif %}
+{% endfor %}
+{% endblock %}
