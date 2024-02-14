@@ -296,6 +296,10 @@ class ProfileTest(TestCase):
         last_name = 'Morder'
         profile = self.created_user(last_name)
         self.assertEqual(last_name, profile.user.last_name)
+    
+    def test_get_absolute_url(self):
+        profile = Profile.objects.get(id=1)
+        self.assertEqual(profile.get_absolute_url(), '/account/')
 
     def test_update_user(self):
         last_name = 'Poncrat'
