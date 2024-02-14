@@ -36,6 +36,9 @@ class Profile(models.Model):
     def __str__(self) -> str:
         return self.user.username
     
+    def get_absolute_url(self):
+        return '/account/'
+    
     class Meta:
         db_table = 'profies'
         verbose_name = 'profile'
