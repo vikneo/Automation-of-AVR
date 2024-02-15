@@ -123,3 +123,25 @@ class File(models.Model):
         db_table = 'files'
         verbose_name = 'file'
         verbose_name_plural = 'files'
+
+
+class Banner(models.Model):
+    """
+    The Class description the models the banners.
+    """
+    name = models.CharField(max_length=100, verbose_name='Название', db_index=True)
+    slug = models.SlugField(max_length=100, verbose_name='URL', db_index=True, unique=True)
+    description = models.TextField(verbose_name='Описание')
+    link = models.URLField(verbose_name='Ссылка на систему')
+    is_active = models.BooleanField(default=False, verbose_name='Модерация')
+    create_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+    update_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
+
+    def __str__(self) -> str:
+        return f'{self.name}'
+    
+    class MEta:
+        db_table = 'banners'
+        ordering = ['name', ]
+        verbose_name = 'banner'
+        verbose_name_plural = 'banners'
