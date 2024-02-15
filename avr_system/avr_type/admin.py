@@ -100,3 +100,5 @@ class AdminBanner(admin.ModelAdmin):
 
     def get_photo(self, obj):
         return mark_safe(f'<img src="{obj.photo.url}" alt="" width="40">')
+    
+    get_photo.short_description = 'Фото'
