@@ -1,6 +1,9 @@
 from typing import Any
 from django.db import models
 
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
+
 
 def path_file_logic(instance: 'File', filename: str) -> str:
     """
@@ -22,6 +25,13 @@ def path_file_description(instance: 'File', filename: str) -> str:
     :return: str - path to save
     """
     return f"{instance.firmware.name}/description/{filename}"
+
+
+def banner_images_directory_path(instance: 'Banner', filename: str) -> str:
+    """
+    
+    """
+    return f"banner/{instance.name}/{filename}"
 
 
 class TypeAVR(models.Model):
@@ -131,6 +141,12 @@ class Banner(models.Model):
     """
     name = models.CharField(max_length=100, verbose_name='Название', db_index=True)
     slug = models.SlugField(max_length=100, verbose_name='URL', db_index=True, unique=True)
+    photo = ProcessedImageField(
+        verbose_name='Основное фото',
+        upload_to=banner_images_directory_path,
+        options={'quantity': 90},
+        processors=[ResizeToFill(600, 300)]
+    )
     description = models.TextField(verbose_name='Описание')
     link = models.URLField(verbose_name='Ссылка на систему')
     is_active = models.BooleanField(default=False, verbose_name='Модерация')

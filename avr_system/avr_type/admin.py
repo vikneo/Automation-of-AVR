@@ -1,8 +1,15 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
 from django.http import HttpRequest
 from django.db.models import QuerySet
 
-from .models import SmartRelay, TypeAVR, Classification, File
+from .models import (
+    SmartRelay,
+    TypeAVR, 
+    Classification, 
+    File,
+    Banner
+    )
 
 
 @admin.action(description='Закрыть доступ')
@@ -75,3 +82,21 @@ class AdminFile(admin.ModelAdmin):
     Registers model the "File" to admin panel
     """
     list_display = ['firmware', 'file']
+
+
+@admin.register(Banner)
+class AdminBanner(admin.ModelAdmin):
+    """
+    Registers model the "Banner" to admin panel
+    """
+    actions = [
+        close_access,
+        open_access
+    ]
+    search_fields = ['name', ]
+    list_display = ['name', 'is_active', 'get_photo']
+    list_filter = ['name',]
+    prepopulated_fields = {'slug': ('name', )}
+
+    def get_photo(self, obj):
+        return mark_safe(f'<img src="{obj.photo.url}" alt="" width="40">')
