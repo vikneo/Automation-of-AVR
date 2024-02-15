@@ -83,10 +83,17 @@
                         <a class="nav-link active reset-padding" aria-current="page" href="#">Регистрация</a>
                     </li>
                     {% else %}
-                    <div class="flex user-auth">
+                    <div class="flex align-items user-auth">
                         <li class="nav-item">
-                            <span>Привет {% if user.last_name %}<b>{{ user.last_name }}</b>{% else %} <b>{{ user }}</b>
+                            <span>Привет {% if user.first_name %}<b>{{ user.first_name }}</b>{% else %} <b>{{ user }}</b>
                                 {% endif %}</span>
+                        </li>
+                        <li>
+                            <a class="nav-link active" href="{% url 'admin:index' %}">
+                                <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Отключенная подсказка">
+                                    <img src="{% static 'img/default/admin_set.svg' %}" width='30px' alt="admin">
+                                </span>
+                            </a>
                         </li>
                     </div>
                     <div class="flex align-items user-auth">
