@@ -36,6 +36,7 @@ class AdminTypeAVR(admin.ModelAdmin):
         close_access,
         open_access
     ]
+
     search_fields = ['name',]
     list_display = ['id', 'name', 'access']
     list_display_links = ['name', ]
@@ -90,15 +91,25 @@ class AdminBanner(admin.ModelAdmin):
     Registers model the "Banner" to admin panel
     """
     actions = [
-        close_access,
-        open_access
+        'close_access',
+        'open_access'
     ]
+
+    @admin.action(description='Закрыть доступ')
+    def close_access(modeladmin: admin.ModelAdmin, request: HttpRequest, queryset: QuerySet):
+        queryset.update(is_active=False)
+
+
+    @admin.action(description='Открыть доступ')
+    def open_access(modeladmin: admin.ModelAdmin, request: HttpRequest, queryset: QuerySet):
+        queryset.update(is_active=True)
+        
     search_fields = ['name', ]
     list_display = ['name', 'is_active', 'get_photo']
     list_filter = ['name',]
     prepopulated_fields = {'slug': ('name', )}
 
     def get_photo(self, obj):
-        return mark_safe(f'<img src="{obj.photo.url}" alt="" width="40">')
+        return mark_safe(f'<img src="{obj.photo.url}" alt="" width="60">')
     
     get_photo.short_description = 'Фото'
