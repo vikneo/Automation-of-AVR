@@ -1,9 +1,14 @@
 {% extends 'base/base.html' %}
+{% load banners_tags %}
 {% load static i18n %}
 
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
 {% block content %}
+{% block banner %}
+    {% banner_main_page %}
+{% endblock %}
+
 {% for system in systems %}
 {% if system.access %}
 <p>
