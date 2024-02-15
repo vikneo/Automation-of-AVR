@@ -1,5 +1,5 @@
 
-nav {
+nav, footer {
     background: #e1e3e5;
 }
 
@@ -18,6 +18,22 @@ nav {
 
 .reset-padding {
     padding: 0 5px;
+}
+
+.reset-input {
+    min-height: 0;
+    height: 0;
+}
+
+.select-language {
+    min-height: 0;
+    margin-right: 15px;
+}
+
+.btn-language {
+    padding: 0 10px;
+    background: #e1e3e5;
+    border: 1px solid;
 }
 
 /* =========================== block nav ========================== */
@@ -45,4 +61,10 @@ nav {
 
 .nav-language {
     padding-right: 50px;
+}
+
+/* ============================ block footer ======================== */
+
+.footer-root-padding {
+    padding-bottom: 30px;
 }
