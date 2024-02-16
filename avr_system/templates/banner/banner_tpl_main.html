@@ -1,12 +1,16 @@
 {% load static i18n %}
 
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleAutoplaying" class="carousel slide banner" style="width: 880px;" data-bs-ride="carousel">
     <div class="carousel-inner">
         {% for banner in banners %}
         <div class="carousel-item active">
-                <img src="{{ banner.photo.url }}" class="d-block w-100" alt="...">
+            <img src="{{ banner.photo.url }}" class="d-block w-100 " alt="{{ banner.name }}">
+            <div class="carousel-caption d-none d-md-block fon-for-title">
+                <h3 class="d-block w-100">{{ banner.name }}</h3>
+                <span class="d-block w-100">{{ banner.description }}</span>
             </div>
-            {% endfor %}
+        </div>
+        {% endfor %}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
         data-bs-slide="prev">
