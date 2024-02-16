@@ -33,6 +33,12 @@ def banner_images_directory_path(instance: 'Banner', filename: str) -> str:
     """
     return f"banner/{instance.name}/{filename}"
 
+def system_images_directory_path(instance: 'ImageTypeAVR', filename: str) -> str:
+    """
+    
+    """
+    return f"system/{instance.type_avr}/{filename}"
+
 
 class TypeAVR(models.Model):
     """
@@ -59,7 +65,7 @@ class ImageTypeAVR(models.Model):
     type_avr = models.ForeignKey(TypeAVR, on_delete=models.CASCADE, verbose_name='Тип системы', related_name='images')
     photo = ProcessedImageField(
         verbose_name='Основное фото',
-        upload_to=banner_images_directory_path,
+        upload_to=system_images_directory_path,
         options={'quantity': 90},
         processors=[ResizeToFill(600, 300)]
     )

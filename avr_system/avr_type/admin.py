@@ -8,7 +8,8 @@ from .models import (
     TypeAVR, 
     Classification, 
     File,
-    Banner
+    Banner,
+    ImageTypeAVR
     )
 
 
@@ -22,6 +23,11 @@ def open_access(modeladmin: admin.ModelAdmin, request: HttpRequest, queryset: Qu
     queryset.update(access=True)
 
 
+class ImageTypeAVRTabular(admin.TabularInline):
+    model = ImageTypeAVR
+    extra = 0
+
+
 class FileTabularInline(admin.TabularInline):
     model = File
     extra = 0
@@ -32,16 +38,23 @@ class AdminTypeAVR(admin.ModelAdmin):
     """
     Registers model the "TypeAVR" to admin panel
     """
+    inlines = [
+        ImageTypeAVRTabular,
+    ]
     actions = [
         close_access,
         open_access
     ]
 
     search_fields = ['name',]
-    list_display = ['id', 'name', 'access']
+    list_display = ['id', 'name', 'get_image', 'access']
     list_display_links = ['name', ]
     list_filter = ['access', 'name']
     prepopulated_fields = {'slug': ('name', )}
+
+    def get_image(self, obj):
+        if obj.images.all():
+            return mark_safe(f'<img src="{obj.images.last().photo.url}" alt="" width="80">')
 
 
 @admin.register(SmartRelay)
