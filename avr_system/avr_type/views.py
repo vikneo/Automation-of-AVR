@@ -10,7 +10,6 @@ class MainPage(ListView):
     """
     The system_avr main page view and display class.
     """
-    model = TypeAVR
     template_name = 'index/system_avr.html'
     context_object_name = 'systems'
 
@@ -20,6 +19,9 @@ class MainPage(ListView):
             title='Системы АВР'
         )
         return context
+
+    def get_queryset(self) -> QuerySet[Any]:
+        return TypeAVR.objects.filter(access=True)
 
 class TypeAvrDetail(DetailView):
     """
