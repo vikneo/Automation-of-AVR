@@ -53,6 +53,15 @@ DATABASES = {
     )
 }
 
+CACHE_ROOT = os.path.join(BASE_DIR, "cache")
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "LOCATION": CACHE_ROOT,
+    }
+}
+
+
 # Application definition
 
 INSTALLED_APPS = [
