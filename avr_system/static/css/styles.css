@@ -1,3 +1,13 @@
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 26px;
+    text-align: center;
+    color: #000;
+}
 
 nav, footer {
     background: #e1e3e5;
@@ -36,6 +46,10 @@ nav, footer {
     border: 1px solid;
 }
 
+.s-section {
+    padding: 20px 0;
+}
+
 /* =========================== block nav ========================== */
 
 .navbar-search {
@@ -70,9 +84,81 @@ nav, footer {
     margin-top: 50px;
 }
 
+.banner-box {
+    margin-bottom: 50px;
+}
+
 .fon-for-title {
     background-color: rgb(12 0 195 / 76%);
     border-radius: 0 100px;
+}
+
+/* =========================== center_sidebar ======================== */
+
+.container-box {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (min-width:768px) {
+    .container-box {
+        width: 750px;
+    }
+}
+@media (min-width:992px) {
+    .container-box {
+        width: 970px;
+    }
+}
+@media (min-width:1200px) {
+    .container-box {
+        width: 1170px;
+    }
+}
+.container-fluid {
+     margin-right: auto;
+     margin-left: auto;
+     padding-left: 15px;
+     padding-right: 15px;
+ }
+
+ .h2-block.decoration {
+    position: relative;
+    height: 96px;
+    margin-bottom: 30px;
+}
+
+.h2-block.decoration h2 {
+    background: url(../img/Bezymyanny-1.png) no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 96px;
+    line-height: 70px;
+    width: auto;
+    position: absolute;
+    left: -37px;
+    top: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 0 120px 0 50px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .h2-block.decoration h2 {
+        font-size: 30px;
+        height: 80px;
+        line-height: 62px;
+    }
+}
+
+/* ============================ cart list systems ==================== */
+
+.card-title-size {
+    text-align: center;
+    font-size: 15px;
 }
 
 /* ============================ block footer ======================== */

@@ -5,15 +5,39 @@
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
 {% block content %}
-{% block banner %}
-    {% banner_main_page %}
-{% endblock %}
 
-{% for system in systems %}
+{% block banner %}
+<div class="banner-box">
+    {% banner_main_page %}
+</div>
+{% endblock %}
+<div class="s-section">
+    <div class="container-box">
+        <div class="h2-block decoration">
+            <h2>Варианты исполнения</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for system in systems %}
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ system.images.first.photo.url }}" class="card-img-top" alt="{{ system.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title card-title-size">{{ system.name }}</h5>
+                        <p class="card-text">{{ system.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- 
+    {% for system in systems %}
 {% if system.access %}
 <p>
     <a href="{% url 'system:detail_system' system.slug %}">{{ system }}</a>
 </p>
 {% endif %}
 {% endfor %}
-{% endblock %}
+ -->
