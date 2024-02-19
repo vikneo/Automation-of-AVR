@@ -43,7 +43,7 @@ def advantage_icon_directory_path(instance: 'Advantage', filename: str) -> str:
     """
     
     """
-    return f"advantage/{instance.type_avr}/{filename}"
+    return f"advantage/{instance.title}/{filename}"
 
 
 class TypeAVR(models.Model):

@@ -9,7 +9,8 @@ from .models import (
     Classification, 
     File,
     Banner,
-    ImageTypeAVR
+    ImageTypeAVR,
+    Advantage
     )
 
 
@@ -126,3 +127,21 @@ class AdminBanner(admin.ModelAdmin):
         return mark_safe(f'<img src="{obj.photo.url}" alt="" width="60">')
     
     get_photo.short_description = 'Фото'
+
+
+@admin.register(Advantage)
+class AdminAdvantage(admin.ModelAdmin):
+    """
+    Registers model the "Advantage" to admin panel
+    """
+    actions = [
+        close_access,
+        open_access
+    ]
+    list_display = ['title', 'get_icon', 'access']
+    list_filter = ['title', ]
+
+    def get_icon(self, obj):
+        return mark_safe(f'<img src="{obj.icon.url}" alt="" width="30">')
+    
+    get_icon.short_description = 'Иконка'
