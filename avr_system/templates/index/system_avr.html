@@ -16,7 +16,7 @@
         <div class="h2-block decoration">
             <h2>Варианты исполнения</h2>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 row-m-3">
             {% for system in systems %}
             <div class="col wrap-item">
                 <div class="card-box">
@@ -25,8 +25,8 @@
                             <img src="{{ system.images.first.photo.url }}" class="card-img-top card-img-pos"
                                 alt="{{ system.name }}">
                         </div>
-                        <a class="card-link" href="">
-                            <div class="card-body">
+                        <a class="card-link" href="{% url 'system:detail_system' system.slug %}">
+                            <div class="card-body card-link-p-10 ">
                                 <h5 class="card-title card-title-size">{{ system.name }}</h5>
                                 <!-- <p class="card-text">{{ system.description }}</p> -->
                             </div>
@@ -36,15 +36,23 @@
             </div>
             {% endfor %}
         </div>
+        <div class="h2-block decoration">
+            <h2>Преимущества</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 row-m-3">
+            {% for advantage in advantages %}
+            <div class="advant-items">
+                <div class="item-box">
+                    <div class="advant-item">
+                        <div class="icon-block">
+                            <img src="" alt="">
+                        </div>
+                        <div class="content-block"></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}
-<!-- 
-    {% for system in systems %}
-{% if system.access %}
-<p>
-    <a href="{% url 'system:detail_system' system.slug %}">{{ system }}</a>
-</p>
-{% endif %}
-{% endfor %}
- -->

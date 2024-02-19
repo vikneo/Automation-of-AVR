@@ -95,10 +95,6 @@ nav, footer {
 
 /* =========================== center_sidebar ======================== */
 
-.centr-sidebar {
-    
-}
-
 .container-box {
     margin-right: auto;
     margin-left: auto;
@@ -158,6 +154,10 @@ nav, footer {
     }
 }
 
+.row-m-3 {
+    margin-bottom: 3em;
+}
+
 /* ============================ cart list systems ==================== */
 
 .card-title-size {
@@ -182,13 +182,35 @@ nav, footer {
 .card-link {
     padding: 10px 5px;
     color: #e1e3e5;
+    text-decoration: none;
     background: rgb(11 0 173 / 88%);
+}
+
+.card-link-p-10 {
+    padding: 10px 0;
 }
 
 .card-img-pos {
     margin: 0 auto;
     /* width: 85%; */
     padding: 18px;
+}
+
+/* ============================ advantage block ===================== */
+
+.advant-items {
+    justify-content: space-between;
+}
+
+.advant-item {
+    margin: 0;
+    padding: 0;
+}
+
+.item-box {
+    flex-basis: 25%;
+    max-width: 25%;
+    padding: 15px 15px;
 }
 
 /* ============================ block footer ======================== */
