@@ -29,19 +29,31 @@ def path_file_description(instance: 'File', filename: str) -> str:
 
 def banner_images_directory_path(instance: 'Banner', filename: str) -> str:
     """
-    
+    The function generates a path based on the name of the file with image the banner.
+
+    :param instance: object File
+    :param filename: name file
+    :return: str - path to save
     """
     return f"banner/{instance.name}/{filename}"
 
 def system_images_directory_path(instance: 'ImageTypeAVR', filename: str) -> str:
     """
-    
+    The function generates a path based on the name of the file with image for the system avr.
+
+    :param instance: object File
+    :param filename: name file
+    :return: str - path to save
     """
     return f"system/{instance.type_avr}/{filename}"
 
 def advantage_icon_directory_path(instance: 'Advantage', filename: str) -> str:
     """
-    
+    The function generates a path based on the name of the file with image the advantage.
+
+    :param instance: object File
+    :param filename: name file
+    :return: str - path to save   
     """
     return f"advantage/{instance.title}/{filename}"
 
