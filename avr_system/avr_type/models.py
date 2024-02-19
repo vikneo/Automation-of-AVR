@@ -63,12 +63,14 @@ class ImageTypeAVR(models.Model):
     
     """
     type_avr = models.ForeignKey(TypeAVR, on_delete=models.CASCADE, verbose_name='Тип системы', related_name='images')
-    photo = ProcessedImageField(
-        verbose_name='Основное фото',
-        upload_to=system_images_directory_path,
-        options={'quantity': 90},
-        processors=[ResizeToFill(600, 300)]
-    )
+    photo = models.ImageField(upload_to=system_images_directory_path, verbose_name='Основное фото')
+    # photo = ProcessedImageField(
+    #     verbose_name='Основное фото',
+    #     upload_to=system_images_directory_path,
+    #     options={'quantity': 60},
+    #     processors=[ResizeToFill(300, 300)]
+    # )
+    
 
     def __str__(self) -> str:
         return f'{self.type_avr}'
