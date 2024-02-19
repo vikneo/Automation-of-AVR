@@ -1,9 +1,9 @@
 from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 
-from .models import TypeAVR
+from .models import TypeAVR, Advantage
 
 
 class MainPage(ListView):
@@ -22,6 +22,7 @@ class MainPage(ListView):
 
     def get_queryset(self) -> QuerySet[Any]:
         return TypeAVR.objects.filter(access=True)
+
 
 class TypeAvrDetail(DetailView):
     """

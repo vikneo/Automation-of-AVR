@@ -198,13 +198,32 @@ nav, footer {
 
 /* ============================ advantage block ===================== */
 
+.advant-box {
+    margin-bottom: 50px;
+    background: #f3efef;
+}
+
+.advant-wrap {
+    flex-wrap: wrap;
+}
+
 .advant-items {
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
 }
 
-.advant-item {
-    margin: 0;
-    padding: 0;
+.advant-img-block {
+    max-height: 70px;
+}
+
+.advant-img {
+    height: 100%;
+    width: 70px;
+}
+
+.icon-block {
+    margin-bottom: 10px;
 }
 
 .item-box {

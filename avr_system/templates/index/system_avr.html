@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load banners_tags %}
+{% load advantage_tags %}
 {% load static i18n %}
 
 {% block title %} <title>{{ title }}</title> {% endblock %}
@@ -28,7 +29,6 @@
                         <a class="card-link" href="{% url 'system:detail_system' system.slug %}">
                             <div class="card-body card-link-p-10 ">
                                 <h5 class="card-title card-title-size">{{ system.name }}</h5>
-                                <!-- <p class="card-text">{{ system.description }}</p> -->
                             </div>
                         </a>
                     </div>
@@ -36,22 +36,13 @@
             </div>
             {% endfor %}
         </div>
+    </div>
+    <div class="container-box advant-box">
         <div class="h2-block decoration">
             <h2>Преимущества</h2>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4 row-m-3">
-            {% for advantage in advantages %}
-            <div class="advant-items">
-                <div class="item-box">
-                    <div class="advant-item">
-                        <div class="icon-block">
-                            <img src="" alt="">
-                        </div>
-                        <div class="content-block"></div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
+        <div class="flex advant-wrap">
+            {% advantage_main_page %}
         </div>
     </div>
 </div>
