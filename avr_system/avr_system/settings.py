@@ -140,6 +140,8 @@ USE_TZ = True
 
 USE_L10N = True
 
+LOGOUT_REDIRECT_URL = '/'
+
 LOCALE_PATHS = [
     BASE_DIR / 'language/'
 ]
