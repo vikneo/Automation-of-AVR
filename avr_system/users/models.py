@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 
 from imagekit.models import ProcessedImageField
 from pilkit.processors import ResizeToFit
@@ -37,7 +38,7 @@ class Profile(models.Model):
         return self.user.username
     
     def get_absolute_url(self):
-        return '/account/'
+        return reverse_lazy('users:acount')
     
     class Meta:
         db_table = 'profies'

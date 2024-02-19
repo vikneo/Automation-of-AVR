@@ -63,7 +63,7 @@ class AdminSmartRelay(admin.ModelAdmin):
     """
     Registers model the "SmartRelay" to admin panel
     """
-    list_display = ['brend', 'model']
+    list_display = ['brand', 'model']
     list_display_links = ['model', ]
     prepopulated_fields = {'slug': ('model', )}
 
@@ -81,7 +81,7 @@ class AdminClassification(admin.ModelAdmin):
         open_access
     ]
     search_fields = ['name', ]
-    list_filter = ['name', 'temp_tp', 'vnr', 'reset', 'shoice_in', 'dgu', 
+    list_filter = ['name', 'temp_tp', 'vnr', 'reset', 'choice_in', 'dgu', 
                    'work_tp', 'status_box', 'lamp_avr_ready', 
                    'lamp_avr_work', 'signal_ozz'
                    ]

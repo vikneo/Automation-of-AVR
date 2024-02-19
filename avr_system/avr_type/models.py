@@ -103,7 +103,7 @@ class Classification(models.Model):
     vnr = models.BooleanField(verbose_name='Ключ ВНР', default=False)
     temp_tp = models.BooleanField(verbose_name='Перегрев тр-ров', default=False)
     reset = models.BooleanField(verbose_name='Кнопка "Сброс"', default=False)
-    shoice_in = models.BooleanField(verbose_name='Выбор ввода', default=False)
+    choice_in = models.BooleanField(verbose_name='Выбор ввода', default=False)
     dgu = models.BooleanField(verbose_name='Наличие ДГУ', default=False)
     work_tp = models.BooleanField(verbose_name='Режим работы тр-ров', default=False)
     status_box = models.BooleanField(verbose_name='Положение АВ в корзине', default=False)
@@ -141,7 +141,7 @@ class SmartRelay(models.Model):
         ONI = 'Oni'
         LOGO = 'LOGO!8'
 
-    brend = models.CharField(max_length=20, verbose_name='Бренд', db_index=True)
+    brand = models.CharField(max_length=20, verbose_name='Бренд', db_index=True)
     model = models.CharField(max_length=20, verbose_name='Модель', choices=TypeRelay)
     slug = models.SlugField(max_length=20, verbose_name='URL')
 

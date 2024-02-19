@@ -37,7 +37,7 @@ class TestModelMixin(TestCase):
 
         for relay in choice:
             SmartRelay.objects.create(
-                brend=relay,
+                brand=relay,
                 model=relay
             )
 
@@ -103,7 +103,7 @@ class SmartRelayTest(TestModelMixin):
 
     def test_brand_field(self):
         brand = SmartRelay.objects.get(id=1)
-        self.assertTrue(brand.brend)
+        self.assertTrue(brand.brand)
 
     def test_model_label(self):
         model = SmartRelay.objects.get(id=1)
@@ -127,13 +127,13 @@ class SmartRelayTest(TestModelMixin):
 
     def test_created_relay(self):
         relay = SmartRelay(
-            brend='brand',
+            brand='brand',
             model='test_model'
         )
         relay.save()
         brand = SmartRelay.objects.get(id=10)
         self.assertEqual(relay, brand)
-        self.assertEqual(relay.brend, brand.brend)
+        self.assertEqual(relay.brand, brand.brand)
         self.assertTrue(relay.slug)
 
     def test_delete_one_element(self):
