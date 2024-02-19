@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("i18n", include('django.conf.urls.i18n')),
     path('', include('avr_type.urls')),
-    path('account/', include('users.urls')),
+    path('user/', include('users.urls')),
 ]
 
 if settings.DEBUG:
