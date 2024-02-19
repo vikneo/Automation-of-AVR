@@ -303,7 +303,7 @@ class ProfileTest(TestCase):
     
     def test_get_absolute_url(self):
         profile = Profile.objects.get(id=1)
-        self.assertEqual(profile.get_absolute_url(), '/account/')
+        self.assertEqual(profile.get_absolute_url(), '/user/account/')
 
     def test_update_user(self):
         last_name = 'Poncrat'
