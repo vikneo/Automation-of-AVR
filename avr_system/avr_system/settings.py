@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'avr_type.apps.AvrTypeConfig',
     'users.apps.UsersConfig',
+    'imagekit'
 ]
 
 MIDDLEWARE = [
