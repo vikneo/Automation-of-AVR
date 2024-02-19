@@ -204,6 +204,7 @@ class Advantage(models.Model):
     """
     title = models.CharField(max_length=50, verbose_name='Название', db_index=True)
     icon = models.ImageField(upload_to=advantage_icon_directory_path)
+    access = models.BooleanField(default=True, verbose_name='Доступ')
 
     def __str__(self) -> str:
         return f'{self.title}'
