@@ -39,6 +39,12 @@ def system_images_directory_path(instance: 'ImageTypeAVR', filename: str) -> str
     """
     return f"system/{instance.type_avr}/{filename}"
 
+def advantage_icon_directory_path(instance: 'Advantage', filename: str) -> str:
+    """
+    
+    """
+    return f"advantage/{instance.type_avr}/{filename}"
+
 
 class TypeAVR(models.Model):
     """
@@ -190,3 +196,19 @@ class Banner(models.Model):
         ordering = ['name', ]
         verbose_name = 'banner'
         verbose_name_plural = 'banners'
+
+
+class Advantage(models.Model):
+    """
+    
+    """
+    title = models.CharField(max_length=50, verbose_name='Название', db_index=True)
+    icon = models.ImageField(upload_to=advantage_icon_directory_path)
+
+    def __str__(self) -> str:
+        return f'{self.title}'
+    
+    class Meta:
+        db_table = 'advantage'
+        verbose_name= 'advantage'
+        verbose_name_plural = 'advantages'
