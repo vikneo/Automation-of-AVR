@@ -95,6 +95,10 @@ nav, footer {
 
 /* =========================== center_sidebar ======================== */
 
+.centr-sidebar {
+    
+}
+
 .container-box {
     margin-right: auto;
     margin-left: auto;
@@ -159,6 +163,32 @@ nav, footer {
 .card-title-size {
     text-align: center;
     font-size: 15px;
+}
+
+.wrap-item {
+    text-align: center;
+}
+
+.card-box {
+    border: 5px #3636ab solid;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-img-h {
+    height: 235px;
+    margin-bottom: 15px;
+}
+
+.card-link {
+    padding: 10px 5px;
+    color: #e1e3e5;
+    background: rgb(11 0 173 / 88%);
+}
+
+.card-img-pos {
+    margin: 0 auto;
+    /* width: 85%; */
+    padding: 18px;
 }
 
 /* ============================ block footer ======================== */
