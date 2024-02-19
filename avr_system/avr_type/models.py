@@ -1,5 +1,6 @@
 from typing import Any
 from django.db import models
+from django.urls import reverse_lazy
 
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
@@ -78,17 +79,10 @@ class TypeAVR(models.Model):
 
 class ImageTypeAVR(models.Model):
     """
-    
+    The class allows you to add images to the model TypeAVR.
     """
     type_avr = models.ForeignKey(TypeAVR, on_delete=models.CASCADE, verbose_name='Тип системы', related_name='images')
     photo = models.ImageField(upload_to=system_images_directory_path, verbose_name='Основное фото')
-    # photo = ProcessedImageField(
-    #     verbose_name='Основное фото',
-    #     upload_to=system_images_directory_path,
-    #     options={'quantity': 60},
-    #     processors=[ResizeToFill(300, 300)]
-    # )
-    
 
     def __str__(self) -> str:
         return f'{self.type_avr}'
@@ -173,8 +167,8 @@ class File(models.Model):
     file = models.FileField(upload_to=path_file_logic, verbose_name='Файл конфигурации', blank=True)
     file_description = models.FileField(upload_to=path_file_description, verbose_name='Описание алгоритма', blank=True)
 
-    def get_absolute_url(self):
-        return '/'
+    def get_absolute_url(self) -> str:
+        return reverse_lazy('system:index')
     
     class Meta:
         db_table = 'files'
@@ -212,10 +206,10 @@ class Banner(models.Model):
 
 class Advantage(models.Model):
     """
-    
+    The Class description the Advantage models.
     """
     title = models.CharField(max_length=50, verbose_name='Название', db_index=True)
-    icon = models.ImageField(upload_to=advantage_icon_directory_path)
+    icon = models.ImageField(upload_to=advantage_icon_directory_path, verbose_name='Икоонка')
     access = models.BooleanField(default=True, verbose_name='Доступ')
 
     def __str__(self) -> str:
