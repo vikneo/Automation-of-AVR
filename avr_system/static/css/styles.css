@@ -10,7 +10,8 @@ h2 {
 }
 
 nav, footer {
-    background: #e1e3e5;
+    background: rgb(11 0 173 / 88%);
+    color: aliceblue;
 }
 
 .flex {
@@ -77,6 +78,18 @@ nav, footer {
     padding-right: 50px;
 }
 
+.nav-link-color {
+    color: #f3efef;
+}
+
+.nav-setting, .nav-icon-circle {
+    background: aliceblue;
+}
+
+.nav-icon-circle {
+    border-radius: 50%;
+}
+
 /* ============================ banner ============================== */
 
 .banner {
@@ -113,7 +126,7 @@ nav, footer {
 }
 @media (min-width:1200px) {
     .container-box {
-        width: 1170px;
+        width: 1130px;
     }
 }
 .container-fluid {
@@ -234,6 +247,14 @@ nav, footer {
 
 /* ============================ block footer ======================== */
 
+.footer-content {
+    padding: 20px 0;
+}
+
 .footer-root-padding {
     padding-bottom: 30px;
+}
+
+.footer-fluid {
+    justify-content: space-between;
 }
