@@ -26,6 +26,8 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+.flake8
+
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
@@ -52,8 +54,9 @@ coverage.xml
 cover/
 
 # Makefile
-.Makefile
+Makefile
 megano/Makefile
+./Makefile
 
 # Translations
 *.mo
@@ -165,9 +168,6 @@ cython_debug/
 
 # For project demo, has been added dir the "media" to the repository
 media/
-
-Makefile
-./Makefile
 
 cache
 cache/
