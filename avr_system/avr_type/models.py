@@ -160,7 +160,7 @@ class File(models.Model):
     """
     firmware = models.ForeignKey(
         Classification, 
-        verbose_name='Адгоритм', 
+        verbose_name='Алгоритм', 
         on_delete=models.CASCADE, 
         related_name='classifications'
         )
@@ -209,7 +209,7 @@ class Advantage(models.Model):
     The Class description the Advantage models.
     """
     title = models.CharField(max_length=50, verbose_name='Название', db_index=True)
-    icon = models.ImageField(upload_to=advantage_icon_directory_path, verbose_name='Икоонка')
+    icon = models.ImageField(upload_to=advantage_icon_directory_path, verbose_name='Иконка')
     access = models.BooleanField(default=True, verbose_name='Доступ')
 
     def __str__(self) -> str:
