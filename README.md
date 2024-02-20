@@ -2,3 +2,6 @@
 Configuration files for AVR systems connected to intelligent relays
 
 "Commercian project. In developing"
+
+
+[Information for test with fixture](https://is20-2019.susu.ru/pollakiyu/2021/05/31/perevod-stati-how-to-provide-test-fixtures-for-django-models-in-pytest/)
