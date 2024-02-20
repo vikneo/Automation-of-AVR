@@ -7,8 +7,10 @@ from .models import (
     TypeAVR,
     Classification,
     SmartRelay,
+    Banner,
 )
 
+@receiver(pre_save, sender=Banner)
 @receiver(pre_save, sender=Classification)
 @receiver(pre_save, sender=TypeAVR)
 def get_slugify_type_avr(instance, **kwargs) -> None:
