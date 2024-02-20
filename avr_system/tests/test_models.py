@@ -13,10 +13,16 @@ from random import randint
 from avr_type.models import (
     TypeAVR, 
     Classification, 
-    SmartRelay, 
+    SmartRelay,
+    ImageTypeAVR,
     File, 
     Advantage, 
-    Banner
+    Banner,
+    path_file_logic,
+    path_file_description,
+    banner_images_directory_path,
+    system_images_directory_path,
+    advantage_icon_directory_path,
     )
 from users.models import Profile
 
@@ -53,8 +59,8 @@ class TestModelMixin(TestCase):
 
     @classmethod
     def setUpTestData(cls) -> None:
-        choice_relay = SmartRelay.TypeRelay
-        icon = tempfile.NamedTemporaryFile(suffix=".jpg").name
+        cls.icon = tempfile.NamedTemporaryFile(suffix=".jpg").name
+        cls.choice_relay = SmartRelay.TypeRelay
 
         for index in range(NUM_FOR_TEST):
             type_avr = cls.set_random_chars(start=32, end=122)
@@ -64,18 +70,18 @@ class TestModelMixin(TestCase):
                 access=True if index % 3 != 0 else False,
             )
 
-        for relay in choice_relay:
+        for relay in cls.choice_relay:
             SmartRelay.objects.create(brand=relay, model=relay)
 
         for _ in range(NUM_FOR_TEST):
             Advantage.objects.create(
-                title=cls.set_random_chars(start=66, end=122), icon=icon
+                title=cls.set_random_chars(start=66, end=122), icon=cls.icon
             )
         
         for index in range(NUM_FOR_TEST):
             Banner.objects.create(
                 name=cls.set_random_chars(start=32, end=122),
-                photo=icon,
+                photo=cls.icon,
                 description=f'Descriiption for elemet - {index}',
             )
     
@@ -131,6 +137,57 @@ class TypeAvrTest(ModelMixin, TestModelMixin):
         TypeAVR.objects.filter(id=3).delete()
         count = self.get_queryset(TypeAVR).count()
         self.assertEqual(count, 4)
+
+
+class ImageTypeAVRTestCase(ModelMixin, TestModelMixin):
+    """
+    
+    """
+    def setUp(self) -> None:
+        self.system = self.get_select_element(TypeAVR, 1)
+        ImageTypeAVR.objects.create(
+            type_avr=self.system,
+            photo=self.icon
+        )
+
+    def test_type_avr_lable(self) -> None:
+        """
+        
+        """
+        type_avr = self.get_select_element(ImageTypeAVR, 1)
+        responce = type_avr._meta.get_field('type_avr').verbose_name
+        self.assertEqual(responce, 'Тип системы')
+    
+    def test_photo_lable(self) -> None:
+        """
+        
+        """
+        photo = self.get_select_element(ImageTypeAVR, 1)
+        responce = photo._meta.get_field('photo').verbose_name
+        self.assertEqual(responce, 'Основное фото')
+    
+    def test_count_create(self) -> None:
+        """
+        
+        """
+        quantity = self.get_queryset(ImageTypeAVR).count()
+        self.assertEqual(quantity, 1)
+    
+    def test_create_element(self) -> None:
+        ImageTypeAVR.objects.create(
+            type_avr=self.system,
+            photo=self.icon
+        )
+        self.assertEqual(self.get_queryset(ImageTypeAVR).count(), 2)
+    
+    def test_delete_element(self) -> None:
+        self.get_select_element(ImageTypeAVR, 1).delete()
+        self.assertFalse(self.get_queryset(ImageTypeAVR))
+
+    def test_path_image_save(self) -> None:
+        file_name = 'test.jpg'
+        path_image = system_images_directory_path(ImageTypeAVR, file_name)
+        self.assertTrue(path_image)
 
 
 class SmartRelayTest(ModelMixin, TestModelMixin):
@@ -432,6 +489,11 @@ class AdvantageTestCase(ModelMixin, TestModelMixin):
         self.get_select_element(Advantage, 2).delete()
         quantity = self.get_queryset(Advantage).count()
         self.assertEqual(quantity, NUM_FOR_TEST - 1)
+    
+    def test_advantage_icon_path(self) -> None:
+        filename = 'icon.jpg'
+        file_banner = advantage_icon_directory_path(Advantage, filename)
+        self.assertTrue(file_banner)
 
 
 class BannerTestCase(ModelMixin, TestModelMixin):
@@ -509,3 +571,16 @@ class BannerTestCase(ModelMixin, TestModelMixin):
         update_at = self.get_select_element(Banner, 1)
         responce = update_at._meta.get_field("update_at").verbose_name
         self.assertEqual(responce, "Дата обновления")
+    
+    def test_path_file_logic(self) -> None:
+        filename = 'test_file'
+        file_banner = banner_images_directory_path(Banner, filename)
+        self.assertTrue(file_banner)
+
+
+class PathFileLogicTestCase(TestCase):
+    """
+    Test for generating path for saving file woth logic
+    """
+    def setUp(self) -> None:
+        path_file = path_file_logic()
