@@ -1,7 +1,9 @@
 """
 The module for testing the models of the application
 """
+import tempfile
 from django.test import TestCase
+from django.db.models.query import QuerySet
 from django.contrib.auth import get_user_model
 
 from random import randint
@@ -10,7 +12,8 @@ from avr_type.models import (
     TypeAVR,
     Classification,
     SmartRelay,
-    File
+    File,
+    Advantage
 )
 from users.models import Profile
 
@@ -25,7 +28,8 @@ class TestModelMixin(TestCase):
 
     @classmethod
     def setUpTestData(cls) -> None:
-        choice = SmartRelay.TypeRelay
+        choice_relay = SmartRelay.TypeRelay
+        icon = tempfile.NamedTemporaryFile(suffix='.jpg').name
 
         for index in range(NUM_FOR_TEST):
             type_avr = ''.join(chr(randint(32, 122)) for _ in range(_RANGE))
@@ -35,10 +39,16 @@ class TestModelMixin(TestCase):
                 access=True if index % 3 != 0 else False,
             )
 
-        for relay in choice:
+        for relay in choice_relay:
             SmartRelay.objects.create(
                 brand=relay,
                 model=relay
+            )
+        
+        for _ in range(NUM_FOR_TEST):
+            Advantage.objects.create(
+                title=''.join(chr(randint(66, 122)) for _ in range(_RANGE)),
+                icon=icon
             )
 
 
@@ -317,3 +327,79 @@ class ProfileTest(TestCase):
     def test_deleted_user(self):
         Profile.objects.filter(id=2).delete()
         self.assertFalse(Profile.objects.all().count() == NUM_FOR_TEST)
+
+
+class AdvantageTestCase(TestModelMixin):
+    """
+    
+    """
+    @staticmethod
+    def select_advantade(_id: int):
+        """
+        Функция возвращает экземпляр класса Advantage по номеру id
+        """
+        return Advantage.objects.get(id=_id)
+    
+    def test_method_str(self) -> None:
+        """
+        Test metod __str__
+        """
+        title = self.select_advantade(2)
+        self.assertEqual(title.__str__(), title.title)
+
+    def test_title_lable(self) -> None:
+        """
+        Тест текстовой метки поля "title"
+        """
+        title = self.select_advantade(1)
+        responce = title._meta.get_field('title').verbose_name
+        self.assertEqual(responce, 'Название')
+    
+    def test_icon_lable(self) -> None:
+        """
+        Тест текстовой метки поля "icon"
+        """
+        icon = self.select_advantade(1)
+        responce = icon._meta.get_field('icon').verbose_name
+        self.assertEqual(responce, 'Иконка')
+
+    def test_access_lable(self) -> None:
+        """
+        Тест текстовой метки поля "access"
+        """
+        access = self.select_advantade(1)
+        responce = access._meta.get_field('access').verbose_name
+        self.assertEqual(responce, 'Доступ')
+    
+    @staticmethod
+    def quantity() -> QuerySet:
+        """
+        Returns the model Advantage queryset
+        """
+        return Advantage.objects.all()
+
+    def test_count_created(self) -> None:
+        """
+        Тест на количество созданных елементов
+        """
+        quantity = self.quantity()
+        self.assertEqual(quantity.count(), NUM_FOR_TEST)
+    
+    def test_add_element(self) -> None:
+        """
+        test for adding an element
+        """
+        add = Advantage(
+            title='test_titale',
+        )
+        add.save()
+        quantity = self.quantity().count()
+        self.assertEqual(quantity, NUM_FOR_TEST + 1)
+    
+    def test_deleted_element(self) -> None:
+        """
+        Test for deleted for element
+        """
+        self.select_advantade(2).delete()
+        quantity = self.quantity().count()
+        self.assertEqual(quantity, NUM_FOR_TEST - 1)
