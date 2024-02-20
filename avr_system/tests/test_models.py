@@ -1,6 +1,7 @@
 """
 The module for testing the models of the application
 """
+
 import tempfile
 from django.test import TestCase
 from django.db.models.query import QuerySet
@@ -8,13 +9,7 @@ from django.contrib.auth import get_user_model
 
 from random import randint
 
-from avr_type.models import (
-    TypeAVR,
-    Classification,
-    SmartRelay,
-    File,
-    Advantage
-)
+from avr_type.models import TypeAVR, Classification, SmartRelay, File, Advantage, Banner
 from users.models import Profile
 
 NUM_FOR_TEST = 5
@@ -29,10 +24,10 @@ class TestModelMixin(TestCase):
     @classmethod
     def setUpTestData(cls) -> None:
         choice_relay = SmartRelay.TypeRelay
-        icon = tempfile.NamedTemporaryFile(suffix='.jpg').name
+        icon = tempfile.NamedTemporaryFile(suffix=".jpg").name
 
         for index in range(NUM_FOR_TEST):
-            type_avr = ''.join(chr(randint(32, 122)) for _ in range(_RANGE))
+            type_avr = "".join(chr(randint(32, 122)) for _ in range(_RANGE))
 
             TypeAVR.objects.create(
                 name=type_avr,
@@ -40,15 +35,11 @@ class TestModelMixin(TestCase):
             )
 
         for relay in choice_relay:
-            SmartRelay.objects.create(
-                brand=relay,
-                model=relay
-            )
-        
+            SmartRelay.objects.create(brand=relay, model=relay)
+
         for _ in range(NUM_FOR_TEST):
             Advantage.objects.create(
-                title=''.join(chr(randint(66, 122)) for _ in range(_RANGE)),
-                icon=icon
+                title="".join(chr(randint(66, 122)) for _ in range(_RANGE)), icon=icon
             )
 
 
@@ -59,15 +50,15 @@ class TypeAvrTest(TestModelMixin):
 
     def test_name_label(self):
         name = TypeAVR.objects.get(id=1)
-        self.assertEqual(name._meta.get_field('name').verbose_name, "Тип АВР")
+        self.assertEqual(name._meta.get_field("name").verbose_name, "Тип АВР")
 
     def test_slug_label(self):
         slug = TypeAVR.objects.get(id=1)
-        self.assertEqual(slug._meta.get_field('slug').verbose_name, "URL")
+        self.assertEqual(slug._meta.get_field("slug").verbose_name, "URL")
 
     def test_access_label(self):
         access = TypeAVR.objects.get(id=1)
-        self.assertEqual(access._meta.get_field('access').verbose_name, "Доступ")
+        self.assertEqual(access._meta.get_field("access").verbose_name, "Доступ")
 
     def test_count_created_type_avr(self):
         count = TypeAVR.objects.all().count()
@@ -88,9 +79,7 @@ class TypeAvrTest(TestModelMixin):
         self.assertTrue(slug.slug)
 
     def test_created_object(self):
-        name = TypeAVR(
-            name='test_type_avr'
-        )
+        name = TypeAVR(name="test_type_avr")
         name.save()
         self.assertEqual(name, TypeAVR.objects.get(id=6))
         self.assertTrue(name.slug)
@@ -109,7 +98,7 @@ class SmartRelayTest(TestModelMixin):
 
     def test_brand_label(self):
         brand = SmartRelay.objects.get(id=1)
-        self.assertEqual(brand._meta.get_field("brand").verbose_name, 'Бренд')
+        self.assertEqual(brand._meta.get_field("brand").verbose_name, "Бренд")
 
     def test_brand_field(self):
         brand = SmartRelay.objects.get(id=1)
@@ -117,7 +106,7 @@ class SmartRelayTest(TestModelMixin):
 
     def test_model_label(self):
         model = SmartRelay.objects.get(id=1)
-        self.assertEqual(model._meta.get_field("model").verbose_name, 'Модель')
+        self.assertEqual(model._meta.get_field("model").verbose_name, "Модель")
 
     def test_model_field(self):
         model = SmartRelay.objects.get(id=1)
@@ -125,7 +114,7 @@ class SmartRelayTest(TestModelMixin):
 
     def test_slug_label(self):
         slug = SmartRelay.objects.get(id=1)
-        self.assertEqual(slug._meta.get_field("slug").verbose_name, 'URL')
+        self.assertEqual(slug._meta.get_field("slug").verbose_name, "URL")
 
     def test_slug_field(self):
         slug = SmartRelay.objects.get(id=1)
@@ -136,10 +125,7 @@ class SmartRelayTest(TestModelMixin):
         self.assertEqual(count, 9)
 
     def test_created_relay(self):
-        relay = SmartRelay(
-            brand='brand',
-            model='test_model'
-        )
+        relay = SmartRelay(brand="brand", model="test_model")
         relay.save()
         brand = SmartRelay.objects.get(id=10)
         self.assertEqual(relay, brand)
@@ -162,7 +148,7 @@ class ClassificationTest(TestModelMixin):
             Classification.objects.create(
                 type_avr=TypeAVR.objects.get(id=_id),
                 name=chr(randint(32, 122)),
-                relay=SmartRelay.objects.get(id=_id)
+                relay=SmartRelay.objects.get(id=_id),
             )
 
     def test_count_created_product(self):
@@ -171,19 +157,21 @@ class ClassificationTest(TestModelMixin):
 
     def test_type_avr_label(self):
         type_avr = Classification.objects.get(id=1)
-        self.assertEqual(type_avr._meta.get_field("type_avr").verbose_name, 'Тип АВР')
+        self.assertEqual(type_avr._meta.get_field("type_avr").verbose_name, "Тип АВР")
 
     def test_name_label(self):
         name = Classification.objects.get(id=1)
-        self.assertEqual(name._meta.get_field("name").verbose_name, 'Название')
+        self.assertEqual(name._meta.get_field("name").verbose_name, "Название")
 
     def test_vnr_label(self):
         vnr = Classification.objects.get(id=1)
-        self.assertEqual(vnr._meta.get_field("vnr").verbose_name, 'Ключ ВНР')
+        self.assertEqual(vnr._meta.get_field("vnr").verbose_name, "Ключ ВНР")
 
     def test_temp_tp_label(self):
         temp_tp = Classification.objects.get(id=1)
-        self.assertEqual(temp_tp._meta.get_field("temp_tp").verbose_name, 'Перегрев тр-ров')
+        self.assertEqual(
+            temp_tp._meta.get_field("temp_tp").verbose_name, "Перегрев тр-ров"
+        )
 
     def test_reset_label(self):
         reset = Classification.objects.get(id=1)
@@ -191,39 +179,54 @@ class ClassificationTest(TestModelMixin):
 
     def test_choice_in_label(self):
         choice_in = Classification.objects.get(id=1)
-        self.assertEqual(choice_in._meta.get_field("choice_in").verbose_name, 'Выбор ввода')
+        self.assertEqual(
+            choice_in._meta.get_field("choice_in").verbose_name, "Выбор ввода"
+        )
 
     def test_dgu_label(self):
         dgu = Classification.objects.get(id=1)
-        self.assertEqual(dgu._meta.get_field("dgu").verbose_name, 'Наличие ДГУ')
+        self.assertEqual(dgu._meta.get_field("dgu").verbose_name, "Наличие ДГУ")
 
     def test_work_tp_label(self):
         work_tp = Classification.objects.get(id=1)
-        self.assertEqual(work_tp._meta.get_field("work_tp").verbose_name, 'Режим работы тр-ров')
+        self.assertEqual(
+            work_tp._meta.get_field("work_tp").verbose_name, "Режим работы тр-ров"
+        )
 
     def test_status_box_label(self):
         status_box = Classification.objects.get(id=1)
-        self.assertEqual(status_box._meta.get_field("status_box").verbose_name, 'Положение АВ в корзине')
+        self.assertEqual(
+            status_box._meta.get_field("status_box").verbose_name,
+            "Положение АВ в корзине",
+        )
 
     def test_lamp_avr_ready_label(self):
         lamp_avr_ready = Classification.objects.get(id=1)
-        self.assertEqual(lamp_avr_ready._meta.get_field("lamp_avr_ready").verbose_name, 'Лампа АВР готов')
+        self.assertEqual(
+            lamp_avr_ready._meta.get_field("lamp_avr_ready").verbose_name,
+            "Лампа АВР готов",
+        )
 
     def test_lamp_avr_work_label(self):
         lamp_avr_work = Classification.objects.get(id=1)
-        self.assertEqual(lamp_avr_work._meta.get_field("lamp_avr_work").verbose_name, 'Лампа АВР с работал')
+        self.assertEqual(
+            lamp_avr_work._meta.get_field("lamp_avr_work").verbose_name,
+            "Лампа АВР с работал",
+        )
 
     def test_signal_ozz_label(self):
         signal_ozz = Classification.objects.get(id=1)
-        self.assertEqual(signal_ozz._meta.get_field("signal_ozz").verbose_name, 'Сигнал ОЗЗ')
+        self.assertEqual(
+            signal_ozz._meta.get_field("signal_ozz").verbose_name, "Сигнал ОЗЗ"
+        )
 
     def test_comment_label(self):
         comment = Classification.objects.get(id=1)
-        self.assertEqual(comment._meta.get_field("comment").verbose_name, 'Примечание')
+        self.assertEqual(comment._meta.get_field("comment").verbose_name, "Примечание")
 
     def test_access_label(self):
         access = Classification.objects.get(id=1)
-        self.assertEqual(access._meta.get_field("access").verbose_name, 'Доступ')
+        self.assertEqual(access._meta.get_field("access").verbose_name, "Доступ")
 
     @staticmethod
     def choice_product():
@@ -233,12 +236,8 @@ class ClassificationTest(TestModelMixin):
 
     def test_created_product(self):
         type_avr, relay = self.choice_product()
-        name = 'ВРУ'
-        avr = Classification(
-            type_avr=type_avr,
-            name=name,
-            relay=relay
-        )
+        name = "ВРУ"
+        avr = Classification(type_avr=type_avr, name=name, relay=relay)
         avr.save()
         self.assertEqual(Classification.objects.all().count(), 6)
         self.assertEqual(name, avr.name)
@@ -246,7 +245,7 @@ class ClassificationTest(TestModelMixin):
 
     def test_update_product(self):
         type_avr, _ = self.choice_product()
-        name = 'РУНН'
+        name = "РУНН"
         avr = Classification.objects.get(type_avr=type_avr)
         avr.name = name
         avr.save()
@@ -260,63 +259,63 @@ class ClassificationTest(TestModelMixin):
 
 class ProfileTest(TestCase):
     """
-        Test of the "Profile" model
+    Test of the "Profile" model
     """
 
     @classmethod
     def setUpTestData(cls) -> None:
         for idx in range(NUM_FOR_TEST):
             user = get_user_model().objects.create_user(
-                username=f'test_user_{idx}',
-                password='test_password',
-                email=f'user_{idx}@qwe.com'
+                username=f"test_user_{idx}",
+                password="test_password",
+                email=f"user_{idx}@qwe.com",
             )
 
             Profile.objects.create(
                 user=user,
-                phone=''.join(str(randint(0, 9)) for _ in range(12)),
+                phone="".join(str(randint(0, 9)) for _ in range(12)),
             )
 
     def test_user_label(self):
         user = Profile.objects.get(id=2)
-        self.assertEqual(user._meta.get_field('user').verbose_name, 'Пользователь')
+        self.assertEqual(user._meta.get_field("user").verbose_name, "Пользователь")
 
     def test_phone_lable(self):
         phone = Profile.objects.get(id=1)
-        self.assertEqual(phone._meta.get_field('phone').verbose_name, 'Телефон')
+        self.assertEqual(phone._meta.get_field("phone").verbose_name, "Телефон")
 
     def test_archive_label(self):
         archive = Profile.objects.get(id=3)
-        self.assertEqual(archive._meta.get_field('archive').verbose_name, 'Архив')
+        self.assertEqual(archive._meta.get_field("archive").verbose_name, "Архив")
 
     def test_avatar_lable(self):
         avatar = Profile.objects.get(id=4)
-        self.assertEqual(avatar._meta.get_field('avatar').verbose_name, 'Фотография профиля')
+        self.assertEqual(
+            avatar._meta.get_field("avatar").verbose_name, "Фотография профиля"
+        )
 
     @staticmethod
     def created_user(last_name):
         user = get_user_model().objects.create(
-            username='one_user',
-            password='test_password',
-            last_name=last_name
+            username="one_user", password="test_password", last_name=last_name
         )
         profile = Profile.objects.create(
             user=user,
-            phone='1234567892',
+            phone="1234567892",
         )
         return profile
 
     def test_create_user(self):
-        last_name = 'Murder'
+        last_name = "Murder"
         profile = self.created_user(last_name)
         self.assertEqual(last_name, profile.user.last_name)
-    
+
     def test_get_absolute_url(self):
         profile = Profile.objects.get(id=1)
-        self.assertEqual(profile.get_absolute_url(), '/user/account/')
+        self.assertEqual(profile.get_absolute_url(), "/user/account/")
 
     def test_update_user(self):
-        last_name = 'Poncrat'
+        last_name = "Poncrat"
         profile = self.created_user(last_name)
         self.assertEqual(last_name, profile.user.last_name)
 
@@ -330,16 +329,15 @@ class ProfileTest(TestCase):
 
 
 class AdvantageTestCase(TestModelMixin):
-    """
-    
-    """
+    """ """
+
     @staticmethod
-    def select_advantade(_id: int):
+    def select_advantade(_id: int) -> Advantage:
         """
         Функция возвращает экземпляр класса Advantage по номеру id
         """
         return Advantage.objects.get(id=_id)
-    
+
     def test_method_str(self) -> None:
         """
         Test metod __str__
@@ -352,25 +350,25 @@ class AdvantageTestCase(TestModelMixin):
         Тест текстовой метки поля "title"
         """
         title = self.select_advantade(1)
-        responce = title._meta.get_field('title').verbose_name
-        self.assertEqual(responce, 'Название')
-    
+        responce = title._meta.get_field("title").verbose_name
+        self.assertEqual(responce, "Название")
+
     def test_icon_lable(self) -> None:
         """
         Тест текстовой метки поля "icon"
         """
         icon = self.select_advantade(1)
-        responce = icon._meta.get_field('icon').verbose_name
-        self.assertEqual(responce, 'Иконка')
+        responce = icon._meta.get_field("icon").verbose_name
+        self.assertEqual(responce, "Иконка")
 
     def test_access_lable(self) -> None:
         """
         Тест текстовой метки поля "access"
         """
         access = self.select_advantade(1)
-        responce = access._meta.get_field('access').verbose_name
-        self.assertEqual(responce, 'Доступ')
-    
+        responce = access._meta.get_field("access").verbose_name
+        self.assertEqual(responce, "Доступ")
+
     @staticmethod
     def quantity() -> QuerySet:
         """
@@ -384,18 +382,18 @@ class AdvantageTestCase(TestModelMixin):
         """
         quantity = self.quantity()
         self.assertEqual(quantity.count(), NUM_FOR_TEST)
-    
+
     def test_add_element(self) -> None:
         """
         test for adding an element
         """
         add = Advantage(
-            title='test_titale',
+            title="test_titale",
         )
         add.save()
         quantity = self.quantity().count()
         self.assertEqual(quantity, NUM_FOR_TEST + 1)
-    
+
     def test_deleted_element(self) -> None:
         """
         Test for deleted for element
@@ -403,3 +401,9 @@ class AdvantageTestCase(TestModelMixin):
         self.select_advantade(2).delete()
         quantity = self.quantity().count()
         self.assertEqual(quantity, NUM_FOR_TEST - 1)
+
+
+class BannerTestCase(TestCase):
+    """ """
+
+    pass
