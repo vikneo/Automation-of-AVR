@@ -1,0 +1,2249 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2024-02-08T01:34:54.449Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2024-02-08T01:56:42.857Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "SR3B261BD",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2024-02-08T01:57:38.814Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "SR2B261FU",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2024-02-08T02:02:00.936Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "SR2B201FU",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2024-02-08T02:02:12.378Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "4",
+            "object_repr": "SR2B121FU",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2024-02-08T02:02:18.287Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "5",
+            "object_repr": "ПР200",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2024-02-08T02:02:22.400Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "ПР205",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2024-02-08T02:02:26.721Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "7",
+            "object_repr": "ПР103",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2024-02-08T02:02:30.957Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "8",
+            "object_repr": "Oni",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2024-02-08T02:02:39.674Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "9",
+            "object_repr": "LOGO!8",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2024-02-08T02:03:18.118Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "ВРУ",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2024-02-08T02:08:14.285Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "ВРУ",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2024-02-08T02:21:16.723Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2024-02-08T02:24:58.971Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2024-02-12T03:56:31.573Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2024-02-12T04:17:04.527Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2024-02-12T04:21:04.257Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2024-02-12T04:23:14.713Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2024-02-12T04:24:51.588Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2024-02-12T04:25:11.396Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2024-02-12T04:25:49.899Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2024-02-12T04:35:00.132Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2024-02-12T04:35:25.018Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2024-02-12T04:39:15.167Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2024-02-12T04:41:00.582Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2024-02-12T04:48:10.038Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u043f\\u0440\\u043e\\u0444\\u0438\\u043b\\u044f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2024-02-12T04:48:55.006Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u043f\\u0440\\u043e\\u0444\\u0438\\u043b\\u044f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 28,
+        "fields": {
+            "action_time": "2024-02-12T04:50:08.033Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 29,
+        "fields": {
+            "action_time": "2024-02-12T04:51:28.652Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u043f\\u0440\\u043e\\u0444\\u0438\\u043b\\u044f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 30,
+        "fields": {
+            "action_time": "2024-02-12T04:51:54.185Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u043f\\u0440\\u043e\\u0444\\u0438\\u043b\\u044f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 31,
+        "fields": {
+            "action_time": "2024-02-12T04:52:23.055Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u043f\\u0440\\u043e\\u0444\\u0438\\u043b\\u044f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 32,
+        "fields": {
+            "action_time": "2024-02-12T05:39:38.756Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 33,
+        "fields": {
+            "action_time": "2024-02-12T05:58:16.493Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u043f\\u0440\\u043e\\u0444\\u0438\\u043b\\u044f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 34,
+        "fields": {
+            "action_time": "2024-02-12T05:58:33.725Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\\u0433\\u0440\\u0430\\u0444\\u0438\\u044f \\u043f\\u0440\\u043e\\u0444\\u0438\\u043b\\u044f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 35,
+        "fields": {
+            "action_time": "2024-02-12T09:25:40.533Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 36,
+        "fields": {
+            "action_time": "2024-02-12T09:29:32.676Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 37,
+        "fields": {
+            "action_time": "2024-02-12T09:29:49.921Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "2 Ввода 1 Потребитель 24 DC",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 38,
+        "fields": {
+            "action_time": "2024-02-12T09:30:00.382Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 39,
+        "fields": {
+            "action_time": "2024-02-12T09:30:35.883Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 40,
+        "fields": {
+            "action_time": "2024-02-12T09:30:47.184Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 24 DC",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 41,
+        "fields": {
+            "action_time": "2024-02-12T09:32:45.690Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 42,
+        "fields": {
+            "action_time": "2024-02-12T09:33:00.208Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 43,
+        "fields": {
+            "action_time": "2024-02-12T09:33:20.461Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "1 Ввода 1 Потребитель + ДГУ 220 AC",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 44,
+        "fields": {
+            "action_time": "2024-02-12T09:33:40.189Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "1 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 45,
+        "fields": {
+            "action_time": "2024-02-12T09:33:50.567Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "1 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0414\\u043e\\u0441\\u0442\\u0443\\u043f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 46,
+        "fields": {
+            "action_time": "2024-02-12T09:33:53.944Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "1 Ввода 1 Потребитель + ДГУ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0414\\u043e\\u0441\\u0442\\u0443\\u043f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 47,
+        "fields": {
+            "action_time": "2024-02-12T09:34:15.904Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 48,
+        "fields": {
+            "action_time": "2024-02-12T09:34:30.910Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 49,
+        "fields": {
+            "action_time": "2024-02-15T07:33:43.994Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"First name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 50,
+        "fields": {
+            "action_time": "2024-02-15T07:35:01.044Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "1",
+            "object_repr": "root",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"First name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 51,
+        "fields": {
+            "action_time": "2024-02-15T08:46:36.091Z",
+            "user": 1,
+            "content_type": 12,
+            "object_id": "1",
+            "object_repr": "Типовые решения АВР",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 52,
+        "fields": {
+            "action_time": "2024-02-15T09:05:04.197Z",
+            "user": 1,
+            "content_type": 12,
+            "object_id": "2",
+            "object_repr": "Передача данных",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 53,
+        "fields": {
+            "action_time": "2024-02-15T09:22:40.436Z",
+            "user": 1,
+            "content_type": 12,
+            "object_id": "3",
+            "object_repr": "Индивидуальный подход",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 54,
+        "fields": {
+            "action_time": "2024-02-16T02:16:42.738Z",
+            "user": 1,
+            "content_type": 12,
+            "object_id": "1",
+            "object_repr": "Типовые решения АВР",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 55,
+        "fields": {
+            "action_time": "2024-02-16T08:44:23.995Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 56,
+        "fields": {
+            "action_time": "2024-02-16T08:55:03.733Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 57,
+        "fields": {
+            "action_time": "2024-02-16T08:55:48.832Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "2 Ввода 1 Потребитель 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 58,
+        "fields": {
+            "action_time": "2024-02-16T08:56:11.631Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 59,
+        "fields": {
+            "action_time": "2024-02-16T08:58:06.603Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 60,
+        "fields": {
+            "action_time": "2024-02-16T08:58:35.846Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 61,
+        "fields": {
+            "action_time": "2024-02-16T09:23:37.755Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 62,
+        "fields": {
+            "action_time": "2024-02-16T09:24:16.645Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 63,
+        "fields": {
+            "action_time": "2024-02-16T09:25:10.167Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 64,
+        "fields": {
+            "action_time": "2024-02-16T09:25:22.095Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 65,
+        "fields": {
+            "action_time": "2024-02-16T09:26:59.951Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 66,
+        "fields": {
+            "action_time": "2024-02-16T09:27:14.791Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 67,
+        "fields": {
+            "action_time": "2024-02-16T09:27:25.096Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 68,
+        "fields": {
+            "action_time": "2024-02-16T09:28:18.785Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 69,
+        "fields": {
+            "action_time": "2024-02-16T09:28:31.803Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 70,
+        "fields": {
+            "action_time": "2024-02-16T09:28:53.995Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 71,
+        "fields": {
+            "action_time": "2024-02-16T09:29:13.441Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 72,
+        "fields": {
+            "action_time": "2024-02-16T09:29:34.297Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 73,
+        "fields": {
+            "action_time": "2024-02-16T09:29:52.007Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 74,
+        "fields": {
+            "action_time": "2024-02-16T09:30:09.066Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 75,
+        "fields": {
+            "action_time": "2024-02-16T09:30:19.662Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 76,
+        "fields": {
+            "action_time": "2024-02-16T09:30:53.273Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 77,
+        "fields": {
+            "action_time": "2024-02-16T09:31:03.417Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 78,
+        "fields": {
+            "action_time": "2024-02-16T09:31:48.968Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 79,
+        "fields": {
+            "action_time": "2024-02-16T09:32:12.951Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 80,
+        "fields": {
+            "action_time": "2024-02-16T09:32:51.688Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 81,
+        "fields": {
+            "action_time": "2024-02-16T09:32:59.508Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 82,
+        "fields": {
+            "action_time": "2024-02-16T09:33:30.806Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 83,
+        "fields": {
+            "action_time": "2024-02-16T09:33:37.943Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 84,
+        "fields": {
+            "action_time": "2024-02-16T09:34:18.245Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 85,
+        "fields": {
+            "action_time": "2024-02-16T09:34:32.779Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 86,
+        "fields": {
+            "action_time": "2024-02-16T09:35:13.170Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 87,
+        "fields": {
+            "action_time": "2024-02-16T09:35:26.125Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 88,
+        "fields": {
+            "action_time": "2024-02-16T09:35:33.270Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 89,
+        "fields": {
+            "action_time": "2024-02-16T09:35:42.312Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 90,
+        "fields": {
+            "action_time": "2024-02-16T09:36:11.121Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 91,
+        "fields": {
+            "action_time": "2024-02-16T09:36:20.858Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 92,
+        "fields": {
+            "action_time": "2024-02-16T09:36:29.693Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "2 Ввода 1 Потребитель 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 93,
+        "fields": {
+            "action_time": "2024-02-16T09:36:44.747Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "2 Ввода 1 Потребитель 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 94,
+        "fields": {
+            "action_time": "2024-02-16T09:38:37.646Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 95,
+        "fields": {
+            "action_time": "2024-02-16T09:38:56.665Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 96,
+        "fields": {
+            "action_time": "2024-02-16T09:39:15.640Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 97,
+        "fields": {
+            "action_time": "2024-02-16T09:39:39.474Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 98,
+        "fields": {
+            "action_time": "2024-02-16T09:49:47.743Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 99,
+        "fields": {
+            "action_time": "2024-02-16T09:50:11.200Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 100,
+        "fields": {
+            "action_time": "2024-02-16T09:50:24.015Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 101,
+        "fields": {
+            "action_time": "2024-02-16T09:50:33.862Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 102,
+        "fields": {
+            "action_time": "2024-02-16T09:50:51.128Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 103,
+        "fields": {
+            "action_time": "2024-02-16T09:51:41.482Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 104,
+        "fields": {
+            "action_time": "2024-02-16T09:51:54.662Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 105,
+        "fields": {
+            "action_time": "2024-02-16T09:52:19.331Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 106,
+        "fields": {
+            "action_time": "2024-02-16T09:52:46.976Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 107,
+        "fields": {
+            "action_time": "2024-02-16T09:52:59.322Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 108,
+        "fields": {
+            "action_time": "2024-02-16T09:53:25.569Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 109,
+        "fields": {
+            "action_time": "2024-02-16T09:53:34.540Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 110,
+        "fields": {
+            "action_time": "2024-02-19T01:16:13.419Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 111,
+        "fields": {
+            "action_time": "2024-02-19T01:16:31.797Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 112,
+        "fields": {
+            "action_time": "2024-02-19T01:16:51.269Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 113,
+        "fields": {
+            "action_time": "2024-02-19T01:17:22.983Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 114,
+        "fields": {
+            "action_time": "2024-02-19T01:17:45.280Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 115,
+        "fields": {
+            "action_time": "2024-02-19T01:18:17.536Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 116,
+        "fields": {
+            "action_time": "2024-02-19T01:21:06.650Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 117,
+        "fields": {
+            "action_time": "2024-02-19T01:22:07.742Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 118,
+        "fields": {
+            "action_time": "2024-02-19T01:22:30.084Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 119,
+        "fields": {
+            "action_time": "2024-02-19T01:22:51.092Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c + \\u0414\\u0413\\u0423 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 120,
+        "fields": {
+            "action_time": "2024-02-19T01:23:01.059Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 121,
+        "fields": {
+            "action_time": "2024-02-19T01:23:13.728Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 122,
+        "fields": {
+            "action_time": "2024-02-19T01:23:19.673Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "2 Ввода 1 Потребитель 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 123,
+        "fields": {
+            "action_time": "2024-02-19T01:23:34.422Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "2 Ввода 1 Потребитель 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 24 DC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 124,
+        "fields": {
+            "action_time": "2024-02-19T01:23:44.568Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 125,
+        "fields": {
+            "action_time": "2024-02-19T01:23:56.906Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "2 Ввода 1 Потребитель 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 1 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044c 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 126,
+        "fields": {
+            "action_time": "2024-02-19T01:24:02.619Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 127,
+        "fields": {
+            "action_time": "2024-02-19T01:24:16.591Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"image\", \"object\": \"2 \\u0412\\u0432\\u043e\\u0434\\u0430 2 \\u041f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f + \\u0421\\u0412 220 AC\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 128,
+        "fields": {
+            "action_time": "2024-02-19T03:31:51.075Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "1",
+            "object_repr": "Архивы",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 129,
+        "fields": {
+            "action_time": "2024-02-19T03:32:32.094Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "2",
+            "object_repr": "Ввод резерва",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 130,
+        "fields": {
+            "action_time": "2024-02-19T03:32:55.039Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "3",
+            "object_repr": "Гибкость настройки",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 131,
+        "fields": {
+            "action_time": "2024-02-19T03:33:12.821Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "4",
+            "object_repr": "Готовое решение",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 132,
+        "fields": {
+            "action_time": "2024-02-19T03:33:28.372Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "5",
+            "object_repr": "Документация",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 133,
+        "fields": {
+            "action_time": "2024-02-19T03:33:43.177Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "6",
+            "object_repr": "Интеграция",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 134,
+        "fields": {
+            "action_time": "2024-02-19T03:33:57.694Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "7",
+            "object_repr": "Один производитель",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 135,
+        "fields": {
+            "action_time": "2024-02-19T03:34:24.008Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "8",
+            "object_repr": "Перепрограммирование",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 136,
+        "fields": {
+            "action_time": "2024-02-19T03:34:39.588Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "9",
+            "object_repr": "Развитый функционал",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 137,
+        "fields": {
+            "action_time": "2024-02-19T03:34:53.935Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "10",
+            "object_repr": "Сервис",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 138,
+        "fields": {
+            "action_time": "2024-02-19T03:35:10.678Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "11",
+            "object_repr": "Совместимость",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 139,
+        "fields": {
+            "action_time": "2024-02-19T03:35:26.879Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "12",
+            "object_repr": "Удаленный мониторинг",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 140,
+        "fields": {
+            "action_time": "2024-02-19T03:35:33.249Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "2",
+            "object_repr": "Ввод резерва",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0414\\u043e\\u0441\\u0442\\u0443\\u043f\"]}}]"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$c9XSnebzh7Xp165pkxU5nX$iYsalfFhdH/e2tF4aaH/nqt9t/jxKqdrr+PP2sfgFYU=",
+            "last_login": "2024-02-19T08:55:07.318Z",
+            "is_superuser": true,
+            "username": "root",
+            "first_name": "Виктор",
+            "last_name": "",
+            "email": "vm-viktor@mail.ru",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-02-07T09:01:15Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "2tswqjyzhu37sxw85lky60mt6zl81ub4",
+        "fields": {
+            "session_data": ".eJxVjDsOwjAQBe_iGlne-BObkp4zWGvvLgkgR8qnQtwdIqWA9s3Me6mM2zrkbeE5j6TOCtTpdytYH9x2QHdst0nXqa3zWPSu6IMu-joRPy-H-3cw4DJ8a5sYel_Zg4kopQoJ1M4kXyNSFzmIF2tdACwCbIJ1nXOG-giUwAqr9wfy8Tf-:1rbzQZ:EKto6TPkYSYX5KF4DuQfGQB6AwS0KKxpiUQ153LxiTg",
+            "expire_date": "2024-03-04T08:55:07.324Z"
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 1,
+        "fields": {
+            "name": "2 Ввода 2 Потребителя + СВ 220 AC",
+            "slug": "2-vvoda-2-potrebitelya-sv-220-ac",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 2,
+        "fields": {
+            "name": "2 Ввода 1 Потребитель 220 AC",
+            "slug": "2-vvoda-1-potrebitel-220-ac",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 3,
+        "fields": {
+            "name": "2 Ввода 1 Потребитель + ДГУ 220 AC",
+            "slug": "2-vvoda-1-potrebitel-dgu-220-ac",
+            "access": false
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 4,
+        "fields": {
+            "name": "2 Ввода 2 Потребителя + СВ + ДГУ 220 AC",
+            "slug": "2-vvoda-2-potrebitelya-sv-dgu-229-ac",
+            "access": false
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 5,
+        "fields": {
+            "name": "2 Ввода 1 Потребитель 24 DC",
+            "slug": "2-vvoda-1-potrebitel-24-dc",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 6,
+        "fields": {
+            "name": "2 Ввода 2 Потребителя + СВ 24 DC",
+            "slug": "2-vvoda-2-potrebitelya-sv-24-dc",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 7,
+        "fields": {
+            "name": "2 Ввода 1 Потребитель + ДГУ 24 DC",
+            "slug": "2-vvoda-1-potrebitel-dgu-24-dc",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 8,
+        "fields": {
+            "name": "1 Ввода 1 Потребитель + ДГУ 220 AC",
+            "slug": "1-vvoda-1-potrebitel-dgu-220-ac",
+            "access": false
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 9,
+        "fields": {
+            "name": "1 Ввода 1 Потребитель + ДГУ 24 DC",
+            "slug": "1-vvoda-1-potrebitel-dgu-24-dc",
+            "access": false
+        }
+    },
+    {
+        "model": "avr_type.typeavr",
+        "pk": 10,
+        "fields": {
+            "name": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
+            "slug": "2-vvoda-2-potrebitelya-sv-dgu-24-dc",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.imagetypeavr",
+        "pk": 34,
+        "fields": {
+            "type_avr": 10,
+            "photo": "system/2 Ввода 2 Потребителя + СВ + ДГУ 24 DC/2_2дгу_24.png"
+        }
+    },
+    {
+        "model": "avr_type.imagetypeavr",
+        "pk": 35,
+        "fields": {
+            "type_avr": 7,
+            "photo": "system/2 Ввода 1 Потребитель + ДГУ 24 DC/2_1дгу_24.png"
+        }
+    },
+    {
+        "model": "avr_type.imagetypeavr",
+        "pk": 36,
+        "fields": {
+            "type_avr": 6,
+            "photo": "system/2 Ввода 2 Потребителя + СВ 24 DC/2_2св_24.png"
+        }
+    },
+    {
+        "model": "avr_type.imagetypeavr",
+        "pk": 37,
+        "fields": {
+            "type_avr": 5,
+            "photo": "system/2 Ввода 1 Потребитель 24 DC/2_1_24.png"
+        }
+    },
+    {
+        "model": "avr_type.imagetypeavr",
+        "pk": 38,
+        "fields": {
+            "type_avr": 2,
+            "photo": "system/2 Ввода 1 Потребитель 220 AC/2_1_220.png"
+        }
+    },
+    {
+        "model": "avr_type.imagetypeavr",
+        "pk": 39,
+        "fields": {
+            "type_avr": 1,
+            "photo": "system/2 Ввода 2 Потребителя + СВ 220 AC/2_2св_220.png"
+        }
+    },
+    {
+        "model": "avr_type.classification",
+        "pk": 1,
+        "fields": {
+            "type_avr": 1,
+            "name": "ВРУ",
+            "slug": "vru",
+            "vnr": false,
+            "temp_tp": false,
+            "reset": false,
+            "choice_in": false,
+            "dgu": false,
+            "work_tp": false,
+            "status_box": false,
+            "lamp_avr_ready": false,
+            "lamp_avr_work": false,
+            "signal_ozz": false,
+            "comment": "!",
+            "relay": 5,
+            "access": false
+        }
+    },
+    {
+        "model": "avr_type.smartrelay",
+        "pk": 1,
+        "fields": {
+            "brand": "Zelio",
+            "model": "SR3B261BD",
+            "slug": "sr3b261bd"
+        }
+    },
+    {
+        "model": "avr_type.smartrelay",
+        "pk": 2,
+        "fields": {
+            "brand": "Zelio",
+            "model": "SR2B261FU",
+            "slug": "sr2b261fu"
+        }
+    },
+    {
+        "model": "avr_type.smartrelay",
+        "pk": 3,
+        "fields": {
+            "brand": "Zelio",
+            "model": "SR2B201FU",
+            "slug": "sr2b201fu"
+        }
+    },
+    {
+        "model": "avr_type.smartrelay",
+        "pk": 4,
+        "fields": {
+            "brand": "Zelio",
+            "model": "SR2B121FU",
+            "slug": "sr2b121fu"
+        }
+    },
+    {
+        "model": "avr_type.smartrelay",
+        "pk": 5,
+        "fields": {
+            "brand": "Owen",
+            "model": "ПР200",
+            "slug": "pr200"
+        }
+    },
+    {
+        "model": "avr_type.smartrelay",
+        "pk": 6,
+        "fields": {
+            "brand": "Owen",
+            "model": "ПР205",
+            "slug": "pr205"
+        }
+    },
+    {
+        "model": "avr_type.smartrelay",
+        "pk": 7,
+        "fields": {
+            "brand": "Owen",
+            "model": "ПР103",
+            "slug": "pr103"
+        }
+    },
+    {
+        "model": "avr_type.smartrelay",
+        "pk": 8,
+        "fields": {
+            "brand": "Oni",
+            "model": "Oni",
+            "slug": "oni"
+        }
+    },
+    {
+        "model": "avr_type.smartrelay",
+        "pk": 9,
+        "fields": {
+            "brand": "Logo",
+            "model": "LOGO!8",
+            "slug": "logo8"
+        }
+    },
+    {
+        "model": "avr_type.banner",
+        "pk": 1,
+        "fields": {
+            "name": "Типовые решения АВР",
+            "slug": "tipovye-resheniya-avr",
+            "photo": "banner/Типовые решения АВР/smart_avr_banner.PNG",
+            "description": "Управление АВР с помощью контроллеров и программируемых реле",
+            "link": "http://127.0.0.1:8000",
+            "is_active": true,
+            "create_at": "2024-02-15T08:46:36.084Z",
+            "update_at": "2024-02-16T02:16:42.732Z"
+        }
+    },
+    {
+        "model": "avr_type.banner",
+        "pk": 2,
+        "fields": {
+            "name": "Передача данных",
+            "slug": "peredacha-dannyh",
+            "photo": "banner/Передача данных/диспетчирезация.jpg",
+            "description": "Мониторинг и управление  по протоколу Modbus",
+            "link": "http://127.0.0.1:8000/",
+            "is_active": true,
+            "create_at": "2024-02-15T09:05:04.192Z",
+            "update_at": "2024-02-15T09:05:04.192Z"
+        }
+    },
+    {
+        "model": "avr_type.banner",
+        "pk": 3,
+        "fields": {
+            "name": "Индивидуальный подход",
+            "slug": "individualnyj-podhod",
+            "photo": "banner/Индивидуальный подход/восточный_порт.jpg",
+            "description": "Разработка индивидуальных решений для не типовых объектов",
+            "link": "http://127.0.0.1:8000/",
+            "is_active": true,
+            "create_at": "2024-02-15T09:22:40.429Z",
+            "update_at": "2024-02-15T09:22:40.429Z"
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 1,
+        "fields": {
+            "title": "Архивы",
+            "icon": "advantage/Архивы/adv-01.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 2,
+        "fields": {
+            "title": "Ввод резерва",
+            "icon": "advantage/Ввод резерва/adv-02.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 3,
+        "fields": {
+            "title": "Гибкость настройки",
+            "icon": "advantage/Гибкость настройки/adv-03.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 4,
+        "fields": {
+            "title": "Готовое решение",
+            "icon": "advantage/Готовое решение/adv-04.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 5,
+        "fields": {
+            "title": "Документация",
+            "icon": "advantage/Документация/adv-05.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 6,
+        "fields": {
+            "title": "Интеграция",
+            "icon": "advantage/Интеграция/adv-06.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 7,
+        "fields": {
+            "title": "Один производитель",
+            "icon": "advantage/Один производитель/adv-07.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 8,
+        "fields": {
+            "title": "Перепрограммирование",
+            "icon": "advantage/Перепрограммирование/adv-08.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 9,
+        "fields": {
+            "title": "Развитый функционал",
+            "icon": "advantage/Развитый функционал/adv-09.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 10,
+        "fields": {
+            "title": "Сервис",
+            "icon": "advantage/Сервис/adv-10.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 11,
+        "fields": {
+            "title": "Совместимость",
+            "icon": "advantage/Совместимость/adv-11.png",
+            "access": true
+        }
+    },
+    {
+        "model": "avr_type.advantage",
+        "pk": 12,
+        "fields": {
+            "title": "Удаленный мониторинг",
+            "icon": "advantage/Удаленный мониторинг/adv-12.png",
+            "access": true
+        }
+    },
+    {
+        "model": "users.profile",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "phone": "+79232273248",
+            "avatar": "default/avatar/avatar.jpg",
+            "archive": false
+        }
+    }
+]
