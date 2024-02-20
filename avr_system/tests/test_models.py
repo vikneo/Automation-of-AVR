@@ -27,7 +27,7 @@ class TestModelMixin(TestCase):
         icon = tempfile.NamedTemporaryFile(suffix=".jpg").name
 
         for index in range(NUM_FOR_TEST):
-            type_avr = "".join(chr(randint(32, 122)) for _ in range(_RANGE))
+            type_avr = cls.set_random_chars(start=32, end=122)
 
             TypeAVR.objects.create(
                 name=type_avr,
@@ -39,8 +39,18 @@ class TestModelMixin(TestCase):
 
         for _ in range(NUM_FOR_TEST):
             Advantage.objects.create(
-                title="".join(chr(randint(66, 122)) for _ in range(_RANGE)), icon=icon
+                title=cls.set_random_chars(start=66, end=122), icon=icon
             )
+        
+        for _ in range(NUM_FOR_TEST):
+            Banner.objects.create(
+                name=cls.set_random_chars(start=32, end=122)
+            )
+    
+    @staticmethod
+    def set_random_chars(start: int, end: int) -> str:
+        str_chars = "".join(chr(randint(start, end)) for _ in range(_RANGE))
+        return str_chars
 
 
 class TypeAvrTest(TestModelMixin):
@@ -406,4 +416,6 @@ class AdvantageTestCase(TestModelMixin):
 class BannerTestCase(TestCase):
     """ """
 
-    pass
+    def setUp(self) -> None:
+        for _ in range(NUM_FOR_TEST):
+            pass
