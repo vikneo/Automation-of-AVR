@@ -77,7 +77,7 @@
                 <ul class="nav justify-content-end align-items">
                     {% if not user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link active reset-padding" style="color: aliceblue;" aria-current="page" href="#">Вход</a>
+                        <a class="nav-link active reset-padding" style="color: aliceblue;" aria-current="page" href="{% url 'users:login' %}">Вход</a>
                     </li>
                     <span>|</span>
                     <li class="nav-item">
@@ -101,9 +101,15 @@
                         <li class="nav-item">
                             <a class="nav-link active" style="color: aliceblue;" aria-current="page" href="{% url 'users:account' %}">Личный кабинет</a>
                         </li>
-                        <span>|</span>
+                        <span>| </span>
                         <li class="nav-item">
-                            <a class="nav-link active" style="color: aliceblue;" aria-current="page" href="{% url 'users:logout' %}">Выход</a>
+                            <form action="{% url 'users:logout' %}" method="post">
+                                {% csrf_token %}
+                                <a href=".">
+                                    <button class="btn-logout" type="submit">Выход</button>
+                                </a>
+                            <!-- <a class="nav-link active" style="color: aliceblue;" aria-current="page" href="">Выход</a> -->
+                        </form>
                         </li>
                     </div>
                     {% endif %}

@@ -51,6 +51,13 @@ nav, footer {
     padding: 20px 0;
 }
 
+.btn-logout {
+    padding-left: 13px;
+    background: none;
+    border: 0;
+    color: aliceblue;
+}
+
 /* =========================== block nav ========================== */
 
 .navbar-search {

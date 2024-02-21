@@ -29,7 +29,7 @@ class UserLoginView(LoginView):
     """
     form_class = AuthenticationForm
     template_name = 'profile/login.html'
-    success_url = reverse_lazy('users:account')
+    success_url = reverse_lazy('system:index')
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -43,5 +43,4 @@ class UserLogoutView(LogoutView):
     """
     
     """
-    next_page = '/'
-    # next_page = reverse_lazy('system:index')
+    next_page = reverse_lazy('system:index')
