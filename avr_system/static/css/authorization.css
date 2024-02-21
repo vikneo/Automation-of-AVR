@@ -11,6 +11,11 @@
     min-width: 13em;
 }
 
-.input-label {
+.form-error {
+    color: red;
+    font-size: 15px;
+}
+
+.form-input {
     width: 400px;
 }

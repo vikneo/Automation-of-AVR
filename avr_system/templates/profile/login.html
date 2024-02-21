@@ -7,23 +7,22 @@
 <div class="flex container form-login">
     <form class="form-block" method="post">
         {% csrf_token %}
+        <div class="form-error">{{ form.non_field_errors }}</div>
         {% for f in form %}
         <div class="mb-3 form-label">
             <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
-            <div class="form-error">{% if errors %}{{ f.errors }}{% endif %}</div>
+            <div class="form-error">{{ f.error }}</div>
         </div>
         {% endfor %}
-        <button type="submit" class="btn btn-primary">Отправить</button>
-      </form>
+        <button type="submit" class="btn btn-primary">{% trans 'Войти' %}</button>
+    </form>
 </div>
 {% endblock %}
 
-<!-- <form method="post">
-    {% csrf_token %}
-    {% for f in form %}
-    <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
-    <div class="form-error">{{ f.errors }}</div>
-    {% endfor %}
 
-    <button type="submit">{% trans 'Войти' %}</button>
-</form> -->
+<!-- <div {% if form.username.errors %}class="form-error"{% endif %}>
+    {{ form.username }}
+</div>
+<div {% if form.username.errors %}class="form-input_error"{% endif %}>
+    {{ form.password }}
+</div> -->

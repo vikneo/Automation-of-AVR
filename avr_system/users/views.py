@@ -1,10 +1,10 @@
 from typing import Any
-from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.views import LoginView, LogoutView
 
 from .models import Profile
+from .forms import UserFormAuth
 
 
 class ProfileDetailView(ListView):
@@ -27,7 +27,7 @@ class UserLoginView(LoginView):
     """
     
     """
-    form_class = AuthenticationForm
+    form_class = UserFormAuth
     template_name = 'profile/login.html'
     success_url = reverse_lazy('system:index')
 
