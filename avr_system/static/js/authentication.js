@@ -8,7 +8,7 @@ function AuthUser(url, title, width, height) {
     let top = pos_top + (window.innerHeight / 2) - (height / 2);
     console.log(`left - ${left}; top - ${top}`)
     
-    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=yes, menubar=no,scrollbars=yes, resizable=yes, copyhistory=no, width=500, height=600, top=' + top + ', left=' + left);
+    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=yes, menubar=no,scrollbars=yes, resizable=yes, copyhistory=no, width=500, height=573, top=' + top + ', left=' + left);
 }
 
 function RegisterUser(url, title, width, height) {
@@ -19,6 +19,6 @@ function RegisterUser(url, title, width, height) {
     let top = pos_top + (window.innerHeight / 2) - (height / 2);
     console.log(`left - ${left}; top - ${top}`)
     
-    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=yes, menubar=no,scrollbars=yes, resizable=yes, copyhistory=no, width=500, height=600, top=' + top + ', left=' + left);
+    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=yes, menubar=no,scrollbars=yes, resizable=yes, copyhistory=no, width=500, height=570, top=' + top + ', left=' + left);
 }
 
