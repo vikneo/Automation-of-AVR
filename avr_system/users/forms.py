@@ -88,3 +88,13 @@ class RegisterUserForm(UserCreationForm):
         fields = [
             'username', 'email', 'password1', 'password2'
         ]
+
+
+class CallBackForm(forms.Form):
+    """
+    
+    """
+    first_name = forms.CharField(label='Имя', widget=forms.TextInput())
+    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput())
+    email = forms.CharField(label='Почта', widget=forms.EmailField())
+    comments = forms.CharField(label='Текст сообщения', widget=forms.Textarea())
