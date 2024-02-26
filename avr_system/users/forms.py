@@ -33,7 +33,7 @@ class UserFormAuth(AuthenticationForm):
         username = self.cleaned_data['username']
         if not User.objects.filter(username=username).exists():
             return username
-        if not User.objects.get(username=username).is_active:
+        if Profile.objects.get(user__username=username).archive:
             raise ValidationError(
             self.error_messages["inactive"],
             code="inactive",
