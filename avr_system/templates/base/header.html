@@ -98,12 +98,14 @@
                                 {% endif %}</span>
                         </li>
                         <li>
-                            <a class="nav-link active" href="{% url 'admin:index' %}">
-                                <span class="d-inline-block nav-icon-circle" tabindex="0" data-bs-toggle="tooltip"
-                                    data-bs-title="Отключенная подсказка">
-                                    <img src="{% static 'img/default/admin_set.svg' %}" width='30px' alt="admin">
-                                </span>
-                            </a>
+                            {% if user.is_staff %}
+                                <a class="nav-link active" href="{% url 'admin:index' %}">
+                                    <span class="d-inline-block nav-icon-circle" tabindex="0" data-bs-toggle="tooltip"
+                                        data-bs-title="Отключенная подсказка">
+                                        <img src="{% static 'img/default/admin_set.svg' %}" width='30px' alt="admin">
+                                    </span>
+                                </a>
+                            {% endif %}
                         </li>
                     </div>
                     <div class="flex align-items user-auth">

@@ -1,7 +1,11 @@
+from typing import Any
 from django import forms
+from django.core.exceptions import ValidationError
+from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
+from django.utils.translation import gettext_lazy as _
 
 from .models import Profile
 
@@ -12,6 +16,30 @@ class UserFormAuth(AuthenticationForm):
     """
     username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    error_messages = {
+        "invalid_login": _(
+            "Комбинация %(username)s и пароля не найдена."
+        ),
+        "inactive": _("Данный акаунт заблокирован."),
+    }
+    
+    def clean_username(self):
+        """
+        Verification of allowing active users to log in and rejecting inactive users to log in.
+
+        If the given user cannot log in, this method should raise a
+        ``ValidationError``.
+        """
+        username = self.cleaned_data['username']
+        if not User.objects.filter(username=username).exists():
+            return username
+        if not User.objects.get(username=username).is_active:
+            raise ValidationError(
+            self.error_messages["inactive"],
+            code="inactive",
+        )
+
+        return username
 
     class Meta:
         model = User
