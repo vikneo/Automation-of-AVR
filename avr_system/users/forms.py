@@ -94,7 +94,10 @@ class CallBackForm(forms.Form):
     """
     
     """
-    first_name = forms.CharField(label='Имя', widget=forms.TextInput())
-    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput())
-    email = forms.CharField(label='Почта', widget=forms.EmailField())
-    comments = forms.CharField(label='Текст сообщения', widget=forms.Textarea())
+    first_name = forms.CharField(label='Имя', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    email = forms.CharField(label='Почта', widget=forms.EmailInput(attrs={'class': 'form-input'}))
+    comments = forms.CharField(label='Текст сообщения', widget=forms.Textarea(attrs={'class': 'form-input'}))
+
+    class Meta:
+        fields = ['first_name', 'last_name', 'email', 'comment']
