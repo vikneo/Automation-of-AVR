@@ -12,3 +12,9 @@ def default_avatar(sender, instance, **kwargs):
     if not instance.avatar:
         instance.avatar = 'default/avatar/avatar.jpg'
 
+    if instance.archive:
+        instance.user.is_active = False
+    else:
+        instance.user.is_active = True
+
+    instance.user.save()
