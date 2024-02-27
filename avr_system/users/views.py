@@ -77,15 +77,13 @@ class CallBackView(FormView):
             "message": data['comments']
         }
         message = '\n'.join(body.values())
-        # message = "ФИО: " + data["first_name"] + " " + data["last_name"] + \
-        # "\nПочта отправителя: " + data["email"] + "\n!!Cообщение:\n" + data['comments']
         send_mail(
             subject=subject,
             message=message,
             from_email=EMAIL_HOST_USER,
             recipient_list=[EMAIL_HOST_USER,]
         )
-        messages.success(self.request, 'Ваше письмо успешно отправлено администрации сайта')
+        messages.success(self.request, 'Ваше письмо успешно отправлено')
         return HttpResponseRedirect(reverse_lazy("system:index"))
 
 
