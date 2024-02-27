@@ -4,13 +4,14 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 from django.core.mail import send_mail
 from django.views.generic import ListView, DetailView, CreateView, FormView
 from django.contrib.auth.views import LoginView, LogoutView
 
 from .models import Profile
 from .forms import CallBackForm, UserFormAuth, RegisterUserForm
+from avr_system.settings import EMAIL_HOST_USER
 
 
 class RegisterUserView(CreateView):
@@ -68,14 +69,23 @@ class CallBackView(FormView):
 
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         data = form.cleaned_data
-        subject = f'Сообщение от {data["first_name"]} {data["last_name"]} Почта отправителя: {data["email"]}'
+        subject = 'Автоматизация систем АВР! (Уточнение или заказ)'
+        body = {
+            "first_name":"Имя: " + data["first_name"],
+            "last_name": "Фамилия: " + data["last_name"],
+            "email": "Почта: " + data["email"],
+            "message": data['comments']
+        }
+        message = '\n'.join(body.values())
+        # message = "ФИО: " + data["first_name"] + " " + data["last_name"] + \
+        # "\nПочта отправителя: " + data["email"] + "\n!!Cообщение:\n" + data['comments']
         send_mail(
             subject=subject,
-            message=data['comments'],
-            from_email='v.martynov@rineco.ru',
-            recipient_list=[data['email']]
+            message=message,
+            from_email=EMAIL_HOST_USER,
+            recipient_list=[EMAIL_HOST_USER,]
         )
-        
+        messages.success(self.request, 'Ваше письмо успешно отправлено администрации сайта')
         return HttpResponseRedirect(reverse_lazy("system:index"))
 
 
