@@ -6,7 +6,7 @@
             <div class="nav-title-centr">
                 <h3>Автоматизация для системы АВР</h1>
             </div>
-            <div class="navbar">
+            <!-- <div class="navbar">
                 <div class="nav-language">
                     <form class="flex" action="{% url 'set_language' %}" method="post">
                         {% csrf_token %}
@@ -26,7 +26,7 @@
                         <button class="btn-language" type="submit">Go</button>
                     </form>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="flex align-items">
             <div class="flex navbar-search">
@@ -39,35 +39,17 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page"
-                                        href="{% url 'system:index' %}">Главная</a>
+                            <ul class="nav nav-pills">
+                                {% for m in menu %}
+                                <li class="flex nav-item align-items">
+                                    {{ link }}
+                                    <a class="nav-link {% if link == m.link %}active{% endif %}" aria-current="page" href="{% url m.url %}">{{ m.name }}</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'users:callback' %}">Контакты</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Выпадающий список
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Действие</a></li>
-                                        <li><a class="dropdown-item" href="#">Другое действие</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled">Отключенная</a>
-                                </li>
+                                {% endfor %}
                             </ul>
                             <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-                                <button class="btn btn-outline-success" type="submit">Поиск</button>
+                                <input class="form-control me-2 m-w3" type="search" placeholder="Поиск" aria-label="Поиск">
+                                <button class="btn btn-outline-success btn-w" type="submit">Поиск</button>
                             </form>
                         </div>
                     </div>

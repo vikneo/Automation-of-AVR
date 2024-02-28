@@ -41,14 +41,24 @@ nav, footer {
     margin-right: 15px;
 }
 
+.s-section {
+    padding: 20px 0;
+}
+
+/* navigation searche */
 .btn-language {
     padding: 0 10px;
     background: #e1e3e5;
     border: 1px solid;
 }
 
-.s-section {
-    padding: 20px 0;
+.m-w3 {
+    min-width: 300px;
+}
+
+.btn-w {
+    width: 150px;
+    margin-left: 35px;
 }
 
 .btn-logout {
