@@ -108,7 +108,8 @@ class CallBackForm(forms.Form):
         }))
     comments = forms.CharField(label='Текст сообщения', widget=forms.Textarea(attrs={
         'class': 'form-input',
-        'placeholder': 'Задайте вопрос или ...'
+        'rows': '6',
+        'placeholder': 'Здесь можете задать вопрос или описать проблему'
         }))
 
     class Meta:
