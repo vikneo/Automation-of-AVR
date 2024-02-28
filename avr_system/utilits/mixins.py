@@ -18,7 +18,7 @@ class MenuMixin:
             {'name': 'Обратная связь', 'url': 'users:callback', 'link': 2},
             {'name': 'Контакты', 'url': 'users:contact', 'link': 3},
             # {'name': 'Карта сайта', 'url': 'system:map_site', 'link': 4},
-            # {'name': 'Личный кабинет', 'url': 'users:account', 'link': 5},
+            {'name': 'Помощь', 'url': 'system:helper', 'link': 5},
         ]
 
         return menu

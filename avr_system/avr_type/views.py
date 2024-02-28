@@ -41,3 +41,17 @@ class TypeAvrDetail(MenuMixin, DetailView):
     
     def get_queryset(self) -> QuerySet[Any]:
         return TypeAVR.objects.filter(access=True)
+
+
+class HelpView(MenuMixin, TemplateView):
+    """
+    
+    """
+    template_name = 'index/helper.html'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(link=5)
+        )
+        return context
