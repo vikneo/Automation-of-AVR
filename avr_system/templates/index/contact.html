@@ -4,5 +4,29 @@
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
 {% block content %}
-
+<div class="s-section">
+    <div class="container-box">
+        <div class="h2-block decoration">
+            <h2>Контакты</h2>
+        </div>
+        <div>
+            <h3>Если у вас появились вопросы</h3>
+            <p>
+                Вы можете связаться по телефону:
+            </p>
+            <p>
+                <a href="tel:+79232273248">+7 (923) 227 32 48</a><br>
+                <a href="tel:+79059556669">+7 (905) 955 66 69</a>
+            </p>
+        </div>
+        <div>
+            <p>
+                Или заполнить форму <a href="{% url 'users:callback' %}">обратной связи</a>
+            </p>
+        </div>
+        <div class="h2-block decoration">
+            <h2>Специфика</h2>
+        </div>
+    </div>
+</div>
 {% endblock %}
