@@ -14,8 +14,11 @@
             {% csrf_token %}
             <div class="form-error">{{ form.non_field_errors }}</div>
             {% for f in form %}
-            <div class="mb-3 form-label">
-                <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
+            <div class="flex mb-3 form-label"  style="align-content: flex-start;">
+                <p class="flex">
+                    <label class="form-label" for="{{ f.id_for_label }}"><b>{{ f.label }}:</b></label>
+                    {{ f }}
+                </p>
                 <div class="form-error">{{ f.error }}</div>
             </div>
             {% endfor %}
