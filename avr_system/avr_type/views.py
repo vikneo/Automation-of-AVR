@@ -4,9 +4,10 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView
 
 from .models import TypeAVR, Advantage
+from utilits.mixins import MenuMixin
 
 
-class MainPage(ListView):
+class MainPage(MenuMixin, ListView):
     """
     The system_avr main page view and display class.
     """
@@ -16,7 +17,7 @@ class MainPage(ListView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
-            title='Системы АВР'
+            self.get_menu(link=1)
         )
         return context
 
@@ -24,7 +25,7 @@ class MainPage(ListView):
         return TypeAVR.objects.filter(access=True)
 
 
-class TypeAvrDetail(DetailView):
+class TypeAvrDetail(MenuMixin, DetailView):
     """
     The system_avr class for viewing and displaying detailed information.
     """
@@ -34,7 +35,7 @@ class TypeAvrDetail(DetailView):
     def  get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
-            title='Detail'
+            self.get_menu()
         )
         return context
     

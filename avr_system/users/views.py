@@ -6,11 +6,12 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.views.generic import ListView, DetailView, CreateView, FormView
+from django.views.generic import ListView, DetailView, CreateView, FormView, TemplateView
 from django.contrib.auth.views import LoginView, LogoutView
 
 from .models import Profile
 from .forms import CallBackForm, UserFormAuth, RegisterUserForm
+from utilits.mixins import MenuMixin
 from avr_system.settings import EMAIL_HOST_USER
 
 
@@ -35,7 +36,7 @@ class RegisterUserView(CreateView):
         return redirect(reverse_lazy('system:index'))
 
 
-class ProfileDetailView(ListView):
+class ProfileDetailView(MenuMixin, ListView):
     """
     
     """
@@ -46,12 +47,26 @@ class ProfileDetailView(ListView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
-            title='Профиль'
+            self.get_menu(link=5)
         )
         return context
 
 
-class CallBackView(FormView):
+class ContactView(MenuMixin, TemplateView):
+    """
+    
+    """
+    template_name = 'index/contact.html'
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]: 
+        context =super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(link=3)
+        )
+        return context
+
+
+class CallBackView(MenuMixin, FormView):
     """
     
     """
@@ -63,7 +78,7 @@ class CallBackView(FormView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
-            title='Обратная связь'
+            self.get_menu(link=2)
         )
         return context
 
