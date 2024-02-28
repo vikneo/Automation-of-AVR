@@ -31,3 +31,9 @@
 .form-input {
     width: 400px;
 }
+
+.span-name {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
