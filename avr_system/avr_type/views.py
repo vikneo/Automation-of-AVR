@@ -55,3 +55,17 @@ class HelpView(MenuMixin, TemplateView):
             self.get_menu(link=5)
         )
         return context
+
+
+class ContactsView(MenuMixin, TemplateView):
+    """
+    
+    """
+    pass
+
+
+class SearcheView(MenuMixin, TemplateView):
+    """
+    
+    """
+    pass
