@@ -5,11 +5,14 @@
 
 {% block content %}
 
-<div class="container-box content">
+<div class="container-box content" style="background-color: #fbf7f1;">
     <div class="h2-block decoration">
         <h2>Обратная связь</h2>
     </div>
-    <div>
+    <div class="clbk-pad">
+        <p style="">
+            <span class="pb-25">Здесь Вы можете задать интересующие Вас вопросы, выразить свое мнение о качестве услуг или оставить предложение</span>
+        </p>
         <form class="form-block" method="post">
             {% csrf_token %}
             <div class="form-error">{{ form.non_field_errors }}</div>

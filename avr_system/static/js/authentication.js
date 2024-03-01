@@ -19,17 +19,10 @@ function OpenWin(url, title, width, height) {
     return window.open(url, title, 'toolbar=no, location=no, directories=no, status=yes, menubar=no,scrollbars=yes, resizable=yes, copyhistory=no, width=500, height=570, top=' + top + ', left=' + left);
 }
 
-const CloseWin = () => { // объявляем функцию закрытия модального окна
-    const modals = document.querySelectorAll('.modal') // ищем все модальные окна
-    if (!modals) return // если их нет, то прекращаем выполнение функции
-    modals.forEach(el => { // если есть, то для каждого из них
-        el.addEventListener('click', e => { // при клике
-            if (e.target.closest('.modal__close')) { // если клик был клик на кнопке закрытия
-                el.classList.remove('modal_active') // то скрываем модальное окно, удаляя активный класс
-            }
-            if (!e.target.closest('.modal__body')) { // если клик был за пределами контентной части модального окна, то есть на затемненную область
-                el.classList.remove('modal_active') // то тоже скрываем модальное окно, удаляя активный класс
-            }
-        })
-    })
+function CloseWin () {
+
+    console.log('Работает консоль')
+    if (window.opener.AuthUser()) {
+        window.close();
+    };
 }

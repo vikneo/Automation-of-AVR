@@ -146,14 +146,15 @@ nav, footer {
 }
 @media (min-width:992px) {
     .container-box {
-        width: 970px;
+        width: 900px;
     }
 }
-@media (min-width:1200px) {
+/* @media (min-width:1200px) {
     .container-box {
         width: 1130px;
     }
-}
+} */
+
 .container-fluid {
      margin-right: auto;
      margin-left: auto;
@@ -196,6 +197,14 @@ nav, footer {
     margin-bottom: 3em;
 }
 
+.clbk-pad {
+    padding: 25px;
+}
+
+.pb-25 {
+    padding-bottom: 25px;
+}
+
 /* ============================ cart list systems ==================== */
 
 .card-title-size {
@@ -208,6 +217,7 @@ nav, footer {
 }
 
 .card-box {
+    height: 19em;
     border: 5px #3636ab solid;
     border-radius: 15px 15px 0 0;
 }

@@ -104,12 +104,12 @@ class CallBackForm(forms.Form):
         }))
     email = forms.CharField(label='Почта', widget=forms.EmailInput(attrs={
         'class': 'form-input',
-        'placeholder': 'Адрес почты'
+        'placeholder': 'Email'
         }))
     comments = forms.CharField(label='Текст сообщения', widget=forms.Textarea(attrs={
         'class': 'form-input',
         'rows': '6',
-        'placeholder': 'Здесь можете задать вопрос или описать проблему'
+        'placeholder': 'Текст сообщения'
         }))
 
     class Meta:
