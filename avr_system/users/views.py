@@ -102,7 +102,7 @@ class CallBackView(MenuMixin, FormView):
         return HttpResponseRedirect(reverse_lazy("system:index"))
 
 
-class UserLoginView(LoginView):
+class UserLoginView(MenuMixin, LoginView):
     """
     
     """
@@ -113,6 +113,7 @@ class UserLoginView(LoginView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
+            self.get_menu(),
             title='Авторизация'
         )
         return context
