@@ -37,3 +37,8 @@
     justify-content: flex-end;
     flex-direction: column;
 }
+
+.auth-pos {
+    margin-bottom: 80px;
+    justify-content: center;
+}
