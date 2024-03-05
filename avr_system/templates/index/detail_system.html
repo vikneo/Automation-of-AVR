@@ -4,5 +4,23 @@
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
 {% block content %}
+<div>
 
+    <h1>
+        {{ system.type_avr }}
+    </h1>
+    <p><span><b>Название: </b> {{ system.name }}</p></span>
+    <p><span><b>Тип ПЛК: </b> {{ system.relay }}</p></span>
+    <p><span><b>Ключ ВНР: </b>{% if system.vnr%}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Перегрев тр-ров: </b>{% if system.temp_tp %}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Кнопка "Сброс": </b>{% if system.reset %}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Выбор ввода: </b>{% if system.choice_in %}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Наличие ДГУ: </b>{% if system.dgu %}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Режим работы тр-ров (запрещена паралель): </b>{% if system.work_tp %}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Положение АВ в корзине: </b>{% if system.status_box %}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Сигнал ОЗЗ: </b>{% if system.signal_ozz %}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Лампа АВР готов: </b>{% if system.lamp_avr_ready %}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Лампа АВР с работал: </b>{% if system.lamp_avr_work %}есть{% else %}нет{% endif %}</p></span>
+
+</div>
 {% endblock %}
