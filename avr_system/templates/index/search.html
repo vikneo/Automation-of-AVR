@@ -6,7 +6,17 @@
 {% block content %}
 <div>
     {% for search in searches %}
-    <p> {{ search }}</p>
+    <div>
+        <div>
+            <h4>
+                {{ search.type_avr }}
+            </h4>
+        </div>
+        <div>
+            <p><span><b>Название: </b> {{ search.name }}</p></span>
+            <p><span><b>Тип ПЛК: </b> {{ search.relay }}</p></span>
+        </div>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}
