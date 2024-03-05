@@ -44,7 +44,6 @@ class TypeAvrDetail(MenuMixin, DetailView):
         return context
     
     def get_queryset(self) -> QuerySet[Any]:
-        print(self.request.GET)
         return TypeAVR.objects.filter(access=True)
 
 

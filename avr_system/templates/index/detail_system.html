@@ -16,7 +16,7 @@
     <p><span><b>Кнопка "Сброс": </b>{% if system.reset %}есть{% else %}нет{% endif %}</p></span>
     <p><span><b>Выбор ввода: </b>{% if system.choice_in %}есть{% else %}нет{% endif %}</p></span>
     <p><span><b>Наличие ДГУ: </b>{% if system.dgu %}есть{% else %}нет{% endif %}</p></span>
-    <p><span><b>Режим работы тр-ров (запрещена паралель): </b>{% if system.work_tp %}есть{% else %}нет{% endif %}</p></span>
+    <p><span><b>Режим работы тр-ров (запрещена паралель): </b>{% if system.work_tp %}есть{% else %}нет{% endif %}</p> {{ system.work_tp }}</span>
     <p><span><b>Положение АВ в корзине: </b>{% if system.status_box %}есть{% else %}нет{% endif %}</p></span>
     <p><span><b>Сигнал ОЗЗ: </b>{% if system.signal_ozz %}есть{% else %}нет{% endif %}</p></span>
     <p><span><b>Лампа АВР готов: </b>{% if system.lamp_avr_ready %}есть{% else %}нет{% endif %}</p></span>

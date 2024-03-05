@@ -5,16 +5,23 @@
 
 {% block content %}
 <div>
-    {% for search in searches %}
+    {% for system in searches %}
     <div>
         <div>
             <h4>
-                {{ search.type_avr }}
+                {{ system.type_avr }}
             </h4>
         </div>
         <div>
-            <p><span><b>Название: </b> {{ search.name }}</p></span>
-            <p><span><b>Тип ПЛК: </b> {{ search.relay }}</p></span>
+            <p>
+                <span>Название</span>
+                <a href="{% url 'system:detail_system' system.type_avr.slug %}">
+                    <div>
+                        <h5>{{ system.name }}</h5>
+                    </div>
+                </a>
+            </p>
+            <p><span><b>Тип ПЛК: </b> {{ system.relay }}</span></p>
         </div>
     </div>
     {% endfor %}
