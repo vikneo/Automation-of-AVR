@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% load static i18n %}
+
+{% block title %} <title>{{ title }}</title> {% endblock %}
+
+{% block content %}
+<div>
+    {% for search in searches %}
+    <p> {{ search }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

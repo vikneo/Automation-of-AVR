@@ -48,8 +48,8 @@
                                 </li>
                                 {% endfor %}
                             </ul>
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2 m-w3" type="search" placeholder="Поиск"
+                            <form class="d-flex" id="search" action="{% url 'system:search' %}" method="get">
+                                <input class="form-control me-2 m-w3" name="search" type="text" placeholder="Поиск"
                                     aria-label="Поиск">
                                 <button class="btn btn-outline-success btn-w" type="submit">Поиск</button>
                             </form>
