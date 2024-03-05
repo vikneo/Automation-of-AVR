@@ -45,7 +45,7 @@ class TypeAvrDetail(MenuMixin, DetailView):
 
 class HelpView(MenuMixin, TemplateView):
     """
-    
+    Template rresentation "HelpView"
     """
     template_name = 'index/helper.html'
 
@@ -57,22 +57,8 @@ class HelpView(MenuMixin, TemplateView):
         return context
 
 
-class ContactsView(MenuMixin, TemplateView):
-    """
-    
-    """
-    template_name = 'index/contact.html'
-
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
-        context = super().get_context_data(**kwargs)
-        context.update(
-            self.get_menu(link=3)
-        )
-        return context
-
-
 class SearcheView(MenuMixin, TemplateView):
     """
-    
+    The search engine
     """
     pass
