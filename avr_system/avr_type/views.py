@@ -1,9 +1,8 @@
 import re
 from typing import Any
 from django.db.models.query import QuerySet
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView
-from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+# from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
 from .models import TypeAVR, Classification
 from utilits.mixins import MenuMixin
