@@ -25,7 +25,8 @@ class RegisterUserView(MenuMixin, CreateView):
     def  get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
-            self.get_menu()
+            self.get_menu(),
+            title='Регистрация'
         )
         return context
 
@@ -54,7 +55,8 @@ class ProfileDetailView(MenuMixin, ListView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
-            self.get_menu(link=5)
+            self.get_menu(link=5),
+            title='Профиль'
         )
         return context
 
@@ -68,7 +70,8 @@ class ContactView(MenuMixin, TemplateView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]: 
         context =super().get_context_data(**kwargs)
         context.update(
-            self.get_menu(link=3)
+            self.get_menu(link=3),
+            title='Контакты'
         )
         return context
 
@@ -85,7 +88,8 @@ class CallBackView(MenuMixin, FormView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
-            self.get_menu(link=2)
+            self.get_menu(link=2),
+            title='Обратная связь'
         )
         return context
 
