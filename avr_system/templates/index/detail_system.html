@@ -23,8 +23,12 @@
                 <p class="flex p-rows"><b>Положение выкатных АВ:</b><span>{% if product.status_box %}есть{% else %}нет{% endif %}</span></p>
                 <p class="flex p-rows"><b>Сигнал ОЗЗ (опционально):</b><span>{% if product.signal_ozz %}есть{% else %}нет{% endif %}</span></p>
                 <p class="flex p-rows"><b>Лампа АВР готов:</b><span>{% if product.lamp_avr_ready %}есть{% else %}нет{% endif %}</span></p>
-                <p class="flex p-rows"><b>Лампа АВР сработал:</b><span>{% if product.lamp_avr_work %}есть{% else %}нет{% endif %}</span></p>
+                <p class="flex p-rows"><b>Лампа АВР сработал:</b><span>{% if product.lamp_avr_work %}есть{% else %}нет{% endif %}</span></p>                
             </div>
+            <div class="comment"></div>
+            <p class="comment-block">
+                {{ product.comment }}
+            </p>
             {% endwith %}
         </div>
     </div>

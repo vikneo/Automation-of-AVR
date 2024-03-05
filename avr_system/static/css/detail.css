@@ -1,8 +1,18 @@
 .product-detail-box {
-    max-width: 65%;
+    max-width: 100%;
     padding: 0 20px;
 }
 
 .p-rows {
     justify-content: space-between;
+}
+
+.comment {
+    padding: 5px 15px; 
+    background-color: rgb(67 82 189);
+}
+
+.comment-block {
+    padding: 10px 15px;
+    font-size: 18px;
 }
