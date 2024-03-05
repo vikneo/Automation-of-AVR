@@ -15,12 +15,19 @@ from utilits.mixins import MenuMixin
 from avr_system.settings import EMAIL_HOST_USER
 
 
-class RegisterUserView(CreateView):
+class RegisterUserView(MenuMixin, CreateView):
     """
     
     """
     template_name = 'profile/register.html'
     form_class = RegisterUserForm
+
+    def  get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu()
+        )
+        return context
 
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         user = form.save()

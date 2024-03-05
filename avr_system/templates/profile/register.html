@@ -1,10 +1,13 @@
-{% extends 'profile/base.html' %}
+{% extends 'base/base.html' %}
 {% load static i18n %}
 
 {% block title %} <title>{{ title }}</title>{% endblock %}
 
 {% block content %}
-<div>
+<div class="flex container-box form-login" style="flex-direction: column; justify-content: flex-start;">
+    <div class="flex container auth-pos">
+        <h1>Регистрация</h1>
+    </div>
     <form class="form-block" method="post">
         {% csrf_token %}
         <div class="form-error">{{ form.non_field_errors }}</div>
