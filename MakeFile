@@ -1,0 +1,29 @@
+local_env:
+	python manage.py migrate --settings=avr_system.settings.local
+	# Указание на файл настроек для локальной разработки
+
+pro_env:
+	python manage.py migrate --settings=avr_system.settings.pro
+	# Указание на файл настроек для глобальной разработки
+
+run:
+	python manage.py runserver
+
+rollback_migrate:
+	python manage.py migrate avr_type 0003
+	# Команда для  отката миграций
+
+run_test:
+	# запуск с coverage
+	coverage run manage.py test tests test_models
+	#---------------------------------------------
+	python manage.py test tests
+	# запуск всех тестов в папке "tests"
+	# или запустить отдельный модуль с тестами
+	python manage.py test tests test_models
+
+daumdata:
+	python -Xutf8 manage.py dumpdata --exclude auth.permission --exclude contenttypes -o system_avr_db.json
+
+loaddata:
+	python manage.py loaddata --exclude auth.permission --exclude contenttypes systen_avr_db.json
