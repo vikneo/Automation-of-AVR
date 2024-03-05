@@ -1,0 +1,8 @@
+.product-detail-box {
+    max-width: 65%;
+    padding: 0 20px;
+}
+
+.p-rows {
+    justify-content: space-between;
+}
