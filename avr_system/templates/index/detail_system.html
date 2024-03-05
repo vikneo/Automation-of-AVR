@@ -4,23 +4,29 @@
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
 {% block content %}
-<div>
-
-    <h1>
-        {{ system.type_avr }}
-    </h1>
-    <p><span><b>Название: </b> {{ system.name }}</p></span>
-    <p><span><b>Тип ПЛК: </b> {{ system.relay }}</p></span>
-    <p><span><b>Ключ ВНР: </b>{% if system.vnr%}есть{% else %}нет{% endif %}</p></span>
-    <p><span><b>Перегрев тр-ров: </b>{% if system.temp_tp %}есть{% else %}нет{% endif %}</p></span>
-    <p><span><b>Кнопка "Сброс": </b>{% if system.reset %}есть{% else %}нет{% endif %}</p></span>
-    <p><span><b>Выбор ввода: </b>{% if system.choice_in %}есть{% else %}нет{% endif %}</p></span>
-    <p><span><b>Наличие ДГУ: </b>{% if system.dgu %}есть{% else %}нет{% endif %}</p></span>
-    <p><span><b>Режим работы тр-ров (запрещена паралель): </b>{% if system.work_tp %}есть{% else %}нет{% endif %}</p> {{ system.work_tp }}</span>
-    <p><span><b>Положение АВ в корзине: </b>{% if system.status_box %}есть{% else %}нет{% endif %}</p></span>
-    <p><span><b>Сигнал ОЗЗ: </b>{% if system.signal_ozz %}есть{% else %}нет{% endif %}</p></span>
-    <p><span><b>Лампа АВР готов: </b>{% if system.lamp_avr_ready %}есть{% else %}нет{% endif %}</p></span>
-    <p><span><b>Лампа АВР сработал: </b>{% if system.lamp_avr_work %}есть{% else %}нет{% endif %}</p></span>
-
+<div class="s-section">
+    <div class="container-box">
+        <div class="h2-block decoration">
+            <h2>{{ system }}</h2>
+        </div>
+        <div class="container">
+            {% with product=system.type_avrs.first %}
+            <div class="product-detail-box">
+                <p class="flex p-rows"><b>Название:</b><span>{% if product %}{{ product.name }}{% else %}отсутствует{% endif %}</p></span>
+                <p class="flex p-rows"><b>Тип ПЛК:</b><span>{% if product.relay %}{{ product.relay }}{% else %}отсутствует{% endif %}</p></span>
+                <p class="flex p-rows"><b>Ключ ВНР:</b><span>{% if product.vnr %}есть{% else %}нет{% endif %}</p></span>
+                <p class="flex p-rows"><b>Перегрев тр-ров:</b><span>{% if product.temp_tp %}есть{% else %}нет{% endif %}</p></span>
+                <p class="flex p-rows"><b>Кнопка "Сброс":</b><span>{% if product.reset %}есть{% else %}нет{% endif %}</p></span>
+                <p class="flex p-rows"><b>Выбор ввода:</b><span>{% if product.choice_in %}есть{% else %}нет{% endif %}</p></span>
+                <p class="flex p-rows"><b>Наличие ДГУ:</b><span>{% if product.dgu %}есть{% else %}нет{% endif %}</p></span>
+                <p class="flex p-rows"><b>Режим работы тр-ров:</b><span>{% if product.work_tp %}запрещена паралель{% else %}разрешена паралель{% endif %}</p></span>
+                <p class="flex p-rows"><b>Положение выкатных АВ:</b><span>{% if product.status_box %}есть{% else %}нет{% endif %}</p></span>
+                <p class="flex p-rows"><b>Сигнал ОЗЗ (опционально):</b><span>{% if product.signal_ozz %}есть{% else %}нет{% endif %}</p></span>
+                <p class="flex p-rows"><b>Лампа АВР готов:</b><span>{% if product.lamp_avr_ready %}есть{% else %}нет{% endif %}</p></span>
+                <p class="flex p-rows"><b>Лампа АВР сработал:</b><span>{% if product.lamp_avr_work %}есть{% else %}нет{% endif %}</p></span>
+            </div>
+            {% endwith %}
+        </div>
+    </div>
 </div>
 {% endblock %}
