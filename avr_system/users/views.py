@@ -17,7 +17,7 @@ from avr_system.settings import EMAIL_HOST_USER
 
 class RegisterUserView(MenuMixin, CreateView):
     """
-    
+    The registration form
     """
     template_name = 'profile/register.html'
     form_class = RegisterUserForm
@@ -45,7 +45,7 @@ class RegisterUserView(MenuMixin, CreateView):
 
 class ProfileDetailView(MenuMixin, ListView):
     """
-    
+    Detailed information about the user
     """
     model = Profile
     template_name = 'profile/account.html'
@@ -61,7 +61,7 @@ class ProfileDetailView(MenuMixin, ListView):
 
 class ContactView(MenuMixin, TemplateView):
     """
-    
+    Contact information
     """
     template_name = 'index/contact.html'
     
@@ -75,7 +75,7 @@ class ContactView(MenuMixin, TemplateView):
 
 class CallBackView(MenuMixin, FormView):
     """
-    
+    The Feedback form
     """
     form_class = CallBackForm
     success_message = 'Ваше письмо успешно отправлено администрации сайта'
@@ -111,7 +111,7 @@ class CallBackView(MenuMixin, FormView):
 
 class UserLoginView(MenuMixin, LoginView):
     """
-    
+    Authorization form
     """
     form_class = UserFormAuth
     template_name = 'profile/login.html'
@@ -128,6 +128,6 @@ class UserLoginView(MenuMixin, LoginView):
 
 class UserLogoutView(LogoutView):
     """
-    
+    Log out
     """
     next_page = reverse_lazy('system:index')
