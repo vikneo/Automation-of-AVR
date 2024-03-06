@@ -27,7 +27,7 @@
                     </form>
                 </div>
             </div> -->
-            <div class="flex align-items">
+            <div class="flex align-items h-8">
                 <ul class="nav justify-content-end align-items auth-block">
                     {% if not user.is_authenticated %}
                     <div class="flex align-items user-auth">
@@ -35,21 +35,23 @@
                             <span class="span-name">{% if not user.is_authenticated %} <b>Гость</b> {% endif %}</span>
                         </li>
                     </div>
-                    <li class="nav-item">
-                        <a class="nav-link active reset-padding" style="color: aliceblue;" aria-current="page"
-                        href="{% url 'users:login' %}">
-                            <!--  href="." onclick="AuthUser('/user/login', 'Popup window', 600, 600)" -->
-                            Вход
-                        </a>
-                    </li>
-                    <span>|</span>
-                    <li class="nav-item">
-                        <a class="nav-link active reset-padding" style="color: aliceblue;" aria-current="page"
-                        href="{% url 'users:register' %}">
-                        <!-- href="" onclick="RegisterUser('/user/register', 'Popup window', 600, 600)" -->
-                            Регистрация
-                        </a>
-                    </li>
+                    <div class="flex align-items">
+                        <li class="nav-item">
+                            <a class="nav-link active reset-padding" style="color: aliceblue;" aria-current="page"
+                                href="{% url 'users:login' %}">
+                                <!--  href="." onclick="AuthUser('/user/login', 'Popup window', 600, 600)" -->
+                                Вход
+                            </a>
+                        </li>
+                        <span>|</span>
+                        <li class="nav-item">
+                            <a class="nav-link active reset-padding" style="color: aliceblue;" aria-current="page"
+                                href="{% url 'users:register' %}">
+                                <!-- href="" onclick="RegisterUser('/user/register', 'Popup window', 600, 600)" -->
+                                Регистрация
+                            </a>
+                        </li>
+                    </div>
                     {% else %}
                     <div class="flex align-items user-auth">
                         <li class="nav-item">

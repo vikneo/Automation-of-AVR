@@ -23,6 +23,10 @@ nav, footer {
     display: flex;
 }
 
+.h-8 {
+    height: 88px;
+}
+
 .fd-col {
     flex-direction: column;
 }
