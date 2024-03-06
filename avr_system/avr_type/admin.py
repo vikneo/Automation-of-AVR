@@ -85,7 +85,7 @@ class AdminClassification(admin.ModelAdmin):
                    'work_tp', 'status_box', 'lamp_avr_ready', 
                    'lamp_avr_work', 'signal_ozz'
                    ]
-    list_display = ['name', 'type_avr', 'access']
+    list_display = ['name', 'type_avr', 'macro_code', 'access']
     list_display_links = ['name', ]
     prepopulated_fields = {'slug': ('name', )}
     save_on_top = True
