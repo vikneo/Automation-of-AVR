@@ -3,6 +3,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
+.body {
+    background: #0000000d;
+}
+
 h2 {
     font-size: 26px;
     text-align: center;
@@ -263,7 +267,7 @@ nav, footer {
 
 .advant-box {
     margin-bottom: 50px;
-    background: #f3efef;
+    background: #e9e4e4;
 }
 
 .advant-wrap {
