@@ -4,10 +4,37 @@
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
 {% block content %}
-<div class="s-section">
+<div class="s-section account-block">
     <div class="container-box">
         <div class="h2-block decoration">
             <h2>Личный кабинет</h2>
+        </div>
+        <div class="container">
+            <div style="width: 80%;">
+                <div class="product-detail-box">
+                    <p class="flex p-rows m-16">
+                        <span>Аватар </span>
+                        <img src="{{ profile.avatar.url }}" alt="Аватар" width="80px">
+                    </p>
+                    <p class="flex p-rows m-16">
+                        <span>Имя </span>
+                        <span>{% if profile.user.first_name %}{{ profile.user.first_name }}{% else %}-{% endif %}</span>
+                    </p>
+                    <p class="flex p-rows m-16">
+                        <span>Фамилия </span>
+                        <span>{% if profile.user.last_name %}{{ profile.user.last_name }}{% else %}-{% endif %}</span>
+                    </p>
+                    <p class="flex p-rows m-16">
+                        <span>Почта </span>
+                        <span>{% if profile.user.email %}{{ profile.user.email }}{% else %}-{% endif %}</span>
+                    </p>
+                    <p class="flex p-rows m-16">
+                        <span>Телефон </span>
+                        <span>{% if profile.phone %}{{ profile.phone }}{% else %}-{% endif %}</span>
+                    </p>
+                </div>
+                <hr>
+            </div>
         </div>
     </div>
 </div>

@@ -8,6 +8,10 @@
     margin: 0;
 }
 
+.m-16 {
+    margin-bottom: 16px;
+}
+
 .comment {
     padding: 5px 15px; 
     background-color: rgb(67 82 189);

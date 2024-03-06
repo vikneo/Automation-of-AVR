@@ -42,3 +42,8 @@
     margin-bottom: 80px;
     justify-content: center;
 }
+
+.account-block {
+    height: 500px;
+    font-size: 20px;
+}
