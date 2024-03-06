@@ -27,38 +27,8 @@
                     </form>
                 </div>
             </div> -->
-        </div>
-        <div class="flex align-items">
-            <div class="flex navbar-search">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Переключатель навигации">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="nav nav-pills">
-                                {% for m in menu %}
-                                <li class="flex nav-item align-items">
-                                    {{ link }}
-                                    <a class="nav-link {% if link == m.link %}active{% endif %}" aria-current="page"
-                                        href="{% url m.url %}">{{ m.name }}</a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            <form class="d-flex" id="search" action="{% url 'system:search' %}" method="get">
-                                <input class="form-control me-2 m-w3" name="search" type="text" placeholder="Поиск"
-                                    aria-label="Поиск">
-                                <button class="btn btn-outline-success btn-w" type="submit">Поиск</button>
-                            </form>
-                        </div>
-                    </div>
-                </nav>
-            </div>
             <div class="flex align-items">
-                <ul class="nav justify-content-end align-items">
+                <ul class="nav justify-content-end align-items auth-block">
                     {% if not user.is_authenticated %}
                     <div class="flex align-items user-auth">
                         <li class="nav-item">
@@ -116,6 +86,36 @@
                     </div>
                     {% endif %}
                 </ul>
+            </div>
+        </div>
+        <div class="flex align-items">
+            <div class="flex navbar-search">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Переключатель навигации">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav nav-pills">
+                                {% for m in menu %}
+                                <li class="flex nav-item align-items">
+                                    {{ link }}
+                                    <a class="nav-link {% if link == m.link %}active{% endif %}" aria-current="page"
+                                        href="{% url m.url %}">{{ m.name }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <form class="d-flex" id="search" action="{% url 'system:search' %}" method="get">
+                                <input class="form-control me-2 m-w3" name="search" type="text" placeholder="Поиск"
+                                    aria-label="Поиск">
+                                <button class="btn btn-outline-success btn-w" type="submit">Поиск</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
