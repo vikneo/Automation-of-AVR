@@ -49,5 +49,12 @@
 }
 
 .btn-redact {
-    
+    min-width: 125px;
+    padding: 0 10px;
+    justify-content: center;
+    /* outline: 1px solid #4a3838ba; */
+    border-radius: 15px;
+    text-decoration: none;
+    background: #4046fd;
+    color: aliceblue;
 }
