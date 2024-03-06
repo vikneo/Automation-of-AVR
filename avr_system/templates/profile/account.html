@@ -4,8 +4,8 @@
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
 {% block content %}
-<div class="s-section account-block">
-    <div class="container-box">
+<div class="s-section">
+    <div class="container-box" style=" background: #c7b9b938;">
         <div class="h2-block decoration">
             <h2>Личный кабинет</h2>
         </div>
@@ -34,6 +34,16 @@
                     </p>
                 </div>
                 <hr>
+                <div class="product-detail-box">
+                    <p class="flex p-rows m-16">
+                        <span>Редактировать профиль</span>
+                        <a class="btn-redact" href="#" type="submit" onclick="formRedactor()">Редактировать</a>
+                    </p>
+                    <p class="flex p-rows m-16">
+                        <span>Сменить пароль</span>
+                        <a class="btn-redact" href="#" type="submit" onclick="changePasw()">Сменить</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
