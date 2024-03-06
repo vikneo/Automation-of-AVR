@@ -80,8 +80,8 @@ class SearcheView(MenuMixin, ListView):
         return context
     
     def get_queryset(self) -> QuerySet[Any]:
-        query = self.request.GET.get('search')
-        return self.get_search_field( query)
+        query = self.request.GET.get('search').upper()
+        return self.get_search_field(query)
     
     @staticmethod
     def get_search_field(query: str) -> list:
@@ -91,7 +91,7 @@ class SearcheView(MenuMixin, ListView):
         product_list = []
         for result in Classification.objects.all():
 
-            if re.findall(fr'{query}', result.name) or re.findall(fr'{query}', result.comment):
+            if re.findall(fr'{query}', result.name.upper()) or re.findall(fr'{query}', result.comment.upper()):
                 product_list.append(result)
         
         return product_list
