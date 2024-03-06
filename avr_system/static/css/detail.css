@@ -5,6 +5,7 @@
 
 .p-rows {
     justify-content: space-between;
+    margin: 0;
 }
 
 .comment {
@@ -15,4 +16,9 @@
 .comment-block {
     padding: 10px 15px;
     font-size: 18px;
+}
+
+.hr {
+    margin-top: 0;
+    margin-bottom: 16px;
 }
