@@ -291,6 +291,16 @@ nav, footer {
     padding: 15px 15px;
 }
 
+/* ============================ block contsct ======================= */
+
+.contact-container {
+    width: 600px;
+}
+
+.contact-row {
+    justify-content:space-between
+}
+
 /* ============================ block footer ======================== */
 
 .footer-box {
