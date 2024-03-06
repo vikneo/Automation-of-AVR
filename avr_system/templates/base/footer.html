@@ -2,14 +2,22 @@
 
 <div class="container">
     <div class="flex footer-content">
-        <div>
-            <div class="flex footer-fluid">
+        <div class="footer-pt-15">
+            <div class="flex footer-fluid align-items">
                 <div>
                     <a class="navbar-brand" href="{% url 'system:index' %}">
                         Автоматизация для систем АВР
                     </a>
                 </div>
-                <div>here links</div>
+                <div>
+                    <ul>
+                        {% for m in menu %}
+                        <li class="footer-list">
+                            <a class="footer-link" href="{% url m.url %}">{{ m.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
                 <div>messager</div>
             </div>
             <hr>
