@@ -105,7 +105,7 @@ class Classification(models.Model):
     reset = models.BooleanField(verbose_name='Кнопка "Сброс"', default=False)
     choice_in = models.BooleanField(verbose_name='Выбор ввода', default=False)
     dgu = models.BooleanField(verbose_name='Наличие ДГУ', default=False)
-    work_tp = models.BooleanField(verbose_name='Режим работы тр-ров', default=False)
+    work_tp = models.BooleanField(verbose_name='Режим работы тр-ров', default=True)
     status_box = models.BooleanField(verbose_name='Положение АВ в корзине', default=False)
     lamp_avr_ready = models.BooleanField(verbose_name='Лампа АВР готов', default=False)
     lamp_avr_work = models.BooleanField(verbose_name='Лампа АВР с работал', default=False)
@@ -113,6 +113,7 @@ class Classification(models.Model):
     comment = models.TextField(verbose_name='Примечание', default='!')
     relay = models.ForeignKey("SmartRelay", on_delete=models.CASCADE, verbose_name='Тип ПЛК')
     access = models.BooleanField(default=True, verbose_name='Доступ')
+    macro_code = models.CharField(max_length=12, verbose_name='Код к макросам')
 
     def __str__(self) -> str:
         return f'{self.name}'
