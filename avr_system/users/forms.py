@@ -1,10 +1,8 @@
 from typing import Any
 from django import forms
 from django.core.exceptions import ValidationError
-from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
 
 from .models import Profile
@@ -89,6 +87,14 @@ class RegisterUserForm(UserCreationForm):
             'username', 'email', 'password1', 'password2'
         ]
 
+
+class UserRasswordResetForm(PasswordChangeForm):
+    """
+    
+    """
+    old_password = forms.CharField(label="Старый пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    new_password1 = forms.CharField(label="Новый пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    new_password2 = forms.CharField(label="Подтверждение пароля", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
 
 class CallBackForm(forms.Form):
     """

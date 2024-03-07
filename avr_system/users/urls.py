@@ -6,7 +6,9 @@ from .views import (
     UserLogoutView,
     RegisterUserView,
     CallBackView,
-    ContactView
+    ContactView,
+    UserPasswordResetView,
+    UserPasswordChangeDoneView,
 )
 
 app_name = 'users'
@@ -16,6 +18,8 @@ urlpatterns = [
     path('login/', UserLoginView.as_view(), name='login'),
     path('logout/', UserLogoutView.as_view(), name='logout'),
     path('register/', RegisterUserView.as_view(), name='register'),
+    path('password-change/', UserPasswordResetView.as_view(), name='password_change'),
+    path('password-change/done/', UserPasswordChangeDoneView.as_view(), name="password_change_done"),
     path('callback/', CallBackView.as_view(), name='callback'),
     path('contact/', ContactView.as_view(), name='contact')
 ]

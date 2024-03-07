@@ -6,11 +6,16 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.views.generic import ListView, DetailView, CreateView, FormView, TemplateView
-from django.contrib.auth.views import LoginView, LogoutView
+from django.views.generic import DetailView, CreateView, FormView, TemplateView, UpdateView
+from django.contrib.auth.views import (
+    LoginView, 
+    LogoutView, 
+    PasswordChangeView, 
+    PasswordChangeDoneView
+    )
 
 from .models import Profile
-from .forms import CallBackForm, UserFormAuth, RegisterUserForm
+from .forms import CallBackForm, UserFormAuth, RegisterUserForm, UserRasswordResetForm
 from utilits.mixins import MenuMixin
 from avr_system.settings import EMAIL_HOST_USER
 
@@ -57,6 +62,38 @@ class ProfileDetailView(MenuMixin, DetailView):
         context.update(
             self.get_menu(),
             title='Профиль'
+        )
+        return context
+
+
+
+class UserPasswordResetView(MenuMixin, PasswordChangeView):
+    """
+    Changing the password
+    """
+    form_class = UserRasswordResetForm
+    success_url = reverse_lazy("users:password_change_done")
+    template_name = 'profile/password_reset.html'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+            title='Изменение пароля'
+        )
+
+        return context
+
+class UserPasswordChangeDoneView(MenuMixin, PasswordChangeDoneView):
+    """
+    Confirmation of password change
+    """
+    template_name = 'profile/password_change_done.html'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu()
         )
         return context
 

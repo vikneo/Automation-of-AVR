@@ -58,3 +58,9 @@
     background: #4046fd;
     color: aliceblue;
 }
+
+.pswd-reset {
+    width: 100%;
+    padding: 8px;
+    background: aquamarine;
+}
