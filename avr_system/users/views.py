@@ -46,7 +46,7 @@ class RegisterUserView(MenuMixin, CreateView):
         user = form.save()
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password1')
-        email = form.cleaned_data.get('email')
+
         Profile.objects.create(
             user=user,
         )
@@ -80,19 +80,47 @@ class ProfileUpdateVIew(MenuMixin, UpdateView):
     model = User
     form_class = ProfileUpdateForm
     template_name = 'profile/update.html'
-    success_url = reverse_lazy('users:account')
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
             self.get_menu(),
+            form=self.get_data,
             title='Редактирование профиля'
         )
+
         return context
     
-    def form_valid(self, form: BaseModelForm) -> HttpResponse:
-        user = form.save()
+    def get_profile_user(self):
+        user = self.request.user
+        profile = Profile.objects.get(user=user)
 
+        return user, profile
+    
+    def get_data(self):
+        user, profile = self.get_profile_user()
+        data = {
+            'email': user.email, 'first_name': user.first_name,
+            'last_name': user.last_name, 'phone': profile.phone
+        }
+        form = ProfileUpdateForm(data)
+
+        return form
+    
+    def get_success_url(self) -> str:
+        return reverse_lazy('users:account', kwargs={'pk': self.request.user.id})    
+    
+    def form_valid(self, form: BaseModelForm) -> HttpResponse:
+        user, profile = self.get_profile_user()
+        user.first_name = form.cleaned_data['first_name']
+        user.last_name = form.cleaned_data['last_name']
+        user.email = form.cleaned_data['email']
+        user.save()
+
+        profile.phone = form.cleaned_data['phone']
+        profile.save()
+
+        return super().form_valid(form)
 
 
 class UserPasswordResetView(MenuMixin, PasswordChangeView):
