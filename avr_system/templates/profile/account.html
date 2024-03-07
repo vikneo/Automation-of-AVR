@@ -37,7 +37,7 @@
                 <div class="product-detail-box">
                     <p class="flex p-rows m-16">
                         <span>Редактировать профиль</span>
-                        <a class="flex btn-redact" href="#" type="submit" onclick="formRedactor()">Редактировать</a>
+                        <a class="flex btn-redact" href="{% url 'users:update' user.pk %}" type="submit">Редактировать</a>
                     </p>
                     <p class="flex p-rows m-16">
                         <span>Сменить пароль</span>

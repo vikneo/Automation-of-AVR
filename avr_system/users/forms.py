@@ -96,6 +96,21 @@ class UserRasswordResetForm(PasswordChangeForm):
     new_password1 = forms.CharField(label="Новый пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
     new_password2 = forms.CharField(label="Подтверждение пароля", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
 
+
+class ProfileUpdateForm(forms.ModelForm):
+    """
+    
+    """
+    first_name = forms.CharField(label='Имя', widget=forms.TextInput(attrs={'class': 'form-input'}), required=False)
+    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput(attrs={'class': 'form-input'}), required=False)
+    email = forms.CharField(label='Почта', widget=forms.EmailInput(attrs={'class': 'form-input'}), required=False)
+    phone = forms.CharField(label='Телефон', widget=forms.TextInput(attrs={'class': 'form-input'}), required=False)
+
+    class Meta:
+        model=Profile
+        fields = ['first_name', 'last_name', 'email', 'phone']
+
+
 class CallBackForm(forms.Form):
     """
     

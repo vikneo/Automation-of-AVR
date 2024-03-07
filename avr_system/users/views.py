@@ -5,17 +5,24 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.views.generic import DetailView, CreateView, FormView, TemplateView, UpdateView
 from django.contrib.auth.views import (
     LoginView, 
     LogoutView, 
     PasswordChangeView, 
-    PasswordChangeDoneView
+    PasswordChangeDoneView,
     )
 
 from .models import Profile
-from .forms import CallBackForm, UserFormAuth, RegisterUserForm, UserRasswordResetForm
+from .forms import (
+    CallBackForm, 
+    UserFormAuth, 
+    RegisterUserForm, 
+    UserRasswordResetForm,
+    ProfileUpdateForm
+    )
 from utilits.mixins import MenuMixin
 from avr_system.settings import EMAIL_HOST_USER
 
@@ -64,6 +71,27 @@ class ProfileDetailView(MenuMixin, DetailView):
             title='Профиль'
         )
         return context
+
+
+class ProfileUpdateVIew(MenuMixin, UpdateView):
+    """
+    Updating profile data
+    """
+    model = User
+    form_class = ProfileUpdateForm
+    template_name = 'profile/update.html'
+    success_url = reverse_lazy('users:account')
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+            title='Редактирование профиля'
+        )
+        return context
+    
+    def form_valid(self, form: BaseModelForm) -> HttpResponse:
+        user = form.save()
 
 
 
