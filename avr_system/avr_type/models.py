@@ -38,6 +38,7 @@ def banner_images_directory_path(instance: 'Banner', filename: str) -> str:
     """
     return f"banner/{instance.name}/{filename}"
 
+
 def system_images_directory_path(instance: 'ImageTypeAVR', filename: str) -> str:
     """
     The function generates a path based on the name of the file with image for the system avr.
@@ -47,6 +48,7 @@ def system_images_directory_path(instance: 'ImageTypeAVR', filename: str) -> str
     :return: str - path to save
     """
     return f"system/{instance.type_avr}/{filename}"
+
 
 def advantage_icon_directory_path(instance: 'Advantage', filename: str) -> str:
     """
@@ -70,7 +72,7 @@ class TypeAVR(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name}"
-    
+
     class Meta:
         db_table = 'type_avr'
         verbose_name = 'system'
@@ -86,7 +88,7 @@ class ImageTypeAVR(models.Model):
 
     def __str__(self) -> str:
         return f'{self.type_avr}'
-    
+
     class Meta:
         db_table = 'images'
         verbose_name = 'image'
@@ -117,7 +119,7 @@ class Classification(models.Model):
 
     def __str__(self) -> str:
         return f'{self.name}'
-    
+
     class Meta:
         db_table = 'classification'
         verbose_name = 'classification'
@@ -128,6 +130,7 @@ class SmartRelay(models.Model):
     """
     The Class description the models of "types logic relay" and choices of models.
     """
+
     class TypeRelay(models.TextChoices):
         """
         Choices of models
@@ -148,7 +151,7 @@ class SmartRelay(models.Model):
 
     def __str__(self) -> Any:
         return f'{self.model}'
-    
+
     class Meta:
         db_table = 'smart_relay'
         verbose_name = 'relay'
@@ -160,17 +163,17 @@ class File(models.Model):
     The Class description the models the file for firmwares.
     """
     firmware = models.ForeignKey(
-        Classification, 
-        verbose_name='Алгоритм', 
-        on_delete=models.CASCADE, 
+        Classification,
+        verbose_name='Алгоритм',
+        on_delete=models.CASCADE,
         related_name='classifications'
-        )
+    )
     file = models.FileField(upload_to=path_file_logic, verbose_name='Файл конфигурации', blank=True)
     file_description = models.FileField(upload_to=path_file_description, verbose_name='Описание алгоритма', blank=True)
 
     def get_absolute_url(self) -> str:
         return reverse_lazy('system:index')
-    
+
     class Meta:
         db_table = 'files'
         verbose_name = 'file'
@@ -197,7 +200,7 @@ class Banner(models.Model):
 
     def __str__(self) -> str:
         return f'{self.name}'
-    
+
     class MEta:
         db_table = 'banners'
         ordering = ['name', ]
@@ -215,8 +218,8 @@ class Advantage(models.Model):
 
     def __str__(self) -> str:
         return f'{self.title}'
-    
+
     class Meta:
         db_table = 'advantage'
-        verbose_name= 'advantage'
+        verbose_name = 'advantage'
         verbose_name_plural = 'advantages'

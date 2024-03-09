@@ -26,4 +26,4 @@ daumdata:
 	python -Xutf8 manage.py dumpdata --exclude auth.permission --exclude contenttypes -o system_avr_db.json
 
 loaddata:
-	python manage.py loaddata --exclude auth.permission --exclude contenttypes systen_avr_db.json
+	python manage.py loaddata --exclude auth.permission --exclude contenttypes system_avr_db.json
