@@ -1,5 +1,6 @@
 from django.dispatch import receiver
 from django.db.models.signals import pre_save
+from django.contrib.auth.models import User
 
 from .models import Profile
 
@@ -18,3 +19,13 @@ def default_avatar(sender, instance, **kwargs):
         instance.user.is_active = True
 
     instance.user.save()
+
+
+@receiver(pre_save, sender=User)
+def create_username(sender, instance, **kwargs):
+    """
+    Create the username for the User if no username
+    """
+    if not instance.username:
+        instance.username = f"NotUserName{instance.id}"
+        instance.save()
