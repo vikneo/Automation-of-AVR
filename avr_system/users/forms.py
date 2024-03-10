@@ -1,4 +1,3 @@
-from typing import Any
 from django import forms
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
@@ -6,6 +5,8 @@ from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, Us
 from django.utils.translation import gettext_lazy as _
 
 from .models import Profile
+
+import re
 
 
 class UserFormAuth(AuthenticationForm):
@@ -18,7 +19,7 @@ class UserFormAuth(AuthenticationForm):
         "invalid_login": _(
             "Комбинация %(username)s и пароля не найдена."
         ),
-        "inactive": _("Данный акаунт заблокирован."),
+        "inactive": _("Данный аккаунт заблокирован."),
     }
     
     def clean_username(self):
@@ -51,15 +52,61 @@ class RegisterUserForm(UserCreationForm):
     """
     User Register Form 
     """
-    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
-    password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-    password2 = forms.CharField(label='Повторить пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-    email = forms.CharField(label='Почтовый адрес', widget=forms.EmailInput(attrs={'class': 'form-input'}))
+    username = forms.CharField(
+        label=_("Логин"),
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-input',
+                'placeholder': 'Не обязательное поле'
+            },
+        )
+    )
+    password1 = forms.CharField(
+        label=_("Пароль"),
+        widget=forms.PasswordInput(
+            attrs={
+                'class': 'form-input',
+                'placeholder': 'Обязательное поле',
+            },
+        ),
+    )
+    password2 = forms.CharField(
+        label=_("Повторить пароль"),
+        widget=forms.PasswordInput(
+            attrs={
+                'class': 'form-input',
+                'placeholder': 'Обязательное поле'
+            },
+        ),
+    )
+    email = forms.CharField(
+        label=_("Почта"),
+        widget=forms.EmailInput(
+            attrs={
+                'class': 'form-input',
+                'placeholder': 'Обязательное поле'
+            },
+        ),
+    )
+
+    """
+    def clean_login_field(self):
+        login_field = self.cleaned_data['login_field']
+        if re.search(r'(\+7|8)\D*\d{3}\D*\d{3}\D*\d{2}\D*\d{2}', login_field):
+            if Profile.objects.filter(phone=login_field).exists():
+                raise forms.ValidationError("Такой телефон уже существует")
+        elif re.search(r'', login_field):
+            if User.objects.filter(email=login_field).exists():
+                raise forms.ValidationError("Данный email уже существует.")
+
+        return login_field
+    """
 
     def clean_phone(self):
         phone = self.cleaned_data['phone']
         if Profile.objects.filter(phone=phone).exists():
             raise forms.ValidationError("Такой телефон уже существует")
+        return phone
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -72,6 +119,8 @@ class RegisterUserForm(UserCreationForm):
         email = self.cleaned_data['email']
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError("Данный email уже существует.")
+
+        return email
 
     def clean_password2(self):
         passw1 = self.cleaned_data['password1']
