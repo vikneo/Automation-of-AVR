@@ -3,6 +3,19 @@
 
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
+{% block left_sidebar %}
+<div class="s-section">
+    <div class="product-detail-box mt-5">
+        <p class="flex p-rows m-16">
+            <a class="flex btn-redact" href="#" onclick="stopper()">Оставить заявку</a>
+        </p>
+        <p class="flex p-rows m-16">
+            <a class="flex btn-redact" href="#"  onclick="stopper()">Детали заказа</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
 <div class="s-section">
     <div class="container-box" style=" background: #c7b9b938;">
@@ -12,10 +25,13 @@
         <div class="container">
             <div style="width: 80%;">
                 <div class="product-detail-box">
-                    <p class="flex p-rows m-16">
-                        <span>Аватар </span>
-                        <img src="{{ profile.avatar.url }}" alt="Аватар" width="80px">
-                    </p>
+                    <div class="flex justify-content-between">
+                        <p class="flex p-rows m-16 avatar">
+                            <span>Аватар </span>
+                            <img src="{{ profile.avatar.url }}" alt="Аватар" width="80px">
+                        </p>
+                        <a class="flex btn-redact" href="#" type="submit">Изменить</a>
+                    </div>
                     <p class="flex p-rows m-16">
                         <span>Имя </span>
                         <span>{% if profile.user.first_name %}{{ profile.user.first_name }}{% else %}-{% endif %}</span>
@@ -37,7 +53,8 @@
                 <div class="product-detail-box">
                     <p class="flex p-rows m-16">
                         <span>Редактировать профиль</span>
-                        <a class="flex btn-redact" href="{% url 'users:update' user.id %}" type="submit">Редактировать</a>
+                        <a class="flex btn-redact" href="{% url 'users:update' user.id %}"
+                            type="submit">Редактировать</a>
                     </p>
                     <p class="flex p-rows m-16">
                         <span>Сменить пароль</span>
@@ -45,7 +62,7 @@
                     </p>
                     <p class="flex p-rows m-16">
                         <span>Изменить аватарку</span>
-                        <a class="flex btn-redact" href="#" type="submit" onclick="changePasw()">Изменить</a>
+                        <a class="flex btn-redact" href="#" type="submit">Изменить</a>
                     </p>
                 </div>
             </div>

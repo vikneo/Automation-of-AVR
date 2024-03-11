@@ -1,3 +1,4 @@
+
 .nav-h, .footer-h {
     height: 200px;
 }
@@ -10,9 +11,19 @@
     margin-top: 30px;
 }
 
+.form-login
+.auth-pos
+.justify-content-center  {
+    justify-content: center
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
 .form-login {
     padding: 25px 0;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .form-block {
@@ -40,7 +51,11 @@
 
 .auth-pos {
     margin-bottom: 80px;
-    justify-content: center;
+    /* justify-content: center; */
+}
+
+.avatar {
+    display: contents;
 }
 
 .account-block {
@@ -49,7 +64,8 @@
 }
 
 .btn-redact {
-    min-width: 125px;
+    min-width: 170px;
+    max-height: 27px;
     padding: 0 10px;
     justify-content: center;
     /* outline: 1px solid #4a3838ba; */
