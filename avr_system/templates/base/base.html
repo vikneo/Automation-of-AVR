@@ -18,10 +18,10 @@
 
 </head>
 <body>
-    <div>
-        <nav>
-            {% include 'base/header.html' %}
-        </nav>
+    <nav>
+        {% include 'base/header.html' %}
+    </nav>
+    <div class="flex">
         <div class="left-sidebar">
             {% block left_sidebar %}{% endblock %}
         </div>
@@ -31,9 +31,9 @@
         <div class="right-sidebar">
             {% block right_sidebar %}{% endblock %}
         </div>
+    </div>
         <footer class="footer-box footer-h">
             {% include 'base/footer.html' %}
         </footer>
-    </div>
 </body>
 </html>

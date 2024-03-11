@@ -15,6 +15,10 @@ h2 {
     color: #000;
 }
 
+a {
+    text-decoration: none;
+}
+
 nav, footer {
     background: rgb(11 0 173 / 88%);
     color: aliceblue;
@@ -143,6 +147,16 @@ nav, footer {
 .fon-for-title {
     background-color: rgb(12 0 195 / 76%);
     border-radius: 0 100px;
+}
+
+/* =========================== left-sidebar ========================== */
+
+.left-sidebar {
+    width: 22%;
+}
+
+.pl-4 {
+    padding-left: 4em;
 }
 
 /* =========================== center_sidebar ======================== */

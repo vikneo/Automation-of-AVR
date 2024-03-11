@@ -105,3 +105,10 @@ class SearcheView(MenuMixin, ListView):
         search_query = SearchQuery(query)
         return Classification.objects.annotate(rank=SearchRank(search_vector, search_query)).order_by("-rank")
     """
+
+
+class OrderView(ListView):
+    """
+    
+    """
+    pass
