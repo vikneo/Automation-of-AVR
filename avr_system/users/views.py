@@ -13,6 +13,10 @@ from django.contrib.auth.views import (
     LogoutView, 
     PasswordChangeView, 
     PasswordChangeDoneView,
+    PasswordResetView,
+    PasswordResetDoneView,
+    PasswordResetConfirmView,
+    PasswordResetCompleteView
     )
 
 from .models import Profile
@@ -123,7 +127,7 @@ class ProfileUpdateVIew(MenuMixin, UpdateView):
         return super().form_valid(form)
 
 
-class UserPasswordResetView(MenuMixin, PasswordChangeView):
+class UserPasswordChangeView(MenuMixin, PasswordChangeView):
     """
     Changing the password
     """
@@ -150,6 +154,21 @@ class UserPasswordChangeDoneView(MenuMixin, PasswordChangeDoneView):
         context = super().get_context_data(**kwargs)
         context.update(
             self.get_menu()
+        )
+        return context
+
+
+class UserPasswordResetView(MenuMixin, PasswordResetView):
+    """
+    
+    """
+    template_name = 'profile/password_reset.html'
+
+    def get_context_data(self, **kwargs: Any) -> Any:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+            title='Сброс пароля'
         )
         return context
 

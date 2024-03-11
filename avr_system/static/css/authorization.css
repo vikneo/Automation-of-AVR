@@ -81,3 +81,20 @@
     padding: 8px;
     background: aquamarine;
 }
+
+/* ======================= reset password ========================== */
+
+.reset-block-input {
+    width: 23em;
+    flex-direction: column;
+}
+
+.reset-pas-block {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.reset-box {
+    margin: 0 auto;
+    max-width: 390px;
+}

@@ -20,7 +20,7 @@
         <span id="span1"></span><br>
         <div class="flex justify-content-between">
             <button id="confirmbtn" type="submit" class="btn btn-primary">{% trans 'Войти' %}</button>
-            <a href="#">Забыли пароль?</a>
+            <a href="{% url 'users:password_reset' %}">Забыли пароль?</a>
         </div>
     </form>
 </div>
