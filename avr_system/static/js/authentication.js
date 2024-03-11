@@ -28,3 +28,14 @@
 // function winclose () {
 //     close;
 // }
+
+function stopper () {
+    alert("Извените данная опция в разработке")
+}
+
+function logOut () {
+    // функция подтверждает выход пользователя из системы
+    document.querySelector('form').onsubmit = function () {
+        return confirm("Вы действительно хотите выйти?");
+    }
+}
