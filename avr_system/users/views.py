@@ -173,6 +173,21 @@ class UserPasswordResetView(MenuMixin, PasswordResetView):
         return context
 
 
+class UserPasswordResetDoneView(MenuMixin, PasswordResetDoneView):
+    """
+    
+    """
+    template_name = 'profile/password_reset_done.html'
+
+    def get_context_data(self, **kwargs: Any) -> Any:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+            title='Проверьте почту'
+        )
+        return context
+
+
 class ContactView(MenuMixin, TemplateView):
     """
     Contact information

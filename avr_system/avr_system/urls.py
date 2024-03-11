@@ -22,6 +22,7 @@ from django.urls import path, include, re_path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("i18n", include('django.conf.urls.i18n')),
+    # path("", include('django.contrib.auth.urls')),
     path('', include('avr_type.urls')),
     re_path(r'^user/', include('users.urls')),
 ]
