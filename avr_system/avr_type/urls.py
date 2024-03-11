@@ -5,6 +5,7 @@ from .views import (
     TypeAvrDetail,
     HelpView,
     SearcheView,
+    OrderView,
     )
 
 app_name = 'system'
@@ -14,4 +15,5 @@ urlpatterns = [
     path('detail/<slug:slug>/', TypeAvrDetail.as_view(), name='detail_system'),
     path('helper/', HelpView.as_view(), name='helper'),
     path('search/', SearcheView.as_view(), name='search'),
+    path('order/', OrderView.as_view(), name='order'),
 ]
