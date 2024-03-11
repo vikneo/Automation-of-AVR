@@ -162,13 +162,12 @@ class UserPasswordResetView(MenuMixin, PasswordResetView):
     """
     
     """
-    template_name = 'profile/password_reset.html'
+    template_name = 'registration/password_reset.html'
 
     def get_context_data(self, **kwargs: Any) -> Any:
         context = super().get_context_data(**kwargs)
         context.update(
-            self.get_menu(),
-            title='Сброс пароля'
+            self.get_menu()
         )
         return context
 
@@ -177,13 +176,40 @@ class UserPasswordResetDoneView(MenuMixin, PasswordResetDoneView):
     """
     
     """
-    template_name = 'profile/password_reset_done.html'
+    template_name = 'registration/password_reset_done.html'
+
+    def get_context_data(self, **kwargs: Any) -> Any:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu()
+        )
+        return context
+
+
+class UserPasswordResetConfirmView(MenuMixin, PasswordResetConfirmView):
+    """
+    
+    """
+    template_name = 'registration/password_reset_confirm.html'
 
     def get_context_data(self, **kwargs: Any) -> Any:
         context = super().get_context_data(**kwargs)
         context.update(
             self.get_menu(),
-            title='Проверьте почту'
+        )
+        return context
+
+
+class UserPasswordResetCompleteView(MenuMixin, PasswordResetCompleteView):
+    """
+    
+    """
+    template_name = 'registration/password_reset_complete.html'
+
+    def get_context_data(self, **kwargs: Any) -> Any:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
         )
         return context
 
@@ -193,6 +219,7 @@ class ContactView(MenuMixin, TemplateView):
     Contact information
     """
     template_name = 'index/contact.html'
+    success_url = reverse_lazy('users:password_reset_confirm')
     
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]: 
         context =super().get_context_data(**kwargs)

@@ -21,6 +21,10 @@
     justify-content: space-between;
 }
 
+.align-items-centr {
+    align-items: center;
+}
+
 .form-login {
     padding: 25px 0;
     /* justify-content: center; */
@@ -97,4 +101,9 @@
 .reset-box {
     margin: 0 auto;
     max-width: 390px;
+}
+
+.pl-5 {
+    margin: 0;
+    padding-left: 35px;
 }
