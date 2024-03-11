@@ -10,7 +10,7 @@
             <a class="flex btn-redact" href="#" onclick="stopper()">Оставить заявку</a>
         </p>
         <p class="flex p-rows m-16">
-            <a class="flex btn-redact" href="#"  onclick="stopper()">Детали заказа</a>
+            <a class="flex btn-redact" href="#" onclick="stopper()">Детали заказа</a>
         </p>
     </div>
 </div>
@@ -28,9 +28,9 @@
                     <div class="flex justify-content-between">
                         <p class="flex p-rows m-16 avatar">
                             <span>Аватар </span>
-                            <img src="{{ profile.avatar.url }}" alt="Аватар" width="80px">
+                            <img src="{{ profile.avatar.url }}" alt="Аватар" width="100px">
                         </p>
-                        <a class="flex btn-redact" href="#" type="submit">Изменить</a>
+                        <a class="flex btn-redact" href="#" type="submit" onclick="stopper()">Изменить</a>
                     </div>
                     <p class="flex p-rows m-16">
                         <span>Имя </span>
@@ -60,10 +60,10 @@
                         <span>Сменить пароль</span>
                         <a class="flex btn-redact" href="{% url 'users:password_change' %}" type="submit">Сменить</a>
                     </p>
-                    <p class="flex p-rows m-16">
+                    <!-- <p class="flex p-rows m-16">
                         <span>Изменить аватарку</span>
                         <a class="flex btn-redact" href="#" type="submit">Изменить</a>
-                    </p>
+                    </p> -->
                 </div>
             </div>
         </div>
