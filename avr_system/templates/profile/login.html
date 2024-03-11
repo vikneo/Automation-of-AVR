@@ -6,7 +6,7 @@
 {% block content %}
 <div class="flex container-box form-login" style="flex-direction: column; justify-content: flex-start;">
     <div class="flex container auth-pos">
-        <h1>Авторизация</h1>
+        <h1>{{ title }}</h1>
     </div>
     <form class="form-block" method="post">
         {% csrf_token %}
@@ -18,7 +18,10 @@
         </div>
         {% endfor %}
         <span id="span1"></span><br>
-        <button id="confirmbtn" type="submit" class="btn btn-primary">{% trans 'Войти' %}</button>
+        <div class="flex justify-content-between">
+            <button id="confirmbtn" type="submit" class="btn btn-primary">{% trans 'Войти' %}</button>
+            <a href="#">Забыли пароль?</a>
+        </div>
     </form>
 </div>
 {% endblock %}

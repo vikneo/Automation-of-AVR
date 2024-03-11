@@ -129,7 +129,7 @@ class UserPasswordResetView(MenuMixin, PasswordChangeView):
     """
     form_class = UserRasswordResetForm
     success_url = reverse_lazy("users:password_change_done")
-    template_name = 'profile/password_reset.html'
+    template_name = 'profile/password_change.html'
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
