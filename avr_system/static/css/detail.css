@@ -26,3 +26,9 @@
     margin-top: 0;
     margin-bottom: 16px;
 }
+
+.message {
+    font-size: 20px;
+    outline: 1px solid red;
+    border-radius: 8px;
+}
