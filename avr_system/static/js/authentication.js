@@ -39,3 +39,13 @@ function logOut () {
         return confirm("Вы действительно хотите выйти?");
     }
 }
+
+function searchField () {
+
+    let elem = document.getElementById('search')[0].value
+
+    if (elem.length < 2 ) {
+        console.log(`Не достаточно символов для поиска`);
+        form.onsubmit = function () { return false;}
+        }
+}
