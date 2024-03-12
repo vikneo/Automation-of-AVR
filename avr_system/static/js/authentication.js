@@ -46,6 +46,7 @@ function searchField () {
 
     if (elem.length < 2 ) {
         console.log(`Не достаточно символов для поиска`);
-        form.onsubmit = function () { return false;}
+        // form.onsubmit = function () { return false;}
         }
+
 }
