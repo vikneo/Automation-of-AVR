@@ -23,9 +23,11 @@
                 <hr>
             </div>
             {% endfor %}
+            {% if messages %}
             <div class="message">
                 {% include 'messages/message.html' %}
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
