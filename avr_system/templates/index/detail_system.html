@@ -84,7 +84,7 @@
                 <p class="flex p-rows">
                     <b>Посмотреть описание файла</b>
                     {% if product.classifications.first.file_description %}
-                    <a href="{{ product.classifications.first.file_description.url }}">читать</a>
+                    <a href="{{ product.classifications.first.file_description.url }}" target="_blank">читать</a>
                     {% else %}
                     <span>описание отсутствует</span>
                     {% endif %}
