@@ -19,7 +19,6 @@ from .views import (
 app_name = 'users'
 
 urlpatterns = [
-    # path('', include('django.contrib.auth.urls')),
     path('password-reset/', UserPasswordResetView.as_view(), name='password_reset'),
     path('password-reset/done/', 
          UserPasswordResetDoneView.as_view(template_name = 'users/password_reset_done.html'), 

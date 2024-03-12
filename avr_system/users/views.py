@@ -160,7 +160,7 @@ class UserPasswordChangeDoneView(MenuMixin, PasswordChangeDoneView):
 
 class UserPasswordResetView(MenuMixin, PasswordResetView):
     """
-    
+    Reset password
     """
     template_name = 'registration/password_reset.html'
 
@@ -174,7 +174,7 @@ class UserPasswordResetView(MenuMixin, PasswordResetView):
 
 class UserPasswordResetDoneView(MenuMixin, PasswordResetDoneView):
     """
-    
+    Password reset done
     """
     template_name = 'registration/password_reset_done.html'
 
@@ -188,7 +188,7 @@ class UserPasswordResetDoneView(MenuMixin, PasswordResetDoneView):
 
 class UserPasswordResetConfirmView(MenuMixin, PasswordResetConfirmView):
     """
-    
+    Password reset confirm
     """
     template_name = 'registration/password_reset_confirm.html'
 
@@ -202,7 +202,7 @@ class UserPasswordResetConfirmView(MenuMixin, PasswordResetConfirmView):
 
 class UserPasswordResetCompleteView(MenuMixin, PasswordResetCompleteView):
     """
-    
+    Password reset complete
     """
     template_name = 'registration/password_reset_complete.html'
 
