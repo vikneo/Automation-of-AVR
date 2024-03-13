@@ -11,11 +11,22 @@
     <form class="form-block" method="post">
         {% csrf_token %}
         <div class="form-error">{{ form.non_field_errors }}</div>
+        <div class="form-label">
+            <p class="flex mb-5">
+                <img src="{{ user.profiles.avatar.url }}" alt="{{ user.profiles.avatar.url }}" width="300px">
+                <span class="p-5">
+                    {{ form.avatar }}
+                </span>
+            <div class="form-error">{{ form.avatar.errors }}</div>
+            </p>
+        </div>
         {% for f in form %}
+        {% if f.label != 'Аватар' %}
         <div class="mb-3 form-label">
             <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
             <div class="form-error">{{ f.errors }}</div>
         </div>
+        {% endif %}
         {% endfor %}
         <span id="span1"></span><br>
         <button id="confirmbtn" type="submit" class="btn btn-primary">{% trans 'Сохранить' %}</button>
