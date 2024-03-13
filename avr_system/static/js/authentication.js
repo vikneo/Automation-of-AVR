@@ -44,9 +44,14 @@ function searchField () {
 
     let elem = document.getElementById('search')[0].value
 
+    btn_search.onclick = function(event) {
+        if (event.which == 1) {
+            form.onsubmit = function () { return true;}
+        }
+    }
+    
     if (elem.length < 2 ) {
         console.log(`Не достаточно символов для поиска`);
-        // form.onsubmit = function () { return false;}
+        form.onsubmit = function () { return false;}
         }
-
 }
