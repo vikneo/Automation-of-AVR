@@ -3,6 +3,7 @@ from django.db.models.query import QuerySet
 from django.views.generic import ListView, DetailView, TemplateView
 from django.contrib import messages
 from django.db.models import Q
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 from .models import TypeAVR, Classification
 from utilits.mixins import MenuMixin, ChangeListMixin
@@ -110,3 +111,20 @@ class OrderView(ListView):
     
     """
     pass
+
+# ==================================== Settings in panel admin =========================================
+
+class SettingsView(PermissionRequiredMixin, ChangeListMixin, ListView):
+    """
+    Класс SettingsView отображает страницу с настройками
+    """
+    model = Classification
+    template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
+
+    def  get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_change_list_admin(title='Настройки')
+        )
+        return context
