@@ -1,12 +1,17 @@
-from typing import Any
 from django.db.models.query import QuerySet
-from django.views.generic import ListView, DetailView, TemplateView
-from django.contrib import messages
 from django.db.models import Q
+from django.views.generic import ListView, DetailView, TemplateView
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
+from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
 from .models import TypeAVR, Classification
 from utilits.mixins import MenuMixin, ChangeListMixin
+from .configs import settings
+
+from typing import Any
 
 
 class MainPage(MenuMixin, ListView):
@@ -125,6 +130,25 @@ class SettingsView(PermissionRequiredMixin, ChangeListMixin, ListView):
     def  get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
-            self.get_change_list_admin(title='Настройки')
+            self.get_change_list_admin(),
+            title='Настройки'
         )
         return context
+
+
+class SiteName(ChangeListMixin, TemplateView):
+    """
+    Класс SiteName позволяет задать новое название интернет магазина
+    """
+
+    template_name = 'admin/settings.html'
+
+    def post(self, request) -> HttpResponse:
+        title_site = request.POST.get('title_site')
+        if title_site:
+            settings.set_site_name(title_site)
+            messages.success(self.request, _('Название магазина успешно изменено'))
+        else:
+            messages.warning(self.request, _('Поле не должно быть пустым'))
+
+        return HttpResponseRedirect(reverse_lazy('store:settings'))
