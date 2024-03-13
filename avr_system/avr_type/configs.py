@@ -19,7 +19,7 @@ class Settings:
 
     def __init__(self):
         """ Значения по умолчанию """
-        self.__site_name = 'NFT\nNetwork Future Technology'
+        self.__site_name = 'NFT Network Future Technology'
         self.__count_banner = 5
         self.__cache_banner = SECOND * 10  # 10 min
         self.__cache_product = DAYS  # 1 day
