@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.db.models import Q
 
 from .models import TypeAVR, Classification
-from utilits.mixins import MenuMixin
+from utilits.mixins import MenuMixin, ChangeListMixin
 
 
 class MainPage(MenuMixin, ListView):
