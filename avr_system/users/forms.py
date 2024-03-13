@@ -105,10 +105,23 @@ class ProfileUpdateForm(forms.ModelForm):
     last_name = forms.CharField(label='Фамилия', widget=forms.TextInput(attrs={'class': 'form-input'}), required=False)
     email = forms.CharField(label='Почта', widget=forms.EmailInput(attrs={'class': 'form-input'}), required=False)
     phone = forms.CharField(label='Телефон', widget=forms.TextInput(attrs={'class': 'form-input'}), required=False)
+    avatar = forms.ImageField(
+        label='Аватар', 
+        widget=forms.FileInput(
+            attrs={
+                'class': 'form-input',
+                'id': "avatar",
+                'name': "avatar",
+                'type': "file",
+                'enctype': "multipart/form-data",
+                },
+            ), 
+            required=False
+        )
 
     class Meta:
         model=Profile
-        fields = ['first_name', 'last_name', 'email', 'phone']
+        fields = ['avatar', 'phone']
 
 
 class CallBackForm(forms.Form):
