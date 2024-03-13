@@ -11,6 +11,7 @@ from .models import TypeAVR, Classification
 from utilits.mixins import MenuMixin, ChangeListMixin
 from .configs import settings
 
+import re
 from typing import Any
 
 
@@ -151,4 +152,25 @@ class SiteName(ChangeListMixin, TemplateView):
         else:
             messages.warning(self.request, _('Поле не должно быть пустым'))
 
-        return HttpResponseRedirect(reverse_lazy('store:settings'))
+        return HttpResponseRedirect(reverse_lazy('system:settings'))
+
+
+class CacheSetupBannerView(ChangeListMixin, TemplateView):
+    """
+    Класс CacheSetupBannerView позволяет задать или обновить время кэширования Баннера
+    """
+
+    template_name = 'admin/settings.html'
+
+    def post(self, request) -> HttpResponse:
+        cache_time_banner = request.POST.get('cache_time_banner')
+        print(cache_time_banner)
+        try:
+            time_banner = int(''.join(re.findall(r'[0-9]+', cache_time_banner)))
+            if time_banner:
+                settings.set_cache_banner(time_banner)
+                messages.success(self.request, _('Время кэширование Баннера установлено'))
+        except Exception:
+            messages.warning(self.request, _('Поле не должно быть пустым или содержать только цифры'))
+
+        return HttpResponseRedirect(reverse_lazy('system:settings'))
