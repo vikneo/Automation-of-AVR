@@ -34,14 +34,14 @@ class TypeAvrDetail(MenuMixin, DetailView):
     template_name = 'index/detail_system.html'
     context_object_name = 'system'
 
-    def  get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
             self.get_menu(),
             title='Типы АВР'
         )
         return context
-    
+
     def get_queryset(self) -> QuerySet[Any]:
         return TypeAVR.objects.filter(access=True)
 
@@ -71,29 +71,28 @@ class SearcheView(MenuMixin, ListView):
     paginate_by = 10
     allow_empty = True
 
-    def  get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
             self.get_menu(),
             title=f"Результат поиска - {self.request.GET.get('search')}"
         )
         return context
-    
+
     def get_queryset(self) -> QuerySet[Any]:
         not_found = 'Нет ни одного совпадения'
         try:
             query = self.request.GET.get('search').upper()
             result = Classification.objects.filter(
-                Q(name__icontains=query) | 
+                Q(name__icontains=query) |
                 Q(relay__model__icontains=query) |
                 Q(type_avr__name__startswith=query)
-                )
+            )
             if not result:
                 messages.info(self.request, not_found)
             return result
         except Exception as err:
             messages.info(self.request, not_found)
-    
 
     """
     def get_queryset(self) -> QuerySet[Any]:

@@ -1,12 +1,12 @@
 from django.urls import path
 
 from .views import (
-    MainPage, 
+    MainPage,
     TypeAvrDetail,
     HelpView,
     SearcheView,
     OrderView,
-    )
+)
 
 app_name = 'system'
 

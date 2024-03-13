@@ -5,13 +5,13 @@ from django.db.models import QuerySet
 
 from .models import (
     SmartRelay,
-    TypeAVR, 
-    Classification, 
+    TypeAVR,
+    Classification,
     File,
     Banner,
     ImageTypeAVR,
     Advantage
-    )
+)
 
 
 @admin.action(description='Закрыть доступ')
@@ -47,11 +47,11 @@ class AdminTypeAVR(admin.ModelAdmin):
         open_access
     ]
 
-    search_fields = ['name',]
+    search_fields = ['name', ]
     list_display = ['id', 'name', 'get_image', 'access']
     list_display_links = ['name', ]
     list_filter = ['access', 'name']
-    prepopulated_fields = {'slug': ('name', )}
+    prepopulated_fields = {'slug': ('name',)}
 
     def get_image(self, obj):
         if obj.images.all():
@@ -65,7 +65,7 @@ class AdminSmartRelay(admin.ModelAdmin):
     """
     list_display = ['brand', 'model']
     list_display_links = ['model', ]
-    prepopulated_fields = {'slug': ('model', )}
+    prepopulated_fields = {'slug': ('model',)}
 
 
 @admin.register(Classification)
@@ -81,13 +81,13 @@ class AdminClassification(admin.ModelAdmin):
         open_access
     ]
     search_fields = ['name', ]
-    list_filter = ['name', 'temp_tp', 'vnr', 'reset', 'choice_in', 'dgu', 
-                   'work_tp', 'status_box', 'lamp_avr_ready', 
+    list_filter = ['name', 'temp_tp', 'vnr', 'reset', 'choice_in', 'dgu',
+                   'work_tp', 'status_box', 'lamp_avr_ready',
                    'lamp_avr_work', 'signal_ozz'
                    ]
     list_display = ['name', 'type_avr', 'macro_code', 'access']
     list_display_links = ['name', ]
-    prepopulated_fields = {'slug': ('name', )}
+    prepopulated_fields = {'slug': ('name',)}
     save_on_top = True
 
 
@@ -113,19 +113,18 @@ class AdminBanner(admin.ModelAdmin):
     def close_access(modeladmin: admin.ModelAdmin, request: HttpRequest, queryset: QuerySet):
         queryset.update(is_active=False)
 
-
     @admin.action(description='Открыть доступ')
     def open_access(modeladmin: admin.ModelAdmin, request: HttpRequest, queryset: QuerySet):
         queryset.update(is_active=True)
-        
+
     search_fields = ['name', ]
     list_display = ['name', 'is_active', 'get_photo']
-    list_filter = ['name',]
-    prepopulated_fields = {'slug': ('name', )}
+    list_filter = ['name', ]
+    prepopulated_fields = {'slug': ('name',)}
 
     def get_photo(self, obj):
         return mark_safe(f'<img src="{obj.photo.url}" alt="" width="60">')
-    
+
     get_photo.short_description = 'Фото'
 
 
@@ -143,5 +142,5 @@ class AdminAdvantage(admin.ModelAdmin):
 
     def get_icon(self, obj):
         return mark_safe(f'<img src="{obj.icon.url}" alt="" width="30">')
-    
+
     get_icon.short_description = 'Иконка'
