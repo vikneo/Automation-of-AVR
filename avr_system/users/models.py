@@ -21,7 +21,7 @@ class Profile(models.Model):
     """
     The class describes the user's profile.
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='Пользователь')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='Пользователь', related_name="profiles")
     phone = models.CharField(max_length=12, verbose_name='Телефон', db_index=True)
     avatar = ProcessedImageField(
         blank=True,
