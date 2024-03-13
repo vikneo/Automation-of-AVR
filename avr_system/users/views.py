@@ -105,7 +105,8 @@ class ProfileUpdateVIew(MenuMixin, UpdateView):
         user, profile = self.get_profile_user()
         data = {
             'email': user.email, 'first_name': user.first_name,
-            'last_name': user.last_name, 'phone': profile.phone
+            'last_name': user.last_name, 'phone': profile.phone,
+            'avatar': profile.avatar
         }
         form = ProfileUpdateForm(data)
 
@@ -122,6 +123,8 @@ class ProfileUpdateVIew(MenuMixin, UpdateView):
         user.save()
 
         profile.phone = form.cleaned_data['phone']
+        if form.cleaned_data['avatar']:
+            profile.avatar = form.cleaned_data['avatar']
         profile.save()
 
         return super().form_valid(form)
