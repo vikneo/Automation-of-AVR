@@ -43,14 +43,14 @@ class Settings:
             return f"{cache_time // SECOND} {minute}"
         elif 60 <= cache_time // SECOND < 1440:
             return (f"{hours}{hour}. "
-                    f"{str(minutes) + {minute} if minutes != 0 else ''}"
+                    f"{str(minutes) + minute if minutes != 0 else ''}"
                     )
         elif 1440 <= cache_time // SECOND:
             _hours = (cache_time % DAYS) // HOURS
             _minutes = ((cache_time % DAYS) % HOURS) // SECOND
             return (f"{days}{day} "
-                    f"{str(_hours) + {hour} if _hours != 0 else ''} "
-                    f"{str(_minutes) + {minute} if _minutes != 0 else ''}"
+                    f"{str(_hours) + hour if _hours != 0 else ''} "
+                    f"{str(_minutes) + minute if _minutes != 0 else ''}"
                     )
 
     def set_site_name(self, name: str) -> None:
