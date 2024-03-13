@@ -28,3 +28,30 @@
 // function winclose () {
 //     close;
 // }
+
+function stopper () {
+    alert("Извените! Данная опция в разработке")
+}
+
+function logOut () {
+    // функция подтверждает выход пользователя из системы
+    document.querySelector('form').onsubmit = function () {
+        return confirm("Вы действительно хотите выйти?");
+    }
+}
+
+function searchField () {
+
+    let elem = document.getElementById('search')[0].value
+
+    btn_search.onclick = function(event) {
+        if (event.which == 1) {
+            form.onsubmit = function () { return true;}
+        }
+    }
+    
+    if (elem.length < 2 ) {
+        console.log(`Не достаточно символов для поиска`);
+        form.onsubmit = function () { return false;}
+        }
+}

@@ -1,3 +1,4 @@
+
 .nav-h, .footer-h {
     height: 200px;
 }
@@ -10,12 +11,27 @@
     margin-top: 30px;
 }
 
+.form-login
+.auth-pos
+.justify-content-center  {
+    justify-content: center
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-centr {
+    align-items: center;
+}
+
 .form-login {
     padding: 25px 0;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .form-block {
+    max-width: 630px;
     padding: 10px;
 }
 
@@ -40,7 +56,11 @@
 
 .auth-pos {
     margin-bottom: 80px;
-    justify-content: center;
+    /* justify-content: center; */
+}
+
+.avatar {
+    display: contents;
 }
 
 .account-block {
@@ -49,7 +69,8 @@
 }
 
 .btn-redact {
-    min-width: 125px;
+    min-width: 170px;
+    max-height: 27px;
     padding: 0 10px;
     justify-content: center;
     /* outline: 1px solid #4a3838ba; */
@@ -63,4 +84,26 @@
     width: 100%;
     padding: 8px;
     background: aquamarine;
+}
+
+/* ======================= reset password ========================== */
+
+.reset-block-input {
+    width: 23em;
+    flex-direction: column;
+}
+
+.reset-pas-block {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.reset-box {
+    margin: 0 auto;
+    max-width: 390px;
+}
+
+.pl-5 {
+    margin: 0;
+    padding-left: 35px;
 }

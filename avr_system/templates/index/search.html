@@ -3,6 +3,7 @@
 
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
+
 {% block content %}
 <div class="s-section">
     <div class="container-box">
@@ -16,12 +17,17 @@
                     <b>Название:</b><span>{{ system.name }}</span>
                     <b>Тип ПЛК:</b><span> {{ system.relay.brand }}_{{ system.relay }}</span>
                     <a href="{% url 'system:detail_system' system.type_avr.slug %}">
-                    Подробнее >>
+                        Подробнее >>
                     </a>
                 </p>
                 <hr>
             </div>
             {% endfor %}
+            {% if messages %}
+            <div class="message">
+                {% include 'messages/message.html' %}
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>

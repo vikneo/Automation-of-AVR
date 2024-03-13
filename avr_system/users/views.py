@@ -13,7 +13,11 @@ from django.contrib.auth.views import (
     LogoutView,
     PasswordChangeView,
     PasswordChangeDoneView,
-)
+    PasswordResetView,
+    PasswordResetDoneView,
+    PasswordResetConfirmView,
+    PasswordResetCompleteView
+    )
 
 from .models import Profile
 from .forms import (
@@ -101,7 +105,8 @@ class ProfileUpdateVIew(MenuMixin, UpdateView):
         user, profile = self.get_profile_user()
         data = {
             'email': user.email, 'first_name': user.first_name,
-            'last_name': user.last_name, 'phone': profile.phone
+            'last_name': user.last_name, 'phone': profile.phone,
+            'avatar': profile.avatar
         }
         form = ProfileUpdateForm(data)
 
@@ -118,18 +123,20 @@ class ProfileUpdateVIew(MenuMixin, UpdateView):
         user.save()
 
         profile.phone = form.cleaned_data['phone']
+        if form.cleaned_data['avatar']:
+            profile.avatar = form.cleaned_data['avatar']
         profile.save()
 
         return super().form_valid(form)
 
 
-class UserPasswordResetView(MenuMixin, PasswordChangeView):
+class UserPasswordChangeView(MenuMixin, PasswordChangeView):
     """
     Changing the password
     """
     form_class = UserRasswordResetForm
     success_url = reverse_lazy("users:password_change_done")
-    template_name = 'profile/password_reset.html'
+    template_name = 'profile/password_change.html'
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -155,14 +162,71 @@ class UserPasswordChangeDoneView(MenuMixin, PasswordChangeDoneView):
         return context
 
 
+class UserPasswordResetView(MenuMixin, PasswordResetView):
+    """
+    Reset password
+    """
+    template_name = 'registration/password_reset.html'
+
+    def get_context_data(self, **kwargs: Any) -> Any:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu()
+        )
+        return context
+
+
+class UserPasswordResetDoneView(MenuMixin, PasswordResetDoneView):
+    """
+    Password reset done
+    """
+    template_name = 'registration/password_reset_done.html'
+
+    def get_context_data(self, **kwargs: Any) -> Any:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu()
+        )
+        return context
+
+
+class UserPasswordResetConfirmView(MenuMixin, PasswordResetConfirmView):
+    """
+    Password reset confirm
+    """
+    template_name = 'registration/password_reset_confirm.html'
+
+    def get_context_data(self, **kwargs: Any) -> Any:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+        )
+        return context
+
+
+class UserPasswordResetCompleteView(MenuMixin, PasswordResetCompleteView):
+    """
+    Password reset complete
+    """
+    template_name = 'registration/password_reset_complete.html'
+
+    def get_context_data(self, **kwargs: Any) -> Any:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+        )
+        return context
+
+
 class ContactView(MenuMixin, TemplateView):
     """
     Contact information
     """
     template_name = 'index/contact.html'
+    success_url = reverse_lazy('users:password_reset_confirm')
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
-        context = super().get_context_data(**kwargs)
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]: 
+        context =super().get_context_data(**kwargs)
         context.update(
             self.get_menu(link=3),
             title='Контакты'

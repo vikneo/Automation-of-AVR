@@ -1,8 +1,8 @@
-import re
 from typing import Any
 from django.db.models.query import QuerySet
 from django.views.generic import ListView, DetailView, TemplateView
-# from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+from django.contrib import messages
+from django.db.models import Q
 
 from .models import TypeAVR, Classification
 from utilits.mixins import MenuMixin
@@ -80,24 +80,22 @@ class SearcheView(MenuMixin, ListView):
         return context
     
     def get_queryset(self) -> QuerySet[Any]:
-        query = self.request.GET.get('search').upper()
-        return self.get_search_field(query)
+        not_found = 'Нет ни одного совпадения'
+        try:
+            query = self.request.GET.get('search').upper()
+            result = Classification.objects.filter(
+                Q(name__icontains=query) | 
+                Q(relay__model__icontains=query) |
+                Q(type_avr__name__startswith=query)
+                )
+            if not result:
+                messages.info(self.request, not_found)
+            return result
+        except Exception as err:
+            messages.info(self.request, not_found)
     
-    @staticmethod
-    def get_search_field(query: str) -> list:
-        """
-        Search for the value in the "name" and "comment" fields of the "Classification" model
-        """
-        product_list = []
-        for result in Classification.objects.all():
-
-            if re.findall(fr'{query}', result.name.upper()) or re.findall(fr'{query}', result.comment.upper()):
-                product_list.append(result)
-        
-        return product_list
 
     """
-
     def get_queryset(self) -> QuerySet[Any]:
         # Search for db postgres
         query = self.request.GET.get('search')
@@ -105,3 +103,10 @@ class SearcheView(MenuMixin, ListView):
         search_query = SearchQuery(query)
         return Classification.objects.annotate(rank=SearchRank(search_vector, search_query)).order_by("-rank")
     """
+
+
+class OrderView(ListView):
+    """
+    
+    """
+    pass
