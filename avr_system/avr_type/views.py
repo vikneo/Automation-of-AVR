@@ -88,7 +88,7 @@ class SearcheView(MenuMixin, ListView):
             query = self.request.GET.get('search').upper()
             if not query:
                 messages.info(self.request, message)
-                return result
+                return []
             result = Classification.objects.filter(Q(name__icontains=query) | Q(relay__model__icontains=query))
             if not result:
                 messages.info(self.request, not_found)
