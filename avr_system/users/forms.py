@@ -21,7 +21,7 @@ class UserFormAuth(AuthenticationForm):
         ),
         "inactive": _("Данный аккаунт заблокирован."),
     }
-    
+
     def clean_username(self):
         """
         Verification of allowing active users to log in and rejecting inactive users to log in.
@@ -34,9 +34,9 @@ class UserFormAuth(AuthenticationForm):
             return username
         if Profile.objects.get(user__username=username).archive:
             raise ValidationError(
-            self.error_messages["inactive"],
-            code="inactive",
-        )
+                self.error_messages["inactive"],
+                code="inactive",
+            )
 
         return username
 
@@ -143,7 +143,8 @@ class UserRasswordResetForm(PasswordChangeForm):
     """
     old_password = forms.CharField(label="Старый пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
     new_password1 = forms.CharField(label="Новый пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-    new_password2 = forms.CharField(label="Подтверждение пароля", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    new_password2 = forms.CharField(label="Подтверждение пароля",
+                                    widget=forms.PasswordInput(attrs={'class': 'form-input'}))
 
 
 class ProfileUpdateForm(forms.ModelForm):
@@ -155,7 +156,7 @@ class ProfileUpdateForm(forms.ModelForm):
     email = forms.CharField(label='Почта', widget=forms.EmailInput(attrs={'class': 'form-input'}), required=False)
     phone = forms.CharField(label='Телефон', widget=forms.TextInput(attrs={'class': 'form-input'}), required=False)
     avatar = forms.ImageField(
-        label='Аватар', 
+        label='Аватар',
         widget=forms.FileInput(
             attrs={
                 'class': 'form-input',
@@ -163,13 +164,13 @@ class ProfileUpdateForm(forms.ModelForm):
                 'name': "avatar",
                 'type': "file",
                 'enctype': "multipart/form-data",
-                },
-            ), 
-            required=False
-        )
+            },
+        ),
+        required=False
+    )
 
     class Meta:
-        model=Profile
+        model = Profile
         fields = ['avatar', 'phone']
 
 
@@ -180,20 +181,20 @@ class CallBackForm(forms.Form):
     first_name = forms.CharField(label='Имя', widget=forms.TextInput(attrs={
         'class': 'form-input',
         'placeholder': 'Имя'
-        }))
+    }))
     last_name = forms.CharField(label='Фамилия', widget=forms.TextInput(attrs={
         'class': 'form-input',
         'placeholder': 'Фамилия'
-        }))
+    }))
     email = forms.CharField(label='Почта', widget=forms.EmailInput(attrs={
         'class': 'form-input',
         'placeholder': 'Email'
-        }))
+    }))
     comments = forms.CharField(label='Текст сообщения', widget=forms.Textarea(attrs={
         'class': 'form-input',
         'rows': '6',
         'placeholder': 'Текст сообщения'
-        }))
+    }))
 
     class Meta:
         fields = ['first_name', 'last_name', 'email', 'comment']

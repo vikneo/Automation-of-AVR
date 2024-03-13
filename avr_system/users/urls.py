@@ -20,11 +20,11 @@ app_name = 'users'
 
 urlpatterns = [
     path('password-reset/', UserPasswordResetView.as_view(), name='password_reset'),
-    path('password-reset/done/', 
-         UserPasswordResetDoneView.as_view(template_name = 'users/password_reset_done.html'), 
+    path('password-reset/done/',
+         UserPasswordResetDoneView.as_view(template_name='users/password_reset_done.html'),
          name='password_reset_done'),
-    path('password-reset-confirm/<uidb64>/<token>/', 
-         UserPasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), 
+    path('password-reset-confirm/<uidb64>/<token>/',
+         UserPasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'),
          name='password_reset_confirm'),
     path('password-reset-complete/',
          UserPasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),

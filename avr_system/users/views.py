@@ -17,7 +17,7 @@ from django.contrib.auth.views import (
     PasswordResetDoneView,
     PasswordResetConfirmView,
     PasswordResetCompleteView
-    )
+)
 
 from .models import Profile
 from .forms import (
@@ -225,8 +225,8 @@ class ContactView(MenuMixin, TemplateView):
     template_name = 'index/contact.html'
     success_url = reverse_lazy('users:password_reset_confirm')
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]: 
-        context =super().get_context_data(**kwargs)
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
         context.update(
             self.get_menu(link=3),
             title='Контакты'

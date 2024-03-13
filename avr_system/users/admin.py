@@ -50,5 +50,5 @@ class AdminProfile(admin.ModelAdmin):
         """
         if obj.avatar:
             return mark_safe(f'<img src="{obj.avatar.url}" width=50>')
-    
+
     get_avatar.short_description = 'аватар'
