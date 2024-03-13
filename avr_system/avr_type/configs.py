@@ -20,6 +20,7 @@ class Settings:
     def __init__(self):
         """ Значения по умолчанию """
         self.__site_name = 'NFT\nNetwork Future Technology'
+        self.__count_banner = 5
         self.__cache_banner = SECOND * 10  # 10 min
         self.__cache_product = DAYS  # 1 day
         self.__cache_system = DAYS  # 1 day
@@ -60,6 +61,12 @@ class Settings:
         """
 
         self.__site_name = name
+    
+    def set_count_banner(self, count: int) -> None:
+        """
+        Устанавливает для вывода количество банеров
+        """
+        self.__count_banner = int(count)
 
     def set_cache_banner(self, time_cache: int) -> None:
         """
@@ -105,6 +112,14 @@ class Settings:
         """
 
         return self.__site_name
+    
+    def get_count_banner(self) -> int:
+        """
+        Возвращает количество баннеров для показа
+
+        :return: int
+        """
+        return self.__count_banner
 
     def get_cache_banner(self, time: bool = True) -> int | str:
         """
