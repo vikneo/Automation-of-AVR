@@ -15,6 +15,6 @@ def banner_main_page() -> dict:
     """
     try:
         banners = cache.get_or_set('banners', Banner.objects.filter(is_active=True), settings.get_cache_banner())
-        return {'banners': banners[:settings.get_count_banner]}
+        return {'banners': banners[:settings.get_count_banner()]}
     except Exception as err:
         HttpResponse('Not Banners', err)  # TODO заменить заглушку на файл с логами
