@@ -81,15 +81,14 @@ class SearcheView(MenuMixin, ListView):
         return context
     
     def get_queryset(self) -> QuerySet[Any]:
-        result = []
         not_found = 'Нет ни одного совпадения'
-        message = 'Поле поиска пустое'
         try:
             query = self.request.GET.get('search').upper()
-            if not query:
-                messages.info(self.request, message)
-                return []
-            result = Classification.objects.filter(Q(name__icontains=query) | Q(relay__model__icontains=query))
+            result = Classification.objects.filter(
+                Q(name__icontains=query) | 
+                Q(relay__model__icontains=query) |
+                Q(type_avr__name__startswith=query)
+                )
             if not result:
                 messages.info(self.request, not_found)
             return result
