@@ -9,6 +9,8 @@ SECOND = 60
 HOURS = 60 * 60
 DAYS = 60 * 60 * 24
 
+COUNT_BANNERS = 5
+
 
 class Settings:
     """
@@ -20,7 +22,7 @@ class Settings:
     def __init__(self):
         """ Значения по умолчанию """
         self.__site_name = 'NFT'
-        self.__count_banner = 5
+        self.__count_banner = COUNT_BANNERS
         self.__cache_banner = SECOND * 10  # 10 min
         self.__cache_product = DAYS  # 1 day
         self.__cache_system = DAYS  # 1 day
@@ -113,7 +115,7 @@ class Settings:
 
         return self.__site_name
     
-    def get_count_banner(self) -> int:
+    def get_count_banner(self, time: bool = True) -> int:
         """
         Возвращает количество баннеров для показа
 

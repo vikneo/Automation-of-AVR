@@ -157,6 +157,24 @@ class SiteName(ChangeListMixin, TemplateView):
         return HttpResponseRedirect(reverse_lazy('system:settings'))
 
 
+class SetCountBanner(ChangeListMixin, TemplateView):
+    """
+    Установка количеста отображаемых банеров
+    """
+    template_name = 'admin/settings.html'
+
+    def post(self, request) -> HttpResponse:
+        count_banner = request.POST.get('count_banner')
+        try:
+            num_banner = int(re.findall(r'[0-9]+', count_banner)[0])
+            settings.set_count_banner(num_banner)
+            messages.success(self.request, f"Установлено {num_banner}шт. банеров.")
+        except Exception:
+            messages.warning(self.request, _('Поле должно cодержать только цифры'))
+        
+        return HttpResponseRedirect(reverse_lazy('system:settings'))
+
+
 class CacheSetupBannerView(ChangeListMixin, TemplateView):
     """
     Класс CacheSetupBannerView позволяет задать или обновить время кэширования Баннера
