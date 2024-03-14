@@ -9,7 +9,8 @@ from .views import (
     SettingsView,
     SiteName,
     CacheSetupBannerView,
-    CacheSetupSystemView
+    CacheSetupSystemView,
+    CacheSetupProductView
     )
 
 app_name = 'system'
@@ -24,4 +25,5 @@ urlpatterns = [
     path('site-name/', SiteName.as_view(), name='site_name'),
     path('cache-time-banner/', CacheSetupBannerView.as_view(), name='cache_time_banner'),
     path('cache-time-system/', CacheSetupSystemView.as_view(), name='cache_time_system'),
+    path('cache-time-product/', CacheSetupProductView.as_view(), name='cache_time_product'),
 ]

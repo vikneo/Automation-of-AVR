@@ -14,6 +14,7 @@
 <div class="flex container">
     <div class="setup-time-cache">
         <h2 class="flex">{% translate 'Настройка времени кэширования' %}</h2>
+        <p class="mb-3"></p>
         <table class="table table-box">
             <thead>
                 <tr>
@@ -73,6 +74,25 @@
                         </td>
                     </form>
                 </tr>
+                <tr>
+                    <form class="flex setup" action="{% url 'system:cache_time_product' %}" method="post">
+                        <td>
+                            {% csrf_token %}
+                            <label for="cache_time_catalog">
+                                <li>{% translate 'Время кэширование продукта' %}:</li>
+                            </label>
+                        <td>
+                            <span class="span-default">{{ cache_product }}</span>
+                        </td>
+                        <td>
+                            <input class="td-input" type="text" name="cache_time_catalog" id="cache_time_catalog"
+                                   placeholder="Указывать в мин">
+                        </td>
+                        <td>
+                            <input class="btn-input" type="submit" value={% translate "Задать" %}>
+                        </td>
+                    </form>
+                </tr>
             </thead>
         </table>
     </div>
@@ -84,25 +104,7 @@
         <div class="setup-time-cache">
 
 
-            <tr>
-                <form class="flex setup" action="{% url 'system:cache_time_catalog' %}" method="post">
-                    <td>
-                        {% csrf_token %}
-                        <label for="cache_time_catalog">
-                            <li>{% translate 'Время кэширование Каталога' %}:</li>
-                        </label>
-                    <td>
-                        <span class="span-default">{{ cache_catalog }}</span>
-                    </td>
-                    <td>
-                        <input type="text" name="cache_time_catalog" id="cache_time_catalog"
-                               placeholder={% translate "Указывать в мин" %}>
-                    </td>
-                    <td>
-                        <input type="submit" value={% translate "Задать" %}>
-                    </td>
-                </form>
-            </tr>
+
         </div>
     </table> -->
 <!-- 

@@ -193,3 +193,21 @@ class CacheSetupSystemView(ChangeListMixin, TemplateView):
             messages.warning(self.request, _('Поле не должно быть пустым или содержать только цифры'))
         
         return HttpResponseRedirect(reverse_lazy('system:settings'))
+
+
+class CacheSetupProductView(ChangeListMixin, TemplateView):
+    """
+    Класс CacheSetupSystemView позволяет задать или обновить время кэширования типы АВР
+    """
+    template_name = 'admin/settings.html'
+
+    def post(self, request) -> HttpResponse:
+        cache_time_product = request.POST.get('cache_time_product')
+        try:
+            time_product = int(''.join(re.findall(r'[0-9]+', cache_time_product)))
+            settings.set_cache_product(time_product)
+            messages.success(self.request, _('Время кэширование для классификации продукта установлено'))
+        except Exception:
+            messages.warning(self.request, _('Поле не должно быть пустым или содержать только цифры'))
+        
+        return HttpResponseRedirect(reverse_lazy('system:settings'))
