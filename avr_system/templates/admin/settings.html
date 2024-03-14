@@ -4,10 +4,6 @@
 
 
 <title>{% block title %}{{ title }}{% endblock %}</title>
-{% block extrastyle %}
-    <link rel="stylesheet" href="{% static 'admin/css/admin.css' %}">
-    {{ block.super }}
-{% endblock %}
 
 {% block branding %}
     <h1><a href="{% url 'admin:index' %}">{{ title_site }}</a></h1>
