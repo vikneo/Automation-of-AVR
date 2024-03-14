@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.core.cache import cache
 
 from .models import TypeAVR, Classification
 from utilits.mixins import MenuMixin, ChangeListMixin
@@ -31,7 +32,8 @@ class MainPage(MenuMixin, ListView):
         return context
 
     def get_queryset(self) -> QuerySet[Any]:
-        return TypeAVR.objects.filter(access=True)
+        
+        return cache.get_or_set("systems", TypeAVR.objects.filter(access=True), settings.get_cache_system())
 
 
 class TypeAvrDetail(MenuMixin, DetailView):
@@ -164,7 +166,6 @@ class CacheSetupBannerView(ChangeListMixin, TemplateView):
 
     def post(self, request) -> HttpResponse:
         cache_time_banner = request.POST.get('cache_time_banner')
-        print(cache_time_banner)
         try:
             time_banner = int(''.join(re.findall(r'[0-9]+', cache_time_banner)))
             if time_banner:
@@ -173,4 +174,22 @@ class CacheSetupBannerView(ChangeListMixin, TemplateView):
         except Exception:
             messages.warning(self.request, _('Поле не должно быть пустым или содержать только цифры'))
 
+        return HttpResponseRedirect(reverse_lazy('system:settings'))
+
+
+class CacheSetupSystemView(ChangeListMixin, TemplateView):
+    """
+    Класс CacheSetupSystemView позволяет задать или обновить время кэширования типы АВР
+    """
+    template_name = 'admin/settings.html'
+
+    def post(self, request) -> HttpResponse:
+        cache_time_system = request.POST.get('cache_time_system')
+        try:
+            time_system = int(''.join(re.findall(r'[0-9]+', cache_time_system)))
+            settings.set_cache_system(time_system)
+            messages.success(self.request, _('Время кэширование для типов АВР установлено'))
+        except Exception:
+            messages.warning(self.request, _('Поле не должно быть пустым или содержать только цифры'))
+        
         return HttpResponseRedirect(reverse_lazy('system:settings'))

@@ -43,3 +43,14 @@ def clear_cache_banner(**kwargs) -> None:
         cache.delete('banners')
     except Exception as err:
         pass
+
+
+@receiver(pre_save, sender=TypeAVR)
+def clear_cache_banner(**kwargs) -> None:
+    """
+    Clearing the cache when changing the TypeAVR model
+    """
+    try:
+        cache.delete('systems')
+    except Exception as err:
+        pass

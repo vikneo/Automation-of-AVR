@@ -56,7 +56,7 @@ class ChangeListMixin:
             opts=model._meta,
             title_site=settings.get_site_name(),
             cache_banner=settings.get_cache_banner(time=False),
-            cache_prod_detail=settings.get_cache_product_detail(time=False),
+            cache_system=settings.get_cache_product_detail(time=False),
             cache_catalog=settings.get_cache_system(time=False),
             cache_params=settings.get_cache_filter_params(time=False),
         )
