@@ -11,6 +11,10 @@ h2 {
     min-width: 100%;
 }
 
+.td-input {
+    justify-content: flex-end;
+}
+
 .td-clear-cache {
     justify-content: flex-end;
     padding-right: 38px;

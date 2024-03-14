@@ -31,7 +31,7 @@
                             <input class="td-input" type="text" name="title_site" id="title_site"
                                 placeholder="Укажите новое название">
                         </td>
-                        <td>
+                        <td class="flex td-input">
                             <input class="btn-input" type="submit" value={% translate "Сменить" %}>
                         </td>
                     </form>
@@ -50,7 +50,7 @@
                             <input class="td-input" type="text" name="cache_time_banner" id="cache_time_banner"
                                 placeholder='Указывать в мин'>
                         </td>
-                        <td>
+                        <td class="flex td-input">
                             <input class="btn-input" type="submit" value={% translate "Задать" %}>
                         </td>
                     </form>
@@ -67,9 +67,9 @@
                         </td>
                         <td>
                             <input class="td-input" type="text" name="cache_time_system" id="cache_time_system"
-                                   placeholder="Указывать в мин">
+                                placeholder="Указывать в мин">
                         </td>
-                        <td>
+                        <td class="flex td-input">
                             <input class="btn-input" type="submit" value={% translate "Задать" %}>
                         </td>
                     </form>
@@ -86,9 +86,9 @@
                         </td>
                         <td>
                             <input class="td-input" type="text" name="cache_time_catalog" id="cache_time_catalog"
-                                   placeholder="Указывать в мин">
+                                placeholder="Указывать в мин">
                         </td>
-                        <td>
+                        <td class="flex td-input">
                             <input class="btn-input" type="submit" value={% translate "Задать" %}>
                         </td>
                     </form>
@@ -111,16 +111,88 @@
                         </td>
                         <td>
                             <input class="td-input" type="text" name="count_banner" id="count_banner"
-                                   placeholder="Указать кол-во">
+                                placeholder="Указать кол-во">
                         </td>
-                        <td>
+                        <td class="flex td-input">
                             <input class="btn-input" type="submit" value={% translate "Задать" %}>
                         </td>
                     </form>
                 </tr>
             </thead>
         </table>
+        <table class="table table-box">
+            <h2 class="flex">{% translate 'Очистка кэша' %}</h2>
+            <p class="mb-3"></p>
+            <tr>
+                <td>
+                    <li>{% translate 'Очистить весь кэш' %}</li>
+                </td>
+                <td class="flex td-input">
+                    <a class="clear-cache" href="{% url 'system:clear_cache_all' %}">
+                        <input class="btn-input"  type="submit" value={% translate "Очистить" %}>
+                    </a>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
 {{ block.super }}
 {% endblock %}
+
+<!-- <table>
+    <div class="setup-time-cache">
+        <h2 class="flex">{% translate 'Очистка кэша' %}</h2>
+
+        <hr>
+        <tr>
+            <td>
+                <li>{% translate 'Очистить кэш Баннера' %}</li>
+            </td>
+            <td class="flex td-clear-cache">
+                <a class="clear-cache" href="{% url 'store:clear_banner_cache' %}">
+                    <input type="submit" value={% translate "Очистить" %}>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <li>{% translate 'Очистить кэш Корзины' %}</li>
+            </td>
+            <td class="flex td-clear-cache">
+                <a class="clear-cache" href="{% url 'store:clear_cart_cache' %}">
+                    <input type="submit" value={% translate "Очистить" %}>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <li>{% translate 'Очистить кэш Детализации продукта' %}</li>
+            </td>
+            <td class="flex td-clear-cache">
+                <a class="clear-cache" href="{% url 'store:clear_product_detail' %}">
+                    <input type="submit" value={% translate "Очистить" %}>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <li>{% translate 'Очистить кэш Продавца' %}</li>
+            </td>
+            <td class="flex td-clear-cache">
+                <a class="clear-cache" href="{% url 'store:clear_seller' %}">
+                    <input type="submit" value={% translate "Очистить" %}>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <li>{% translate 'Очистить кэш Каталога продуктов' %}</li>
+            </td>
+            <td class="flex td-clear-cache">
+                <a class="clear-cache" href="{% url 'store:clear_catalog' %}">
+                    <input type="submit" value={% translate "Очистить" %}>
+                </a>
+            </td>
+        </tr>
+    </div>
+</table> -->

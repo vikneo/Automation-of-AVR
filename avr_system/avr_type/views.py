@@ -229,3 +229,26 @@ class CacheSetupProductView(ChangeListMixin, TemplateView):
             messages.warning(self.request, _('Поле не должно быть пустым или содержать только цифры'))
         
         return HttpResponseRedirect(reverse_lazy('system:settings'))
+
+# =========================== Настройки по очистке кэша =================================
+    
+class ClearCacheAll(ChangeListMixin, TemplateView):
+    """
+    Класс ClearCacheAll позволяет очистить весь кэш сайта
+    """
+
+    template_name = 'admin/settings.html'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        cache.clear()
+        messages.success(self.request, _('Кэш полностью очищен.'))
+
+        return context
+
+    def dispatch(self, request, *args, **kwargs) -> HttpResponse:
+        if cache:
+            super().dispatch(request, *args, **kwargs)
+
+        return HttpResponseRedirect(reverse_lazy("system:settings"))
+
