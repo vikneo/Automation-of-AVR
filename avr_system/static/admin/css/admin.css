@@ -36,10 +36,14 @@ h2 {
 
 .span-default, .time_today {
     padding-left: 35px;
-    color: yellow;
+    color: red;
     font-size: 20px;
 }
 
 .time_today {
     font-size: 15px;
+}
+
+.btn-input {
+    min-width: 9em;
 }

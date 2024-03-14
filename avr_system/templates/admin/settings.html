@@ -6,61 +6,63 @@
 <title>{% block title %}{{ title }}{% endblock %}</title>
 
 {% block branding %}
-    <h1><a href="{% url 'admin:index' %}">{{ title_site }}</a></h1>
+<h1><a href="{% url 'admin:index' %}">{{ title_site }}</a></h1>
 {% endblock %}
 
 
 {% block content %}
-    <div class="flex container">
-        <div  class="setup-time-cache">
-            <h2 class="flex">{% translate 'Настройка времени кэширования' %}</h2>
-            <table class="table-success">
-                <thead>
-                    <tr class="table-success">
-                        <form class="flex setup" method="post" action="{% url 'system:site_name' %}">
-                            {% csrf_token %}
-                            <td>
-                                <label for="title_site">
-                                    <li>{% translate 'Название магазина' %}:</li>
-                                </label>
-                            <td>
-                                <span class="span-default">{{ title_site }}</span>
-                            </td>
-                            <td>
-                                <input type="text" name="title_site" id="title_site" placeholder={% translate "Укажите новое название" %}>
-                            </td>
-                            <td>
-                                <input type="submit" value={% translate "Сменить" %}>
-                        </form>
-                    </tr>
-                    <hr>
-                    <tr class="table-success">
-                        <form class="flex setup" action="{% url 'system:cache_time_banner' %}" method="post">
-                            {% csrf_token %}
-                            <td>
-                                <label for="cache_time_banner">
-                                    <li>{% translate 'Время кэширование Баннера' %}:</li>
-                                </label>
-                            <td>
-                                <span class="span-default">{{ cache_banner }}</span>
-                            </td>
-                            <td>
-                                <input type="text" name="cache_time_banner" id="cache_time_banner"
-                                       placeholder={% translate "Указывать в мин" %}>
-                            </td>
-                            <td>
-                                <input type="submit" value={% translate "Задать" %}>
-                            </td>
-                        </form>
-                    </tr>
-                </thead>
-            </table>
-        </div>
+<div class="flex container">
+    <div class="setup-time-cache">
+        <h2 class="flex">{% translate 'Настройка времени кэширования' %}</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <form class="flex setup" method="post" action="{% url 'system:site_name' %}">
+                        {% csrf_token %}
+                        <td>
+                            <label for="title_site">
+                                <li>{% translate 'Название магазина' %}:</li>
+                            </label>
+                        <td>
+                            <span class="span-default">{{ title_site }}</span>
+                        </td>
+                        <td>
+                            <input class="td-input" type="text" name="title_site" id="title_site"
+                                placeholder="Укажите новое название">
+                        </td>
+                        <td>
+                            <input class="btn-input" type="submit" value={% translate "Сменить" %}>
+                        </td>
+                    </form>
+                </tr>
+                <hr>
+                <tr>
+                    <form class="flex setup" action="{% url 'system:cache_time_banner' %}" method="post">
+                        {% csrf_token %}
+                        <td>
+                            <label for="cache_time_banner">
+                                <li>{% translate 'Время кэширование Баннера' %}:</li>
+                            </label>
+                        <td>
+                            <span class="span-default">{{ cache_banner }}</span>
+                        </td>
+                        <td>
+                            <input class="td-input" type="text" name="cache_time_banner" id="cache_time_banner"
+                                placeholder='Указывать в мин'>
+                        </td>
+                        <td>
+                            <input class="btn-input" type="submit" value={% translate "Задать" %}>
+                        </td>
+                    </form>
+                </tr>
+            </thead>
+        </table>
     </div>
-    {{ block.super }}
-    {% endblock %}
-    
-    <!-- <table>
+</div>
+{{ block.super }}
+{% endblock %}
+
+<!-- <table>
         <div class="setup-time-cache">
 
             <tr>
