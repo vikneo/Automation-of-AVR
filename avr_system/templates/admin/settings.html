@@ -95,9 +95,9 @@
                 </tr>
             </thead>
         </table>
-        <h2 class="flex">{% translate 'Настройка отображение кол-во баннеров' %}</h2>
-        <p class="mb-3"></p>
         <table class="table table-box">
+            <h2 class="flex">{% translate 'Настройка отображение кол-во баннеров' %}</h2>
+            <p class="mb-3"></p>
             <thead>
                 <tr>
                     <form class="flex setup" action="{% url 'system:set_count_banner' %}" method="post">
@@ -129,6 +129,16 @@
                 </td>
                 <td class="flex td-input">
                     <a class="clear-cache" href="{% url 'system:clear_cache_all' %}">
+                        <input class="btn-input"  type="submit" value={% translate "Очистить" %}>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <li>{% translate 'Очистить кэш баннеров' %}</li>
+                </td>
+                <td class="flex td-input">
+                    <a class="clear-cache" href="{% url 'system:clear_cache_banner' %}">
                         <input class="btn-input"  type="submit" value={% translate "Очистить" %}>
                     </a>
                 </td>

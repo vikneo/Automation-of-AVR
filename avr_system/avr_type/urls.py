@@ -12,7 +12,8 @@ from .views import (
     CacheSetupBannerView,
     CacheSetupSystemView,
     CacheSetupProductView,
-    ClearCacheAll
+    ClearCacheAll,
+    ClearCacheBanner
     )
 
 app_name = 'system'
@@ -30,4 +31,5 @@ urlpatterns = [
     path('cache-time-product/', CacheSetupProductView.as_view(), name='cache_time_product'),
     path('set-count-banner/', SetCountBanner.as_view(), name='set_count_banner'),
     path('clear-cache-all', ClearCacheAll.as_view(), name='clear_cache_all'),
+    path('clear-cache-banner', ClearCacheBanner.as_view(), name='clear_cache_banner'),
 ]

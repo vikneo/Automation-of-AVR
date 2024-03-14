@@ -252,3 +252,23 @@ class ClearCacheAll(ChangeListMixin, TemplateView):
 
         return HttpResponseRedirect(reverse_lazy("system:settings"))
 
+
+class ClearCacheBanner(ChangeListMixin, TemplateView):
+    """
+    Класс ClearCacheBanner позволяет очистить кэш банера
+    """
+
+    template_name = 'admin/settings.html'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        cache.delete('banners')
+        messages.success(self.request, _('Кэш банера очищен.'))
+
+        return context
+
+    def dispatch(self, request, *args, **kwargs) -> HttpResponse:
+        if cache:
+            super().dispatch(request, *args, **kwargs)
+
+        return HttpResponseRedirect(reverse_lazy("system:settings"))
