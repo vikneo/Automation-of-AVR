@@ -3,6 +3,10 @@ h2 {
     font-size: 20px;
 }
 
+.table-box {
+    min-width: 100%;
+}
+
 .td-clear-cache {
     justify-content: flex-end;
     padding-right: 38px;
