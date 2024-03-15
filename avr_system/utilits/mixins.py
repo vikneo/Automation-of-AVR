@@ -1,4 +1,8 @@
 # from django.utils.translation import gettext_lazy as _
+from django.contrib import admin
+
+from avr_type.models import Classification
+from avr_type.configs import settings
 
 
 class MenuMixin:
@@ -36,4 +40,25 @@ class MenuMixin:
             menu=self.__menu__(),
         )
 
+        return context
+
+
+class ChangeListMixin:
+    """
+    Класс ChangeListMixin миксуется для отображения "sidebar" и навигации в "header" в шаблоне настроек
+    """
+
+    def get_change_list_admin(self, **kwargs):
+        model = Classification
+        context = kwargs
+        context = dict(list(context.items()) + list(admin.site.each_context(self.request).items()))
+        context.update(
+            opts=model._meta,
+            title_site=settings.get_site_name(),
+            cache_banner=settings.get_cache_banner(time=False),
+            cache_product=settings.get_cache_product_detail(time=False),
+            cache_system=settings.get_cache_system(time=False),
+            num_banners=settings.get_count_banner(time=False),
+            cache_params=settings.get_cache_filter_params(time=False),
+        )
         return context

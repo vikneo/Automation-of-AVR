@@ -9,6 +9,10 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
 } */
 
+.move {
+    background: url(../img/NFT.png);
+}
+
 h2 {
     font-size: 26px;
     text-align: center;
@@ -42,7 +46,6 @@ nav, footer {
 }
 
 .align-items {
-    /* max-width: 100%; */
     align-items: center;
 }
 
@@ -107,6 +110,7 @@ nav, footer {
 }
 
 .nav-title {
+    width: 1170px;
     padding-top: 20px;
     padding-bottom: 10px;
     justify-content: space-around;
