@@ -1,3 +1,4 @@
+import os
 from django.db.models.query import QuerySet
 from django.db.models import Q
 from django.views.generic import ListView, DetailView, TemplateView
@@ -6,7 +7,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.core.cache import cache
+from django.core.cache import cache, caches
 
 from .models import TypeAVR, Classification
 from utilits.mixins import MenuMixin, ChangeListMixin
@@ -52,11 +53,15 @@ class TypeAvrDetail(MenuMixin, DetailView):
         return context
     
     def get_queryset(self) -> QuerySet[Any]:
+        """
         return cache.get_or_set(
-            f"{self.kwargs['slug']}", 
+            {"product": f"{self.kwargs['slug']}"}, 
             TypeAVR.objects.filter(access=True, slug=self.kwargs['slug']), 
             settings.get_cache_product_detail(),
+            version=self.kwargs['slug'],
             )
+        """
+        return TypeAVR.objects.filter(access=True, slug=self.kwargs['slug'])
 
 
 class HelpView(MenuMixin, TemplateView):
@@ -289,6 +294,27 @@ class ClearCacheSystem(ChangeListMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         cache.delete('systems')
         messages.success(self.request, _('Кэш типов АВР очищен.'))
+
+        return context
+
+    def dispatch(self, request, *args, **kwargs) -> HttpResponse:
+        if cache:
+            super().dispatch(request, *args, **kwargs)
+
+        return HttpResponseRedirect(reverse_lazy("system:settings"))
+
+
+class ClearCacheProduct(ChangeListMixin, TemplateView):
+    """
+    Класс ClearCacheBanner позволяет очистить кэш продуктов с детальной информацией
+    """
+
+    template_name = 'admin/settings.html'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        cache.delete('product')
+        messages.success(self.request, _('Кэш продуктов очищен.'))
 
         return context
 
