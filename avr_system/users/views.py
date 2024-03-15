@@ -9,24 +9,24 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.views.generic import DetailView, CreateView, FormView, TemplateView, UpdateView
 from django.contrib.auth.views import (
-    LoginView, 
-    LogoutView, 
-    PasswordChangeView, 
+    LoginView,
+    LogoutView,
+    PasswordChangeView,
     PasswordChangeDoneView,
     PasswordResetView,
     PasswordResetDoneView,
     PasswordResetConfirmView,
     PasswordResetCompleteView
-    )
+)
 
 from .models import Profile
 from .forms import (
-    CallBackForm, 
-    UserFormAuth, 
-    RegisterUserForm, 
+    CallBackForm,
+    UserFormAuth,
+    RegisterUserForm,
     UserRasswordResetForm,
     ProfileUpdateForm
-    )
+)
 from utilits.mixins import MenuMixin
 from avr_system.settings import EMAIL_HOST_USER
 
@@ -38,7 +38,7 @@ class RegisterUserView(MenuMixin, CreateView):
     template_name = 'profile/register.html'
     form_class = RegisterUserForm
 
-    def  get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
             self.get_menu(),
@@ -94,13 +94,13 @@ class ProfileUpdateVIew(MenuMixin, UpdateView):
         )
 
         return context
-    
+
     def get_profile_user(self):
         user = self.request.user
         profile = Profile.objects.get(user=user)
 
         return user, profile
-    
+
     def get_data(self):
         user, profile = self.get_profile_user()
         data = {
@@ -111,10 +111,10 @@ class ProfileUpdateVIew(MenuMixin, UpdateView):
         form = ProfileUpdateForm(data)
 
         return form
-    
+
     def get_success_url(self) -> str:
-        return reverse_lazy('users:account', kwargs={'pk': self.request.user.id})    
-    
+        return reverse_lazy('users:account', kwargs={'pk': self.request.user.id})
+
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         user, profile = self.get_profile_user()
         user.first_name = form.cleaned_data['first_name']
@@ -146,6 +146,7 @@ class UserPasswordChangeView(MenuMixin, PasswordChangeView):
         )
 
         return context
+
 
 class UserPasswordChangeDoneView(MenuMixin, PasswordChangeDoneView):
     """
@@ -223,9 +224,9 @@ class ContactView(MenuMixin, TemplateView):
     """
     template_name = 'index/contact.html'
     success_url = reverse_lazy('users:password_reset_confirm')
-    
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]: 
-        context =super().get_context_data(**kwargs)
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
         context.update(
             self.get_menu(link=3),
             title='Контакты'
@@ -254,7 +255,7 @@ class CallBackView(MenuMixin, FormView):
         data = form.cleaned_data
         subject = 'Автоматизация систем АВР! (Уточнение или заказ)'
         body = {
-            "first_name":"Имя: " + data["first_name"],
+            "first_name": "Имя: " + data["first_name"],
             "last_name": "Фамилия: " + data["last_name"],
             "email": "Почта: " + data["email"],
             "message": data['comments']
@@ -264,7 +265,7 @@ class CallBackView(MenuMixin, FormView):
             subject=subject,
             message=message,
             from_email=EMAIL_HOST_USER,
-            recipient_list=[EMAIL_HOST_USER,]
+            recipient_list=[EMAIL_HOST_USER, ]
         )
         messages.success(self.request, 'Ваше письмо успешно отправлено')
         return HttpResponseRedirect(reverse_lazy("system:index"))
