@@ -1,7 +1,7 @@
 from django.db.models.query import QuerySet
 from django.db.models import Q
 from django.views.generic import ListView, DetailView, TemplateView
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
@@ -47,12 +47,16 @@ class TypeAvrDetail(MenuMixin, DetailView):
         context = super().get_context_data(**kwargs)
         context.update(
             self.get_menu(),
-            title='Типы АВР'
+            title=context['system']
         )
         return context
     
     def get_queryset(self) -> QuerySet[Any]:
-        return TypeAVR.objects.filter(access=True)
+        return cache.get_or_set(
+            f"{self.kwargs['slug']}", 
+            TypeAVR.objects.filter(access=True, slug=self.kwargs['slug']), 
+            settings.get_cache_product_detail(),
+            )
 
 
 class HelpView(MenuMixin, TemplateView):
