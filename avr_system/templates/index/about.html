@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static i18n %}
+
+{% block title %} <title>{{ title }}</title> {% endblock %}
+
+{% block content %}
+<div class="s-section">
+    <div class="container-box">
+        <div class="h2-block decoration">
+            <h2>NFT</h2>
+        </div>
+        <div class="about-move">
+            <video autoplay loop muted class="about-block-move container video" id="bgvideo">
+                <source src="{% static 'img/move/galagram.mp4' %}" type="video/mp4">
+                </source>
+            </video>
+            <div class="about-container">
+                <div class="flex overlay">
+                    <span class="about-title">NFT</span><br>
+                    <span class="about-desc">Сетевые Технологии Будущего</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
