@@ -66,7 +66,7 @@ class TypeAvrDetail(MenuMixin, DetailView):
 
 class HelpView(MenuMixin, TemplateView):
     """
-    Template rresentation "HelpView"
+    Template presentation "HelpView"
     """
     template_name = 'index/helper.html'
 
@@ -75,6 +75,21 @@ class HelpView(MenuMixin, TemplateView):
         context.update(
             self.get_menu(link=5),
             title='Помощь'
+        )
+        return context
+
+
+class AboutView(MenuMixin, TemplateView):
+    """
+    Template presentation "AboutView"
+    """
+    template_name = 'index/about.html'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(link=6),
+            title='О нас'
         )
         return context
 
