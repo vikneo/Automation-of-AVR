@@ -23,6 +23,7 @@ class MenuMixin:
             {'name': 'Контакты', 'url': 'users:contact', 'link': 3},
             # {'name': 'Заказы', 'url': 'system:order', 'link': 4},
             {'name': 'Помощь', 'url': 'system:helper', 'link': 5},
+            {'name': 'О нас', 'url': 'system:about', 'link': 6},
         ]
 
         return menu
