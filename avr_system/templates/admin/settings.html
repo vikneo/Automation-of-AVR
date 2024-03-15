@@ -13,9 +13,8 @@
 {% block content %}
 <div class="flex container">
     <div class="setup-time-cache">
-        <h2 class="flex">{% translate 'Настройка времени кэширования' %}</h2>
-        <p class="mb-3"></p>
         <table class="table table-box">
+            <caption class="pb-1">НАСТРОЙКА ВРЕМЕНИ КЭШИРОВАНИЯ</caption>
             <thead>
                 <tr>
                     <form class="flex setup" method="post" action="{% url 'system:site_name' %}">
@@ -96,7 +95,7 @@
             </thead>
         </table>
         <table class="table table-box">
-            <h2 class="flex">{% translate 'Настройка отображение кол-во баннеров' %}</h2>
+            <caption class="pb-1">НАСТРОЙКА ОТОБРАЖЕНИЕ КОЛ-ВО БАННЕРОВ</caption>
             <p class="mb-3"></p>
             <thead>
                 <tr>
@@ -121,28 +120,50 @@
             </thead>
         </table>
         <table class="table table-box">
-            <h2 class="flex">{% translate 'Очистка кэша' %}</h2>
+            <caption class="pb-1">ОЧИСТКА КЭША</caption>
             <p class="mb-3"></p>
-            <tr>
-                <td>
-                    <li>{% translate 'Очистить весь кэш' %}</li>
-                </td>
-                <td class="flex td-input">
-                    <a class="clear-cache" href="{% url 'system:clear_cache_all' %}">
-                        <input class="btn-input"  type="submit" value={% translate "Очистить" %}>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <li>{% translate 'Очистить кэш баннеров' %}</li>
-                </td>
-                <td class="flex td-input">
-                    <a class="clear-cache" href="{% url 'system:clear_cache_banner' %}">
-                        <input class="btn-input"  type="submit" value={% translate "Очистить" %}>
-                    </a>
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <td>
+                        <li>{% translate 'Очистить весь кэш' %}</li>
+                    </td>
+                    <td class="flex td-input">
+                        <a class="clear-cache" href="{% url 'system:clear_cache_all' %}">
+                            <input class="btn-input" type="submit" value={% translate "Очистить" %}>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li>{% translate 'Очистить кэш баннеров' %}</li>
+                    </td>
+                    <td class="flex td-input">
+                        <a class="clear-cache" href="{% url 'system:clear_cache_banner' %}">
+                            <input class="btn-input" type="submit" value={% translate "Очистить" %}>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li>{% translate 'Очистить кэш типов АВР' %}</li>
+                    </td>
+                    <td class="flex td-input">
+                        <a class="clear-cache" href="{% url 'system:clear_cache_system' %}">
+                            <input class="btn-input" type="submit" value={% translate "Очистить" %}>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li>{% translate 'Очистить кэш продуктов' %}</li>
+                    </td>
+                    <td class="flex td-input">
+                        <a class="clear-cache" href="#">
+                            <input class="btn-input" type="submit" value={% translate "Очистить" %}>
+                        </a>
+                    </td>
+                </tr>
+            </thead>
         </table>
     </div>
 </div>
