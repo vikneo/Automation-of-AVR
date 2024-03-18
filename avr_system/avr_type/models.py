@@ -2,6 +2,8 @@ from typing import Any
 from django.db import models
 from django.urls import reverse_lazy
 
+from users.models import Profile
+
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
@@ -160,7 +162,7 @@ class SmartRelay(models.Model):
 
 class File(models.Model):
     """
-    The Class description the models the file for firmwares.
+    The Class description the model the file for firmwares.
     """
     firmware = models.ForeignKey(
         Classification,
@@ -182,7 +184,7 @@ class File(models.Model):
 
 class Banner(models.Model):
     """
-    The Class description the models the banners.
+    The Class description the models the banner.
     """
     name = models.CharField(max_length=100, verbose_name='Название', db_index=True)
     slug = models.SlugField(max_length=100, verbose_name='URL', db_index=True, unique=True)
@@ -210,7 +212,7 @@ class Banner(models.Model):
 
 class Advantage(models.Model):
     """
-    The Class description the Advantage models.
+    The Class description the Advantage model.
     """
     title = models.CharField(max_length=50, verbose_name='Название', db_index=True)
     icon = models.ImageField(upload_to=advantage_icon_directory_path, verbose_name='Иконка')
@@ -223,3 +225,20 @@ class Advantage(models.Model):
         db_table = 'advantage'
         verbose_name = 'advantage'
         verbose_name_plural = 'advantages'
+
+
+class Order(models.Model):
+    """
+    The Class description the Order model.
+    """
+    class Status(models.IntegerChoices):
+        """
+        The model of choice of options
+        """
+    
+
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='orders', verbose_name='Профиль')
+    system = models.CharField(max_length=100, verbose_name='Тип АВР')
+    name = models.CharField(max_length=100, verbose_name='Название шкафа')
+    options = models.TextField(verbose_name='Опции')
+
