@@ -10,7 +10,8 @@ from .models import (
     File,
     Banner,
     ImageTypeAVR,
-    Advantage
+    Advantage,
+    Order
 )
 
 
@@ -144,3 +145,13 @@ class AdminAdvantage(admin.ModelAdmin):
         return mark_safe(f'<img src="{obj.icon.url}" alt="" width="30">')
 
     get_icon.short_description = 'Иконка'
+
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    """
+    
+    """
+    list_display = ['system', 'name', 'status']
+    list_filter = ['name']
+    
