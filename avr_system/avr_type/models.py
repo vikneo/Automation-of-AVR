@@ -16,7 +16,7 @@ def path_file_logic(instance: 'File', filename: str) -> str:
     :param filename: name file
     :return: str - path to save
     """
-    return f"{instance.firmware.name}/logic/{filename}"
+    return f"logics/{instance.firmware.name}/logic/{filename}"
 
 
 def path_file_description(instance: 'File', filename: str) -> str:
@@ -27,7 +27,18 @@ def path_file_description(instance: 'File', filename: str) -> str:
     :param filename: name file
     :return: str - path to save
     """
-    return f"{instance.firmware.name}/description/{filename}"
+    return f"logics/{instance.firmware.name}/description/{filename}"
+
+def path_order_file_description(instance: 'File', filename: str) -> str:
+    """
+    The function generates a path based on the name of the file with description the algorithm.
+
+    :param instance: object File
+    :param filename: name file
+    :return: str - path to save
+    """
+    return f"orders/{instance.firmware.name}/description/{filename}"
+
 
 
 def banner_images_directory_path(instance: 'Banner', filename: str) -> str:
@@ -247,6 +258,9 @@ class Order(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название шкафа')
     options = models.TextField(verbose_name='Опции')
     status = models.IntegerField(verbose_name='Статус заказа', choices=Status.choices)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
+    access = models.BooleanField(default=True, verbose_name='Архив')
+    description = models.FileField(upload_to=path_order_file_description, verbose_name='Описание алгоритма')
 
     def __str__(self) -> str:
         return f"Заказа №_{self.pk}"

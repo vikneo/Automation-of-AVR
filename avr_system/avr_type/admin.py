@@ -119,7 +119,7 @@ class AdminBanner(admin.ModelAdmin):
         queryset.update(is_active=True)
 
     search_fields = ['name', ]
-    list_display = ['name', 'is_active', 'get_photo']
+    list_display = ['name', 'create_at', 'is_active', 'get_photo']
     list_filter = ['name', ]
     prepopulated_fields = {'slug': ('name',)}
 
@@ -152,6 +152,5 @@ class OrderAdmin(admin.ModelAdmin):
     """
     
     """
-    list_display = ['system', 'name', 'status']
+    list_display = ['system', 'name', 'status', 'created_at']
     list_filter = ['name']
-    
