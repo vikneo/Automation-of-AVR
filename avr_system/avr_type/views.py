@@ -1,7 +1,7 @@
 import os
 from django.db.models.query import QuerySet
 from django.db.models import Q
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import ListView, DetailView, TemplateView, CreateView
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
@@ -10,6 +10,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.cache import cache, caches
 
 from .models import TypeAVR, Classification
+from.forms import OrderCreateForm
 from utilits.mixins import MenuMixin, ChangeListMixin
 from .configs import settings
 
@@ -137,11 +138,25 @@ class SearcheView(MenuMixin, ListView):
     """
 
 
-class OrderView(ListView):
+class OrderView(MenuMixin, CreateView):
     """
     
     """
-    pass
+    model = Classification
+    template_name = 'orders/order.html'
+    form_class = OrderCreateForm
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+            title='Оформление заявки'
+        )
+        return context
+    
+    def form_valid(self, form):
+        return super().form_valid(form)
+
 
 # ==================================== Settings in panel admin =========================================
 
