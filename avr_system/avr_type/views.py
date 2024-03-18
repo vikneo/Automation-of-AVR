@@ -156,12 +156,12 @@ class OrderView(MenuMixin, CreateView):
     
     def form_valid(self, form):
         user = Profile.objects.get(user=self.request.user)
-        print(user)
         type_avr = form.cleaned_data['type_avr']
         name = form.cleaned_data['name']
         relay = form.cleaned_data['relay']
-
         description = form.cleaned_data['description']
+        sсheme = form.cleaned_data['scheme']
+
         Order.objects.create(
             user=user,
             system=type_avr,
@@ -180,6 +180,7 @@ class OrderView(MenuMixin, CreateView):
                 f"{'Лампа АВР сработал' if form.cleaned_data['lamp_avr_work'] else ''}",
             ],
             description=description,
+            scheme=sсheme,
         )
         return super().form_valid(form)
 
