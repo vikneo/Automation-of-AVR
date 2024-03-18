@@ -235,10 +235,23 @@ class Order(models.Model):
         """
         The model of choice of options
         """
-    
+    PROCESS = 1, 'В обработке'
+    ORDERED = 2, 'Заказано'
+    READY = 3, 'Готов'
+    WORK = 4, 'В работе'
+
+    __empty__ = 'Статус заказа'
 
     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='orders', verbose_name='Профиль')
     system = models.CharField(max_length=100, verbose_name='Тип АВР')
     name = models.CharField(max_length=100, verbose_name='Название шкафа')
     options = models.TextField(verbose_name='Опции')
+    status = models.IntegerField(verbose_name='Статус заказа', choices=Status.choices)
 
+    def __str__(self) -> str:
+        return f"Заказа №_{self.pk}"
+    
+    class Meta:
+        db_table = 'orders'
+        verbose_name = 'заказ'
+        verbose_name_plural = 'заказы'
