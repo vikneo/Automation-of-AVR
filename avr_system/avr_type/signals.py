@@ -65,4 +65,4 @@ def get_status_order(instance, **kwargs) -> None:
     
     """
     if not instance.status:
-        instance.status = 'PROCESS'
+        instance.status = 'В обработке'
