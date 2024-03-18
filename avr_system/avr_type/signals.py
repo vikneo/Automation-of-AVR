@@ -9,6 +9,7 @@ from .models import (
     Classification,
     SmartRelay,
     Banner,
+    Order,
 )
 
 
@@ -56,3 +57,12 @@ def clear_cache_banner(**kwargs) -> None:
         cache.delete('systems')
     except Exception as err:
         pass
+
+
+@receiver(pre_save, sender=Order)
+def get_status_order(instance, **kwargs) -> None:
+    """
+    
+    """
+    if not instance.status:
+        instance.status = 'PROCESS'
