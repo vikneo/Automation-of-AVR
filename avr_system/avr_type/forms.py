@@ -1,26 +1,12 @@
 from django import forms
-from django.contrib.admin.sites import site
-from django.contrib.admin.widgets import ForeignKeyRawIdWidget
 
 from .models import Classification
 
 
 class OrderCreateForm(forms.ModelForm):
     """ """
-
-    # type_avr = forms.Select(attrs={'class': 'form-input'})
     name = forms.CharField(label='Название', widget=forms.TextInput(attrs={'class': 'form-input'}))
-    # relay = forms.Select(attrs={'class': 'form-input'})
-    # vnr = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
-    # temp_tp = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
-    # reset = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
-    # choice_in = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
-    # dgu = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
-    # work_tp = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
-    # status_box = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
-    # signal_ozz = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
-    # lamp_avr_ready = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
-    # lamp_avr_work = forms.CharField(label='Название', widget=forms.CheckboxInput(attrs={'class': 'form-input'}))
+
     comment = forms.CharField(
         label="Комментарий",
         widget=forms.Textarea(attrs={
