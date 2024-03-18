@@ -137,10 +137,9 @@ class SearcheView(MenuMixin, ListView):
         return Classification.objects.annotate(rank=SearchRank(search_vector, search_query)).order_by("-rank")
     """
 
-
 class OrderView(MenuMixin, CreateView):
     """
-    
+    Submission for placing an order.
     """
     model = Classification
     template_name = 'orders/order.html'
