@@ -29,7 +29,8 @@ def path_file_description(instance: 'File', filename: str) -> str:
     """
     return f"logics/{instance.firmware.name}/description/{filename}"
 
-def path_order_file_description(instance: 'File', filename: str) -> str:
+
+def path_order_file_description(instance: 'Order', filename: str) -> str:
     """
     The function generates a path based on the name of the file with description the algorithm.
 
@@ -39,6 +40,16 @@ def path_order_file_description(instance: 'File', filename: str) -> str:
     """
     return f"orders/{instance.name}/description/{filename}"
 
+
+def path_order_file_scheme(instance: 'Order', filename: str) -> str:
+    """
+    The function generates a path based on the name of the file with description the algorithm.
+
+    :param instance: object File
+    :param filename: name file
+    :return: str - path to save
+    """
+    return f"orders/{instance.name}/scheme/{filename}"
 
 
 def banner_images_directory_path(instance: 'Banner', filename: str) -> str:
@@ -127,7 +138,7 @@ class Classification(models.Model):
     signal_ozz = models.BooleanField(verbose_name='Сигнал ОЗЗ', default=False)
     comment = models.TextField(verbose_name='Примечание', default='!')
     relay = models.ForeignKey("SmartRelay", on_delete=models.CASCADE, verbose_name='Тип ПЛК')
-    access = models.BooleanField(default=True, verbose_name='Доступ')
+    access = models.BooleanField(default=False, verbose_name='Доступ')
     macro_code = models.CharField(max_length=12, verbose_name='Код к макросам')
 
     def __str__(self) -> str:
@@ -261,6 +272,7 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
     access = models.BooleanField(default=False, verbose_name='Архив')
     description = models.FileField(upload_to=path_order_file_description, verbose_name='Описание алгоритма')
+    scheme = models.FileField(upload_to=path_order_file_scheme, verbose_name='Схема АВР')
 
     def __str__(self) -> str:
         return f"Заказ №_{self.pk}"
