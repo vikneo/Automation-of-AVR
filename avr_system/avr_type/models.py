@@ -37,7 +37,7 @@ def path_order_file_description(instance: 'File', filename: str) -> str:
     :param filename: name file
     :return: str - path to save
     """
-    return f"orders/{instance.firmware.name}/description/{filename}"
+    return f"orders/{instance.name}/description/{filename}"
 
 
 
@@ -242,28 +242,28 @@ class Order(models.Model):
     """
     The Class description the Order model.
     """
-    class Status(models.IntegerChoices):
+    class StatusOrder(models.TextChoices):
         """
         The model of choice of options
         """
-    PROCESS = 1, 'В обработке'
-    ORDERED = 2, 'Заказано'
-    READY = 3, 'Готов'
-    WORK = 4, 'В работе'
+        PROCESS = 'В обработке'
+        ORDERED = 'Заказано'
+        READY = 'Готов'
+        WORK = 'В работе'
 
-    __empty__ = 'Статус заказа'
+        __empty__ = 'Статус заказа'
 
     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='orders', verbose_name='Профиль')
     system = models.CharField(max_length=100, verbose_name='Тип АВР')
     name = models.CharField(max_length=100, verbose_name='Название шкафа')
     options = models.TextField(verbose_name='Опции')
-    status = models.IntegerField(verbose_name='Статус заказа', choices=Status.choices)
+    status = models.CharField(max_length=15, verbose_name='Статус заказа', choices=StatusOrder)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
-    access = models.BooleanField(default=True, verbose_name='Архив')
+    access = models.BooleanField(default=False, verbose_name='Архив')
     description = models.FileField(upload_to=path_order_file_description, verbose_name='Описание алгоритма')
 
     def __str__(self) -> str:
-        return f"Заказа №_{self.pk}"
+        return f"Заказ №_{self.pk}"
     
     class Meta:
         db_table = 'orders'
