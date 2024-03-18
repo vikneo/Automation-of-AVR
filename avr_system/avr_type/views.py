@@ -1,7 +1,7 @@
 import os
 from django.db.models.query import QuerySet
 from django.db.models import Q
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import ListView, DetailView, TemplateView, CreateView
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
@@ -9,7 +9,9 @@ from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.cache import cache, caches
 
-from .models import TypeAVR, Classification
+from .models import TypeAVR, Classification, Order
+from.forms import OrderCreateForm
+from users.models import Profile
 from utilits.mixins import MenuMixin, ChangeListMixin
 from .configs import settings
 
@@ -136,12 +138,53 @@ class SearcheView(MenuMixin, ListView):
         return Classification.objects.annotate(rank=SearchRank(search_vector, search_query)).order_by("-rank")
     """
 
+class OrderView(MenuMixin, CreateView):
+    """
+    Submission for placing an order.
+    """
+    # model = Classification
+    template_name = 'orders/order.html'
+    form_class = OrderCreateForm
 
-class OrderView(ListView):
-    """
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+            title='Оформление заявки'
+        )
+        return context
     
-    """
-    pass
+    def form_valid(self, form):
+        user = Profile.objects.get(user=self.request.user)
+        print(user)
+        type_avr = form.cleaned_data['type_avr']
+        name = form.cleaned_data['name']
+        relay = form.cleaned_data['relay']
+
+        description = form.cleaned_data['description']
+        Order.objects.create(
+            user=user,
+            system=type_avr,
+            name=name,
+            options=[
+                f"Тип реле - {relay}",
+                f"{'Ключ ВНР' if form.cleaned_data['vnr'] else ''}",
+                f"{'Перегрев тр-ров ' if form.cleaned_data['temp_tp'] else ''}",
+                f"{'Кнопка сброса' if form.cleaned_data['reset'] else ''}",
+                f"{'Выбор основного ввода' if form.cleaned_data['choice_in'] else ''}",
+                f"{'Наличие ДГУ' if form.cleaned_data['dgu'] else ''}",
+                f"{'Зпрет паралели' if form.cleaned_data['work_tp'] else ''}",
+                f"{'Положение выкатных АВ' if form.cleaned_data['status_box'] else ''}",
+                f"{'Сигнал ОЗЗ' if form.cleaned_data['signal_ozz'] else ''}",
+                f"{'Лампа АВР готов' if form.cleaned_data['lamp_avr_ready'] else ''}",
+                f"{'Лампа АВР сработал' if form.cleaned_data['lamp_avr_work'] else ''}",
+            ],
+            description=description,
+        )
+        return super().form_valid(form)
+
+    def get_success_url(self) -> str:
+        return reverse_lazy('users:account', kwargs={'pk': self.request.user.id})
 
 # ==================================== Settings in panel admin =========================================
 

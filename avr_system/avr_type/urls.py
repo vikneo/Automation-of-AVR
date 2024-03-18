@@ -16,7 +16,8 @@ from .views import (
     ClearCacheAll,
     ClearCacheBanner,
     ClearCacheSystem,
-    ClearCacheProduct
+    ClearCacheProduct,
+    OrderView,
     )
 
 app_name = 'system'

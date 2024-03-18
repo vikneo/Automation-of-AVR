@@ -2,6 +2,8 @@ from typing import Any
 from django.db import models
 from django.urls import reverse_lazy
 
+from users.models import Profile
+
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
@@ -14,7 +16,7 @@ def path_file_logic(instance: 'File', filename: str) -> str:
     :param filename: name file
     :return: str - path to save
     """
-    return f"{instance.firmware.name}/logic/{filename}"
+    return f"logics/{instance.firmware.name}/logic/{filename}"
 
 
 def path_file_description(instance: 'File', filename: str) -> str:
@@ -25,7 +27,29 @@ def path_file_description(instance: 'File', filename: str) -> str:
     :param filename: name file
     :return: str - path to save
     """
-    return f"{instance.firmware.name}/description/{filename}"
+    return f"logics/{instance.firmware.name}/description/{filename}"
+
+
+def path_order_file_description(instance: 'Order', filename: str) -> str:
+    """
+    The function generates a path based on the name of the file with description the algorithm.
+
+    :param instance: object File
+    :param filename: name file
+    :return: str - path to save
+    """
+    return f"orders/{instance.name}/description/{filename}"
+
+
+def path_order_file_scheme(instance: 'Order', filename: str) -> str:
+    """
+    The function generates a path based on the name of the file with description the algorithm.
+
+    :param instance: object File
+    :param filename: name file
+    :return: str - path to save
+    """
+    return f"orders/{instance.name}/scheme/{filename}"
 
 
 def banner_images_directory_path(instance: 'Banner', filename: str) -> str:
@@ -114,7 +138,7 @@ class Classification(models.Model):
     signal_ozz = models.BooleanField(verbose_name='Сигнал ОЗЗ', default=False)
     comment = models.TextField(verbose_name='Примечание', default='!')
     relay = models.ForeignKey("SmartRelay", on_delete=models.CASCADE, verbose_name='Тип ПЛК')
-    access = models.BooleanField(default=True, verbose_name='Доступ')
+    access = models.BooleanField(default=False, verbose_name='Доступ')
     macro_code = models.CharField(max_length=12, verbose_name='Код к макросам')
 
     def __str__(self) -> str:
@@ -160,7 +184,7 @@ class SmartRelay(models.Model):
 
 class File(models.Model):
     """
-    The Class description the models the file for firmwares.
+    The Class description the model the file for firmwares.
     """
     firmware = models.ForeignKey(
         Classification,
@@ -182,7 +206,7 @@ class File(models.Model):
 
 class Banner(models.Model):
     """
-    The Class description the models the banners.
+    The Class description the models the banner.
     """
     name = models.CharField(max_length=100, verbose_name='Название', db_index=True)
     slug = models.SlugField(max_length=100, verbose_name='URL', db_index=True, unique=True)
@@ -210,7 +234,7 @@ class Banner(models.Model):
 
 class Advantage(models.Model):
     """
-    The Class description the Advantage models.
+    The Class description the Advantage model.
     """
     title = models.CharField(max_length=50, verbose_name='Название', db_index=True)
     icon = models.ImageField(upload_to=advantage_icon_directory_path, verbose_name='Иконка')
@@ -223,3 +247,37 @@ class Advantage(models.Model):
         db_table = 'advantage'
         verbose_name = 'advantage'
         verbose_name_plural = 'advantages'
+
+
+class Order(models.Model):
+    """
+    The Class description the Order model.
+    """
+    class StatusOrder(models.TextChoices):
+        """
+        The model of choice of options
+        """
+        PROCESS = 'В обработке'
+        ORDERED = 'Заказано'
+        READY = 'Готов'
+        WORK = 'В работе'
+
+        __empty__ = 'Статус заказа'
+
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='orders', verbose_name='Профиль')
+    system = models.CharField(max_length=100, verbose_name='Тип АВР')
+    name = models.CharField(max_length=100, verbose_name='Название шкафа')
+    options = models.TextField(verbose_name='Опции')
+    status = models.CharField(max_length=15, verbose_name='Статус заказа', choices=StatusOrder)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
+    access = models.BooleanField(default=False, verbose_name='Архив')
+    description = models.FileField(upload_to=path_order_file_description, verbose_name='Описание алгоритма')
+    scheme = models.FileField(upload_to=path_order_file_scheme, verbose_name='Схема АВР')
+
+    def __str__(self) -> str:
+        return f"Заказ №_{self.pk}"
+    
+    class Meta:
+        db_table = 'orders'
+        verbose_name = 'заказ'
+        verbose_name_plural = 'заказы'

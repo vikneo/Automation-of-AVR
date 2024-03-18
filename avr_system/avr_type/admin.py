@@ -10,7 +10,8 @@ from .models import (
     File,
     Banner,
     ImageTypeAVR,
-    Advantage
+    Advantage,
+    Order
 )
 
 
@@ -118,7 +119,7 @@ class AdminBanner(admin.ModelAdmin):
         queryset.update(is_active=True)
 
     search_fields = ['name', ]
-    list_display = ['name', 'is_active', 'get_photo']
+    list_display = ['name', 'create_at', 'is_active', 'get_photo']
     list_filter = ['name', ]
     prepopulated_fields = {'slug': ('name',)}
 
@@ -144,3 +145,12 @@ class AdminAdvantage(admin.ModelAdmin):
         return mark_safe(f'<img src="{obj.icon.url}" alt="" width="30">')
 
     get_icon.short_description = 'Иконка'
+
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    """
+    
+    """
+    list_display = ['system', 'name', 'status', 'created_at']
+    list_filter = ['name']
