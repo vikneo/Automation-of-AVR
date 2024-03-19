@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="flex align-items">
                                     <li class="nav-item">
-                                        <a class="nav-link active reset-padding" style="color: aliceblue;"
+                                        <a class="nav-link active reset-padding"
                                             aria-current="page" href="{% url 'users:login' %}">
                                             <!--  href="." onclick="AuthUser('/user/login', 'Popup window', 600, 600)" -->
                                             Вход
@@ -58,7 +58,7 @@
                                     </li>
                                     <span>|</span>
                                     <li class="nav-item">
-                                        <a class="nav-link active reset-padding" style="color: aliceblue;"
+                                        <a class="nav-link active reset-padding"
                                             aria-current="page" href="{% url 'users:register' %}">
                                             <!-- href="" onclick="RegisterUser('/user/register', 'Popup window', 600, 600)" -->
                                             Регистрация
@@ -75,7 +75,7 @@
                                     </li>
                                     <li>
                                         {% if user.is_staff %}
-                                        <a class="nav-link active" href="{% url 'admin:index' %}">
+                                        <a class="nav-link-prim active" href="{% url 'admin:index' %}">
                                             <span class="d-inline-block nav-icon-circle" tabindex="0"
                                                 data-bs-toggle="tooltip" data-bs-title="Отключенная подсказка">
                                                 <img src="{% static 'img/default/admin_set.svg' %}" width='30px'
@@ -87,10 +87,10 @@
                                 </div>
                                 <div class="flex align-items user-auth">
                                     <li class="nav-item">
-                                        <a class="nav-link active" style="color: aliceblue;" aria-current="page"
+                                        <a class="nav-link-prim a" aria-current="page"
                                             href="{% url 'users:account' user.profiles.id %}">Личный кабинет</a>
                                     </li>
-                                    <span>| </span>
+                                    <span>|</span>
                                     <li class="nav-item">
                                         <form action="{% url 'users:logout' %}" method="post">
                                             {% csrf_token %}
@@ -119,7 +119,6 @@
                                         <ul class="nav nav-pills">
                                             {% for m in menu %}
                                             <li class="flex nav-item align-items">
-                                                {{ link }}
                                                 <a class="nav-link {% if link == m.link %}active{% endif %}"
                                                     aria-current="page" href="{% url m.url %}">{{ m.name }}</a>
                                             </li>
