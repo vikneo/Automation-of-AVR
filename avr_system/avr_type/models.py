@@ -99,8 +99,8 @@ class TypeAVR(models.Model):
 
     class Meta:
         db_table = 'type_avr'
-        verbose_name = 'system'
-        verbose_name_plural = 'systems'
+        verbose_name = 'система'
+        verbose_name_plural = 'системы'
 
 
 class ImageTypeAVR(models.Model):
@@ -115,8 +115,8 @@ class ImageTypeAVR(models.Model):
 
     class Meta:
         db_table = 'images'
-        verbose_name = 'image'
-        verbose_name_plural = 'images'
+        verbose_name = 'картинка'
+        verbose_name_plural = 'картинки'
 
 
 class Classification(models.Model):
@@ -146,8 +146,8 @@ class Classification(models.Model):
 
     class Meta:
         db_table = 'classification'
-        verbose_name = 'classification'
-        verbose_name_plural = 'classifications'
+        verbose_name = 'продукт'
+        verbose_name_plural = 'продукты'
 
 
 class SmartRelay(models.Model):
@@ -178,8 +178,8 @@ class SmartRelay(models.Model):
 
     class Meta:
         db_table = 'smart_relay'
-        verbose_name = 'relay'
-        verbose_name_plural = 'relays'
+        verbose_name = 'плк'
+        verbose_name_plural = 'плк'
 
 
 class File(models.Model):
@@ -200,8 +200,8 @@ class File(models.Model):
 
     class Meta:
         db_table = 'files'
-        verbose_name = 'file'
-        verbose_name_plural = 'files'
+        verbose_name = 'файл'
+        verbose_name_plural = 'файлы'
 
 
 class Banner(models.Model):
@@ -228,8 +228,8 @@ class Banner(models.Model):
     class MEta:
         db_table = 'banners'
         ordering = ['name', ]
-        verbose_name = 'banner'
-        verbose_name_plural = 'banners'
+        verbose_name = 'баннер'
+        verbose_name_plural = 'баннеры'
 
 
 class Advantage(models.Model):
@@ -245,8 +245,8 @@ class Advantage(models.Model):
 
     class Meta:
         db_table = 'advantage'
-        verbose_name = 'advantage'
-        verbose_name_plural = 'advantages'
+        verbose_name = 'преимущество'
+        verbose_name_plural = 'преимущества'
 
 
 class Order(models.Model):

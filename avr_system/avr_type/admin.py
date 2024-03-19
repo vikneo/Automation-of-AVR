@@ -152,5 +152,5 @@ class OrderAdmin(admin.ModelAdmin):
     """
     
     """
-    list_display = ['system', 'name', 'status', 'created_at']
+    list_display = ['id', 'system', 'name', 'status', 'created_at']
     list_filter = ['name']

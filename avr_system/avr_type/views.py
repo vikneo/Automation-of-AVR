@@ -5,6 +5,7 @@ from django.views.generic import ListView, DetailView, TemplateView, CreateView
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
+from django.core.mail import send_mail
 from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.cache import cache, caches
@@ -14,6 +15,7 @@ from.forms import OrderCreateForm
 from users.models import Profile
 from utilits.mixins import MenuMixin, ChangeListMixin
 from .configs import settings
+from avr_system.settings import EMAIL_HOST_USER
 
 import re
 from typing import Any
@@ -142,7 +144,7 @@ class OrderView(MenuMixin, CreateView):
     """
     Submission for placing an order.
     """
-    # model = Classification
+    success_message = "Ваша заявка отправлена."
     template_name = 'orders/order.html'
     form_class = OrderCreateForm
 
@@ -159,10 +161,11 @@ class OrderView(MenuMixin, CreateView):
         type_avr = form.cleaned_data['type_avr']
         name = form.cleaned_data['name']
         relay = form.cleaned_data['relay']
+        comment = form.cleaned_data['comment']
         description = form.cleaned_data['description']
         sсheme = form.cleaned_data['scheme']
 
-        Order.objects.create(
+        order = Order.objects.create(
             user=user,
             system=type_avr,
             name=name,
@@ -182,7 +185,30 @@ class OrderView(MenuMixin, CreateView):
             description=description,
             scheme=sсheme,
         )
+        self.send_mail_message(comment, order)
+        messages.success(self.request, f'Ваша заявка создана.')
+        
         return super().form_valid(form)
+    
+    def send_mail_message(self, comment, num_order):
+        """
+        
+        """
+        subject = f'Оформление заказа {num_order.id}'
+        body = {
+            "first_name": "Имя: " + self.request.user.first_name,
+            "last_name": "Фамилия: " + self.request.user.last_name,
+            "email": "Почта: " + self.request.user.email,
+            "message": f"Оформлен {num_order}.\nКомментарий к заяке:\n{comment}",
+        }
+        message = '\n'.join(body.values())
+        send_mail(
+            subject=subject,
+            message=message,
+            from_email=EMAIL_HOST_USER,
+            recipient_list=[EMAIL_HOST_USER, ]
+        )
+
 
     def get_success_url(self) -> str:
         return reverse_lazy('users:account', kwargs={'pk': self.request.user.id})
