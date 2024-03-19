@@ -2,12 +2,9 @@
 
 <div class="flex justify-content">
     <ul class="pagination">
-        <li class="page-item">
-            <span class="page-link">Предыдущая</span>
-            {% if page_obj.has_previous %}
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}"></a>
-            {% endif %}
-        </li>
+        {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a></li>
+        {% endif %}
         {% if page_obj.number %}
         <li class="page-item"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
         {% endif %}
