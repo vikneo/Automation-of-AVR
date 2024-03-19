@@ -4,19 +4,11 @@
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
 {% block left_sidebar %}
-<div class="s-section">
-    <div class="product-detail-box mt-5">
-        <p class="flex p-rows m-16">
-            <a class="flex btn-redact" href="{% url 'system:order' %}">Оставить заявку</a>
-        </p>
-        <p class="flex p-rows m-16">
-            <a class="flex btn-redact" href="#" onclick="stopper()">Детали заказа</a>
-        </p>
-    </div>
-</div>
+{% include 'profile/nav_left_sidebar.html' %}
 {% endblock %}
 
 {% block content %}
+{% include 'messages/message.html' %}
 <div class="s-section">
     <div class="container-box" style=" background: #c7b9b938;">
         <div class="h2-block decoration">

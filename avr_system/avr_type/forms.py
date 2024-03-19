@@ -20,6 +20,9 @@ class OrderCreateForm(forms.ModelForm):
     description = forms.CharField(
         label="Описание файла", widget=forms.FileInput(attrs={"class": "form-input"})
     )
+    scheme = forms.CharField(
+        label="Схема подключения", widget=forms.FileInput(attrs={"class": "form-input"})
+    )
 
     class Meta:
         model = Classification

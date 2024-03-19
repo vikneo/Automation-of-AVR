@@ -18,6 +18,7 @@ from .views import (
     ClearCacheSystem,
     ClearCacheProduct,
     OrderView,
+    OrderDetailView,
     )
 
 app_name = 'system'
@@ -29,6 +30,7 @@ urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
     path('search/', SearcheView.as_view(), name='search'),
     path('order/', OrderView.as_view(), name='order'),
+    path('order-history/', OrderDetailView.as_view(), name='order_history'),
     path('settings/', SettingsView.as_view(), name='settings'),
     path('site-name/', SiteName.as_view(), name='site_name'),
     path('cache-time-banner/', CacheSetupBannerView.as_view(), name='cache_time_banner'),
