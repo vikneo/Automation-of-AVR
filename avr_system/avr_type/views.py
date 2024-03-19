@@ -1,14 +1,15 @@
 import os
 from django.db.models.query import QuerySet
 from django.db.models import Q
+from django.http import Http404
 from django.views.generic import ListView, DetailView, TemplateView, CreateView
-from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.core.mail import send_mail
 from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.core.cache import cache, caches
+from django.core.cache import cache
 
 from .models import TypeAVR, Classification, Order
 from.forms import OrderCreateForm
@@ -109,7 +110,11 @@ class SearcheView(MenuMixin, ListView):
     allow_empty = True
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
-        context = super().get_context_data(**kwargs)
+        try:
+            context = super().get_context_data(**kwargs)
+        except Exception as err:
+            raise Http404("Poll does not exist")
+
         context.update(
             self.get_menu(),
             title=f"Результат поиска - {self.request.GET.get('search')}"

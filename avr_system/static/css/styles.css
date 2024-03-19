@@ -58,7 +58,7 @@ nav, footer {
     height: 88px;
 }
 
-.fd-col {
+.fd-col, .auth-block {
     flex-direction: column;
 }
 
@@ -66,9 +66,13 @@ nav, footer {
     align-items: center;
 }
 
-.auth-block {
-    flex-direction: column;
+.justify-content {
+    justify-content: center;
 }
+
+/* .auth-block {
+    flex-direction: column;
+} */
 
 .reset-padding {
     padding: 0 5px;
