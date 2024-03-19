@@ -209,9 +209,25 @@ class OrderView(MenuMixin, CreateView):
             recipient_list=[EMAIL_HOST_USER, ]
         )
 
-
     def get_success_url(self) -> str:
         return reverse_lazy('users:account', kwargs={'pk': self.request.user.id})
+
+
+class OrderDetailView(MenuMixin, ListView):
+    """
+    
+    """
+    model = Order
+    template_name= 'orders/order_detail.html'
+    context_object_name = 'orders'
+
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+            title='Детали заявки'
+        )
+        return context
 
 # ==================================== Settings in panel admin =========================================
 

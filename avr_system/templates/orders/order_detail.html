@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+{% load static i18n %}
+
+{% block title %} <title>{{ title }}</title> {% endblock %}
+
+{% block content %}
+<div class="s-section">
+    <div class="container-box">
+        <div class="h2-block decoration">
+            <h2>{{ title }}</h2>
+        </div>
+        <div>
+            <table class="table table-box">
+                <thead>
+                    {% for order in orders %}
+                    <tr>
+                        <form class="flex setup" method="post" action="#">
+                            {% csrf_token %}
+                            <td>
+                                <label for="title_site">
+                                    <li>{{ order}}:</li>
+                                </label>
+                            <td>
+                                <span class="span-default">{{ order.system }}</span>
+                            </td>
+                            <td>
+                                <span class="span-default">{{ order.name }}</span>
+                            </td>
+                            <td>
+                                <span class="span-default">{{ order.relay }}</span>
+                            </td>
+                            <td class="flex td-input">
+                                <span class="span-default">{{ order.status }}</span>
+                            </td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
