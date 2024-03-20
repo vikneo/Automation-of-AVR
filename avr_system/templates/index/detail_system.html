@@ -77,11 +77,15 @@
                 <p class="flex p-rows">
                     <b>Скачать файл конфигурации </b>
                     {% if product.classifications.first.file %}
-                        {% if user.is_authenticated %}
-                        <a href="{{ product.classifications.first.file.url }}" download>скачать</a>
-                        {% else %}
-                        <a href="{% url 'users:login' %}">Авторизация</a>
-                        {% endif %}
+                    {% if user.is_authenticated %}
+                    {% if product.access %}
+                    <a href="{{ product.classifications.first.file.url }}" download>скачать</a>
+                    {% else %}
+                    <a href="{% url 'system:order' %}">Под заказ</a>
+                    {% endif %}
+                    {% else %}
+                    <a href="{% url 'users:login' %}">Авторизация</a>
+                    {% endif %}
                     {% else %}
                     <span>файл отсутствует</span>
                     {% endif %}
@@ -109,8 +113,8 @@
             <p class="comment-block">
                 <span>
                     По требованию заказчика базовая схема может быть дополнена различными опциональными элементами:
-                    кнопками ручного перехода на нужную сеть, кнопкой ручного возврата на приоритетную сеть, 
-                    переключателем выбора приоритетной сети, модулем дискретного ввода/ вывода для дистанционного 
+                    кнопками ручного перехода на нужную сеть, кнопкой ручного возврата на приоритетную сеть,
+                    переключателем выбора приоритетной сети, модулем дискретного ввода/ вывода для дистанционного
                     управления и мониторинга состояний сетей и самого АВР.
                 </span>
             </p>
