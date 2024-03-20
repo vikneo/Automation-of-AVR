@@ -69,6 +69,26 @@ class TypeAvrDetail(MenuMixin, DetailView):
         return TypeAVR.objects.filter(access=True, slug=self.kwargs['slug'])
 
 
+class ClassificationDetail(MenuMixin, DetailView):
+    """
+    The system_avr class for viewing and displaying detailed information.
+    """
+    template_name = 'index/detail_product.html'
+    context_object_name = 'product'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+            title=context['product']
+        )
+        return context
+
+    def get_queryset(self) -> QuerySet[Any]:
+        
+        return Classification.objects.filter(slug=self.kwargs['slug'])
+
+
 class HelpView(MenuMixin, TemplateView):
     """
     Template presentation "HelpView"
