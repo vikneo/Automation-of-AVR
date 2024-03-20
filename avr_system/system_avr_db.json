@@ -1820,11 +1820,908 @@
         }
     },
     {
+        "model": "admin.logentry",
+        "pk": 141,
+        "fields": {
+            "action_time": "2024-03-18T08:51:39.866Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "2",
+            "object_repr": "Заказ №_2",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 142,
+        "fields": {
+            "action_time": "2024-03-18T08:51:39.876Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "1",
+            "object_repr": "Заказ №_1",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 143,
+        "fields": {
+            "action_time": "2024-03-18T08:55:35.553Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "3",
+            "object_repr": "Заказ №_3",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 144,
+        "fields": {
+            "action_time": "2024-03-18T09:04:04.171Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "4",
+            "object_repr": "Заказ №_4",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u0437\\u0430\\u043a\\u0430\\u0437\\u0430\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 145,
+        "fields": {
+            "action_time": "2024-03-18T09:07:08.292Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "5",
+            "object_repr": "Заказ №_5",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 146,
+        "fields": {
+            "action_time": "2024-03-18T09:17:27.213Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "8",
+            "object_repr": "Заказ №_8",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 147,
+        "fields": {
+            "action_time": "2024-03-18T09:17:27.221Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "7",
+            "object_repr": "Заказ №_7",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 148,
+        "fields": {
+            "action_time": "2024-03-18T09:17:27.229Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "6",
+            "object_repr": "Заказ №_6",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 149,
+        "fields": {
+            "action_time": "2024-03-18T09:17:27.237Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "4",
+            "object_repr": "Заказ №_4",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 150,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.823Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "15",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 151,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.833Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "14",
+            "object_repr": "Nokia N9",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 152,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.842Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "13",
+            "object_repr": "Сибур_Химпром",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 153,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.849Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "12",
+            "object_repr": "Сибур_Химпром",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 154,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.859Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "11",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 155,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.866Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "Илим_Усть-Илимск",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 156,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.875Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 157,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.883Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 158,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.889Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 159,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.896Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 160,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.905Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 161,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.912Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 162,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.919Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 163,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.926Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 164,
+        "fields": {
+            "action_time": "2024-03-18T09:32:40.932Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "ВРУ",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 165,
+        "fields": {
+            "action_time": "2024-03-18T09:32:47.796Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "9",
+            "object_repr": "Заказ №_9",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 166,
+        "fields": {
+            "action_time": "2024-03-18T09:41:44.724Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "16",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 167,
+        "fields": {
+            "action_time": "2024-03-18T09:43:21.850Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "11",
+            "object_repr": "Заказ №_11",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 168,
+        "fields": {
+            "action_time": "2024-03-18T09:43:31.909Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "17",
+            "object_repr": "1",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 169,
+        "fields": {
+            "action_time": "2024-03-19T01:25:49.575Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 170,
+        "fields": {
+            "action_time": "2024-03-19T01:26:03.403Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "18",
+            "object_repr": "Заказ №_18",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 171,
+        "fields": {
+            "action_time": "2024-03-19T01:26:03.410Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "17",
+            "object_repr": "Заказ №_17",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 172,
+        "fields": {
+            "action_time": "2024-03-19T01:26:03.420Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "16",
+            "object_repr": "Заказ №_16",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 173,
+        "fields": {
+            "action_time": "2024-03-19T01:26:03.427Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "15",
+            "object_repr": "Заказ №_15",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 174,
+        "fields": {
+            "action_time": "2024-03-19T01:26:03.435Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "14",
+            "object_repr": "Заказ №_14",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 175,
+        "fields": {
+            "action_time": "2024-03-19T01:41:36.281Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "21",
+            "object_repr": "Заказ №_21",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u0437\\u0430\\u043a\\u0430\\u0437\\u0430\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 176,
+        "fields": {
+            "action_time": "2024-03-19T02:24:59.292Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "10",
+            "object_repr": "2 Ввода + СВ + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 177,
+        "fields": {
+            "action_time": "2024-03-19T02:25:10.989Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "9",
+            "object_repr": "1 Ввода + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 178,
+        "fields": {
+            "action_time": "2024-03-19T02:25:21.085Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "8",
+            "object_repr": "1 Ввода + ДГУ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 179,
+        "fields": {
+            "action_time": "2024-03-19T02:25:30.284Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "7",
+            "object_repr": "2 Вводаь + ДГУ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 180,
+        "fields": {
+            "action_time": "2024-03-19T02:25:44.538Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "2 Ввода+ СВ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 181,
+        "fields": {
+            "action_time": "2024-03-19T02:26:00.411Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "5",
+            "object_repr": "2 Ввода 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 182,
+        "fields": {
+            "action_time": "2024-03-19T02:26:12.147Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "4",
+            "object_repr": "2 Ввода + СВ + ДГУ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 183,
+        "fields": {
+            "action_time": "2024-03-19T02:26:21.965Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "2 Ввода + ДГУ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 184,
+        "fields": {
+            "action_time": "2024-03-19T02:26:32.053Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "2 Ввода 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 185,
+        "fields": {
+            "action_time": "2024-03-19T02:26:47.117Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "2 Ввода + СВ 220 AC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\", \"URL\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 186,
+        "fields": {
+            "action_time": "2024-03-19T02:27:21.802Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "2 Ввода + СВ 24 DC",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0438\\u043f \\u0410\\u0412\\u0420\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 187,
+        "fields": {
+            "action_time": "2024-03-20T02:02:46.138Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Илим_Усть-Илимск",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u0434 \\u043a \\u043c\\u0430\\u043a\\u0440\\u043e\\u0441\\u0430\\u043c\"]}}, {\"added\": {\"name\": \"\\u0444\\u0430\\u0439\\u043b\", \"object\": \"File object (1)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 188,
+        "fields": {
+            "action_time": "2024-03-20T03:12:46.554Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "File object (1)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 189,
+        "fields": {
+            "action_time": "2024-03-20T03:20:24.175Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 190,
+        "fields": {
+            "action_time": "2024-03-20T03:20:24.182Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Илим_Усть-Илимск",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 191,
+        "fields": {
+            "action_time": "2024-03-20T03:20:24.192Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 192,
+        "fields": {
+            "action_time": "2024-03-20T03:20:31.215Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "21",
+            "object_repr": "Заказ №_21",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 193,
+        "fields": {
+            "action_time": "2024-03-20T03:20:31.226Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "20",
+            "object_repr": "Заказ №_20",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 194,
+        "fields": {
+            "action_time": "2024-03-20T03:20:31.239Z",
+            "user": 1,
+            "content_type": 14,
+            "object_id": "19",
+            "object_repr": "Заказ №_19",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 195,
+        "fields": {
+            "action_time": "2024-03-20T03:33:56.277Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "ЩСН",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0444\\u0430\\u0439\\u043b\", \"object\": \"File object (2)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 196,
+        "fields": {
+            "action_time": "2024-03-20T03:37:28.982Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "ЩСН",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0440\\u0438\\u043c\\u0435\\u0447\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 197,
+        "fields": {
+            "action_time": "2024-03-20T03:40:19.254Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "ЩСУ",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0444\\u0430\\u0439\\u043b\", \"object\": \"File object (3)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 198,
+        "fields": {
+            "action_time": "2024-03-20T04:00:40.922Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "РУНН 0,4",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0444\\u0430\\u0439\\u043b\", \"object\": \"File object (4)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 199,
+        "fields": {
+            "action_time": "2024-03-20T04:03:37.058Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "ВРУ",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0444\\u0430\\u0439\\u043b\", \"object\": \"File object (5)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 200,
+        "fields": {
+            "action_time": "2024-03-20T04:03:44.748Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "ВРУ",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0414\\u043e\\u0441\\u0442\\u0443\\u043f\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 201,
+        "fields": {
+            "action_time": "2024-03-20T05:42:28.279Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "ГРЩ",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0444\\u0430\\u0439\\u043b\", \"object\": \"File object (6)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 202,
+        "fields": {
+            "action_time": "2024-03-20T05:47:05.550Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "ЩАВР",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0444\\u0430\\u0439\\u043b\", \"object\": \"File object (7)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 203,
+        "fields": {
+            "action_time": "2024-03-20T07:33:16.173Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "ЩАВР",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0430\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 204,
+        "fields": {
+            "action_time": "2024-03-20T07:33:25.778Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "ГРЩ",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0430\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 205,
+        "fields": {
+            "action_time": "2024-03-20T07:33:32.165Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "ВРУ",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0430\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 206,
+        "fields": {
+            "action_time": "2024-03-20T07:33:39.401Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "РУНН 0,4",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0430\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 207,
+        "fields": {
+            "action_time": "2024-03-20T07:33:46.432Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "ЩСУ",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0430\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 208,
+        "fields": {
+            "action_time": "2024-03-20T07:33:53.301Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "ЩСН",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0430\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 209,
+        "fields": {
+            "action_time": "2024-03-20T07:45:14.541Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "11",
+            "object_repr": "1200_HMCC_01",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u0434 \\u043a \\u043c\\u0430\\u043a\\u0440\\u043e\\u0441\\u0430\\u043c\"]}}, {\"added\": {\"name\": \"\\u0444\\u0430\\u0439\\u043b\", \"object\": \"File object (8)\"}}]"
+        }
+    },
+    {
         "model": "auth.user",
         "pk": 1,
         "fields": {
             "password": "pbkdf2_sha256$720000$c9XSnebzh7Xp165pkxU5nX$iYsalfFhdH/e2tF4aaH/nqt9t/jxKqdrr+PP2sfgFYU=",
-            "last_login": "2024-02-19T08:55:07.318Z",
+            "last_login": "2024-03-19T01:40:22.620Z",
             "is_superuser": true,
             "username": "root",
             "first_name": "Виктор",
@@ -1838,6 +2735,24 @@
         }
     },
     {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$AM6h5FCrxHiNKbfzPZTEsA$1+seUurtTlyco4nw/WQTVdFLbu6gvWRa/e60tvD08ZQ=",
+            "last_login": "2024-03-19T01:29:22.477Z",
+            "is_superuser": false,
+            "username": "petro",
+            "first_name": "",
+            "last_name": "",
+            "email": "petro@qwe.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-03-19T01:29:20.970Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
         "model": "sessions.session",
         "pk": "2tswqjyzhu37sxw85lky60mt6zl81ub4",
         "fields": {
@@ -1846,11 +2761,19 @@
         }
     },
     {
+        "model": "sessions.session",
+        "pk": "qj3gkc52pz0igtog2j6ilddqz3jsb6rx",
+        "fields": {
+            "session_data": ".eJxVjDsOwjAQBe_iGlne-BObkp4zWGvvLgkgR8qnQtwdIqWA9s3Me6mM2zrkbeE5j6TOCtTpdytYH9x2QHdst0nXqa3zWPSu6IMu-joRPy-H-3cw4DJ8a5sYel_Zg4kopQoJ1M4kXyNSFzmIF2tdACwCbIJ1nXOG-giUwAqr9wfy8Tf-:1rmOSk:6uMQ_yeZmjvhPcr2OFnbTAHW9RTLD-MpVHoxnI59_s8",
+            "expire_date": "2024-04-02T01:40:22.630Z"
+        }
+    },
+    {
         "model": "avr_type.typeavr",
         "pk": 1,
         "fields": {
-            "name": "2 Ввода 2 Потребителя + СВ 220 AC",
-            "slug": "2-vvoda-2-potrebitelya-sv-220-ac",
+            "name": "2 Ввода + СВ 220 AC",
+            "slug": "2-vvoda-sv-220-ac",
             "access": true
         }
     },
@@ -1858,8 +2781,8 @@
         "model": "avr_type.typeavr",
         "pk": 2,
         "fields": {
-            "name": "2 Ввода 1 Потребитель 220 AC",
-            "slug": "2-vvoda-1-potrebitel-220-ac",
+            "name": "2 Ввода 220 AC",
+            "slug": "2-vvoda-220-ac",
             "access": true
         }
     },
@@ -1867,8 +2790,8 @@
         "model": "avr_type.typeavr",
         "pk": 3,
         "fields": {
-            "name": "2 Ввода 1 Потребитель + ДГУ 220 AC",
-            "slug": "2-vvoda-1-potrebitel-dgu-220-ac",
+            "name": "2 Ввода + ДГУ 220 AC",
+            "slug": "2-vvoda-dgu-220-ac",
             "access": false
         }
     },
@@ -1876,8 +2799,8 @@
         "model": "avr_type.typeavr",
         "pk": 4,
         "fields": {
-            "name": "2 Ввода 2 Потребителя + СВ + ДГУ 220 AC",
-            "slug": "2-vvoda-2-potrebitelya-sv-dgu-229-ac",
+            "name": "2 Ввода + СВ + ДГУ 220 AC",
+            "slug": "2-vvoda-sv-dgu-229-ac",
             "access": false
         }
     },
@@ -1885,8 +2808,8 @@
         "model": "avr_type.typeavr",
         "pk": 5,
         "fields": {
-            "name": "2 Ввода 1 Потребитель 24 DC",
-            "slug": "2-vvoda-1-potrebitel-24-dc",
+            "name": "2 Ввода 24 DC",
+            "slug": "2-vvoda-24-dc",
             "access": true
         }
     },
@@ -1894,8 +2817,8 @@
         "model": "avr_type.typeavr",
         "pk": 6,
         "fields": {
-            "name": "2 Ввода 2 Потребителя + СВ 24 DC",
-            "slug": "2-vvoda-2-potrebitelya-sv-24-dc",
+            "name": "2 Ввода + СВ 24 DC",
+            "slug": "2-vvoda-sv-24-dc",
             "access": true
         }
     },
@@ -1903,8 +2826,8 @@
         "model": "avr_type.typeavr",
         "pk": 7,
         "fields": {
-            "name": "2 Ввода 1 Потребитель + ДГУ 24 DC",
-            "slug": "2-vvoda-1-potrebitel-dgu-24-dc",
+            "name": "2 Вводаь + ДГУ 24 DC",
+            "slug": "2-vvoda-dgu-24-dc",
             "access": true
         }
     },
@@ -1912,8 +2835,8 @@
         "model": "avr_type.typeavr",
         "pk": 8,
         "fields": {
-            "name": "1 Ввода 1 Потребитель + ДГУ 220 AC",
-            "slug": "1-vvoda-1-potrebitel-dgu-220-ac",
+            "name": "1 Ввода + ДГУ 220 AC",
+            "slug": "1-vvoda-dgu-220-ac",
             "access": false
         }
     },
@@ -1921,8 +2844,8 @@
         "model": "avr_type.typeavr",
         "pk": 9,
         "fields": {
-            "name": "1 Ввода 1 Потребитель + ДГУ 24 DC",
-            "slug": "1-vvoda-1-potrebitel-dgu-24-dc",
+            "name": "1 Ввода + ДГУ 24 DC",
+            "slug": "1-vvodal-dgu-24-dc",
             "access": false
         }
     },
@@ -1930,8 +2853,8 @@
         "model": "avr_type.typeavr",
         "pk": 10,
         "fields": {
-            "name": "2 Ввода 2 Потребителя + СВ + ДГУ 24 DC",
-            "slug": "2-vvoda-2-potrebitelya-sv-dgu-24-dc",
+            "name": "2 Ввода + СВ + ДГУ 24 DC",
+            "slug": "2-vvoda-sv-dgu-24-dc",
             "access": true
         }
     },
@@ -1985,7 +2908,79 @@
     },
     {
         "model": "avr_type.classification",
-        "pk": 1,
+        "pk": 5,
+        "fields": {
+            "type_avr": 5,
+            "name": "ЩСН",
+            "slug": "shsn",
+            "vnr": false,
+            "temp_tp": false,
+            "reset": false,
+            "choice_in": true,
+            "dgu": false,
+            "work_tp": false,
+            "status_box": false,
+            "lamp_avr_ready": false,
+            "lamp_avr_work": false,
+            "signal_ozz": false,
+            "comment": "Стандартное, простое решения для управления АВР, на базе Owen ПР200-24DC.",
+            "relay": 5,
+            "access": true,
+            "sell": false,
+            "macro_code": "4865213"
+        }
+    },
+    {
+        "model": "avr_type.classification",
+        "pk": 6,
+        "fields": {
+            "type_avr": 2,
+            "name": "ЩСУ",
+            "slug": "shsu",
+            "vnr": false,
+            "temp_tp": false,
+            "reset": false,
+            "choice_in": true,
+            "dgu": false,
+            "work_tp": false,
+            "status_box": false,
+            "lamp_avr_ready": false,
+            "lamp_avr_work": false,
+            "signal_ozz": false,
+            "comment": "Стандартное, простое решения для управления АВР, на базе Owen ПР200-220AC.",
+            "relay": 5,
+            "access": true,
+            "sell": false,
+            "macro_code": "4865213"
+        }
+    },
+    {
+        "model": "avr_type.classification",
+        "pk": 7,
+        "fields": {
+            "type_avr": 6,
+            "name": "РУНН 0,4",
+            "slug": "runn-04",
+            "vnr": false,
+            "temp_tp": false,
+            "reset": false,
+            "choice_in": false,
+            "dgu": false,
+            "work_tp": false,
+            "status_box": false,
+            "lamp_avr_ready": false,
+            "lamp_avr_work": false,
+            "signal_ozz": false,
+            "comment": "Стандартное, простое решение для управления АВР, на базе Owen ПР200-24DC. Для полного функционирования предусмотрен модуль расширения ПРМ-24.1. Возможность менять режим работы тр-ров силовых на программном уровне.",
+            "relay": 5,
+            "access": true,
+            "sell": false,
+            "macro_code": "леголас123"
+        }
+    },
+    {
+        "model": "avr_type.classification",
+        "pk": 8,
         "fields": {
             "type_avr": 1,
             "name": "ВРУ",
@@ -2000,9 +2995,83 @@
             "lamp_avr_ready": false,
             "lamp_avr_work": false,
             "signal_ozz": false,
+            "comment": "Стандартное, простое решение для управления АВР, на базе Owen ПР200-220АC. Для полного функционирования предусмотрен модуль расширения ПРМ-220.1. Возможность менять режим работы тр-ров силовых на программном уровне.",
+            "relay": 5,
+            "access": true,
+            "sell": false,
+            "macro_code": "голос12"
+        }
+    },
+    {
+        "model": "avr_type.classification",
+        "pk": 9,
+        "fields": {
+            "type_avr": 10,
+            "name": "ГРЩ",
+            "slug": "grsh",
+            "vnr": false,
+            "temp_tp": false,
+            "reset": false,
+            "choice_in": false,
+            "dgu": false,
+            "work_tp": false,
+            "status_box": false,
+            "lamp_avr_ready": false,
+            "lamp_avr_work": false,
+            "signal_ozz": false,
+            "comment": "Стандартное, простое решение для управления АВР, на базе Owen ПР200-24DC.\r\nДля полного функционирования предусмотрен модуль расширения ПРМ-24.1.\r\nВозможность менять режим работы тр-ров силовых на программном уровне.\r\nВывод информации на экран (состояние АВР, аварийные сигналы вводных аппаратов.",
+            "relay": 5,
+            "access": true,
+            "sell": false,
+            "macro_code": "accessgrch43"
+        }
+    },
+    {
+        "model": "avr_type.classification",
+        "pk": 10,
+        "fields": {
+            "type_avr": 4,
+            "name": "ЩАВР",
+            "slug": "shavr",
+            "vnr": false,
+            "temp_tp": false,
+            "reset": false,
+            "choice_in": false,
+            "dgu": false,
+            "work_tp": false,
+            "status_box": false,
+            "lamp_avr_ready": false,
+            "lamp_avr_work": false,
+            "signal_ozz": false,
+            "comment": "Стандартное, простое решение для управления АВР, на базе Owen ПР200-220АС.\r\nДля полного функционирования предусмотрен модуль расширения ПРМ-220.1.\r\nВозможность менять режим работы тр-ров силовых на программном уровне.\r\nВывод информации на экран (состояние АВР, аварийные сигналы вводных аппаратов.",
+            "relay": 5,
+            "access": true,
+            "sell": false,
+            "macro_code": "accessgrch43"
+        }
+    },
+    {
+        "model": "avr_type.classification",
+        "pk": 11,
+        "fields": {
+            "type_avr": 1,
+            "name": "1200_HMCC_01",
+            "slug": "1200_hmcc_01",
+            "vnr": true,
+            "temp_tp": true,
+            "reset": true,
+            "choice_in": false,
+            "dgu": false,
+            "work_tp": true,
+            "status_box": false,
+            "lamp_avr_ready": false,
+            "lamp_avr_work": false,
+            "signal_ozz": false,
             "comment": "!",
             "relay": 5,
-            "access": false
+            "access": false,
+            "sell": true,
+            "macro_code": "0"
         }
     },
     {
@@ -2084,6 +3153,69 @@
             "brand": "Logo",
             "model": "LOGO!8",
             "slug": "logo8"
+        }
+    },
+    {
+        "model": "avr_type.file",
+        "pk": 2,
+        "fields": {
+            "firmware": 5,
+            "file": "logics/ЩСН/logic/2-вводаПР200_24_v.1.001.owle",
+            "file_description": "logics/ЩСН/description/Описание_работы.docx"
+        }
+    },
+    {
+        "model": "avr_type.file",
+        "pk": 3,
+        "fields": {
+            "firmware": 6,
+            "file": "logics/ЩСУ/logic/2-вводаПР200_220_v.1.001.owle",
+            "file_description": "logics/ЩСУ/description/Описание_работы.docx"
+        }
+    },
+    {
+        "model": "avr_type.file",
+        "pk": 4,
+        "fields": {
+            "firmware": 7,
+            "file": "logics/РУНН 0,4/logic/2вводасекц_v.1.001.owle",
+            "file_description": "logics/РУНН 0,4/description/Описание_АВР.docx"
+        }
+    },
+    {
+        "model": "avr_type.file",
+        "pk": 5,
+        "fields": {
+            "firmware": 8,
+            "file": "logics/ВРУ/logic/2вводасекц_220_v.1.001.owle",
+            "file_description": "logics/ВРУ/description/описание.docx"
+        }
+    },
+    {
+        "model": "avr_type.file",
+        "pk": 6,
+        "fields": {
+            "firmware": 9,
+            "file": "logics/ГРЩ/logic/2вводасекц_v.1.001.owle",
+            "file_description": "logics/ГРЩ/description/Описание_АВР.docx"
+        }
+    },
+    {
+        "model": "avr_type.file",
+        "pk": 7,
+        "fields": {
+            "firmware": 10,
+            "file": "logics/ЩАВР/logic/2вводасекц_v.1.001.owle",
+            "file_description": "logics/ЩАВР/description/Описание_АВР.docx"
+        }
+    },
+    {
+        "model": "avr_type.file",
+        "pk": 8,
+        "fields": {
+            "firmware": 11,
+            "file": "logics/1200_HMCC_01/logic/Описание_АВР.docx",
+            "file_description": ""
         }
     },
     {
@@ -2237,11 +3369,36 @@
         }
     },
     {
+        "model": "avr_type.order",
+        "pk": 22,
+        "fields": {
+            "user": 1,
+            "system": "2 Ввода + СВ 220 AC",
+            "name": "1200_HMCC_01",
+            "options": "['Тип реле - ПР200', 'Ключ ВНР', 'Перегрев тр-ров ', 'Кнопка сброса', '', '', 'Зпрет паралели', '', '', '', '']",
+            "status": "В обработке",
+            "created_at": "2024-03-20T07:19:45.990Z",
+            "access": false,
+            "description": "Описание АВР.docx",
+            "scheme": "Описание АВР.docx"
+        }
+    },
+    {
         "model": "users.profile",
         "pk": 1,
         "fields": {
             "user": 1,
             "phone": "+79232273248",
+            "avatar": "profiles/root/avatar/admin_set_PwuENWm.png",
+            "archive": false
+        }
+    },
+    {
+        "model": "users.profile",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "phone": "",
             "avatar": "default/avatar/avatar.jpg",
             "archive": false
         }
