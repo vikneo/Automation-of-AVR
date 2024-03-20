@@ -11,18 +11,30 @@
             <div class="h2-block decoration">
                 <h2>{{ title }}</h2>
             </div>
-            {% for system in searches %}
             <div>
-                <p class="flex p-rows">
-                    <b>Название:</b><span>{{ system.name }}</span>
-                    <b>Тип ПЛК:</b><span> {{ system.relay.brand }}_{{ system.relay }}</span>
-                    <a href="{% url 'system:detail_system' system.type_avr.slug %}">
-                        Подробнее >>
-                    </a>
-                </p>
-                <hr>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td><b>Система АВР</b></td>
+                            <td><b>Название</b></td>
+                            <td><b>Тип ПЛК</b></td>
+                            <td></td>
+                        </tr>
+                        {% for system in searches %}
+                        <tr>
+                            <td>{{ system.type_avr.name }}</td>
+                            <td><span>{{ system.name }}</span></td>
+                            <td><span> {{ system.relay.brand }}_{{ system.relay }}</span></td>
+                            <td>
+                                <a href="{% url 'system:detail_system' system.type_avr.slug %}">
+                                    Подробнее >>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </thead>
+                </table>
             </div>
-            {% endfor %}
             {% if messages %}
             <div class="message">
                 {% include 'messages/message.html' %}
@@ -32,7 +44,3 @@
     </div>
 </div>
 {% endblock %}
-<nav aria-label="Пример навигации по страницам">
-    <ul class="pagination">
-    </ul>
-  </nav>
