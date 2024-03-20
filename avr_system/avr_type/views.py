@@ -128,7 +128,8 @@ class SearcheView(MenuMixin, ListView):
             result = Classification.objects.filter(
                 Q(name__icontains=query) |
                 Q(relay__model__icontains=query) |
-                Q(type_avr__name__startswith=query)
+                Q(type_avr__name__iregex=query) |
+                Q(type_avr__name__icontains=query) 
             )
             if not result:
                 messages.info(self.request, not_found)
