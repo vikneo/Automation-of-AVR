@@ -1,0 +1,124 @@
+{% extends 'base/base.html' %}
+{% load static i18n %}
+
+{% block title %} <title>{{ title }}</title> {% endblock %}
+
+{% block content %}
+<div class="s-section">
+    <div class="container-box">
+        <div class="h2-block decoration">
+            <h2>{{ title }}</h2>
+        </div>
+        <div class="container">
+            <div class="product-detail-box">
+                <p class="flex p-rows">
+                    <b>Название:</b>
+                    <span>{% if product %}<b>{{ product.name }}</b>{% else %}отсутствует{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Тип ПЛК:</b>
+                    <span>{% if product.relay %}<b>{{ product.relay }}</b>{% else %}отсутствует{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Ключ ВНР:</b>
+                    <span>{% if product.vnr %}<b>есть</b>{% else %}нет{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Перегрев тр-ров:</b>
+                    <span>{% if product.temp_tp %}<b>есть</b>{% else %}нет{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Кнопка "Сброс":</b>
+                    <span>{% if product.reset %}<b>есть</b>{% else %}нет{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Выбор основного ввода:</b>
+                    <span>{% if product.choice_in %}<b>есть</b>{% else %}нет{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Наличие ДГУ:</b>
+                    <span>{% if product.dgu %}<b>есть</b>{% else %}нет{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Режим работы тр-ров:</b>
+                    <span>
+                        {% if product.work_tp %}<b>разрешена паралель</b>{% else %}запрещена паралель{% endif %}
+                    </span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Положение выкатных АВ:</b>
+                    <span>{% if product.status_box %}<b>есть</b>{% else %}нет{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Сигнал ОЗЗ:</b>
+                    <span>{% if product.signal_ozz %}<b>есть</b>{% else %}нет{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Лампа АВР готов:</b>
+                    <span>{% if product.lamp_avr_ready %}<b>есть</b>{% else %}нет{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Лампа АВР сработал:</b>
+                    <span>{% if product.lamp_avr_work %}<b>есть</b>{% else %}нет{% endif %}</span>
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Скачать файл конфигурации </b>
+                    {% if product.classifications.first.file %}
+                    {% if user.is_authenticated %}
+                    {% if product.access %}
+                    <a href="{{ product.classifications.first.file.url }}" download>скачать</a>
+                    {% else %}
+                    <a href="{% url 'system:order' %}">Под заказ</a>
+                    {% endif %}
+                    {% else %}
+                    <a href="{% url 'users:login' %}">Авторизация</a>
+                    {% endif %}
+                    {% else %}
+                    <span>файл отсутствует</span>
+                    {% endif %}
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <b>Посмотреть описание файла</b>
+                    {% if product.classifications.first.file_description %}
+                    <a href="{{ product.classifications.first.file_description.url }}" target="_blank">читать</a>
+                    {% else %}
+                    <span>описание отсутствует</span>
+                    {% endif %}
+                </p>
+                <hr class="hr">
+                <p class="flex p-rows">
+                    <span>
+                        <b>Примечание* </b>
+                        <p>
+                            {{ product.comment }}
+                        </p>
+                    </span>
+                </p>
+            </div>
+            <div class="comment"></div>
+            <p class="comment-block">
+                <span>
+                    По требованию заказчика базовая схема может быть дополнена различными опциональными элементами:
+                    кнопками ручного перехода на нужную сеть, кнопкой ручного возврата на приоритетную сеть,
+                    переключателем выбора приоритетной сети, модулем дискретного ввода/ вывода для дистанционного
+                    управления и мониторинга состояний АВР.
+                </span>
+            </p>
+            <div class="comment"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
