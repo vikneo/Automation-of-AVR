@@ -138,7 +138,8 @@ class Classification(models.Model):
     signal_ozz = models.BooleanField(verbose_name='Сигнал ОЗЗ', default=False)
     comment = models.TextField(verbose_name='Примечание', default='!')
     relay = models.ForeignKey("SmartRelay", on_delete=models.CASCADE, verbose_name='Тип ПЛК')
-    access = models.BooleanField(default=False, verbose_name='Доступ')
+    access = models.BooleanField(default=False, verbose_name='Свободно')
+    sell = models.BooleanField(default=True, verbose_name='Продажа')
     macro_code = models.CharField(max_length=12, verbose_name='Код к макросам')
 
     def __str__(self) -> str:
