@@ -13,7 +13,7 @@ class OrderCreateForm(forms.ModelForm):
             "class": "form-input",
             "rows": 5,
             "cols": 80,
-            'placeholder': 'Здесь можете ...'
+            'placeholder': 'Дополнительные требования'
             },
         ),
     )

@@ -5,15 +5,17 @@
 
 {% block content %}
 <div class="flex container-box form-login" style="flex-direction: column; justify-content: flex-start;">
-    <div class="flex container auth-pos">
-        <h1>{{ title }}</h1>
+    <div class="h2-block decoration">
+        <h2>{{ title }}</h2>
     </div>
     <form class="form-block" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-error">{{ form.non_field_errors }}</div>
         {% for f in form %}
         <div class="mb-3 form-label">
-            <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
+            <p class="flex p-rows">
+                <label class="form-label" for="{{ f.id_for_label }}"><b>{{ f.label }}:</b></label>{{ f }}
+            </p>
             <div class="form-error">{{ f.errors }}</div>
         </div>
         {% endfor %}
@@ -22,5 +24,9 @@
             <button id="confirmbtn" type="submit" class="btn btn-primary">{% trans 'Оформить' %}</button>
         </div>
     </form>
+    <hr>
+    <div class="form-error">
+        <b>* </b><span>- По умолчанию все опции отключены</span>
+    </div>
 </div>
 {% endblock %}
