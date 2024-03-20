@@ -3,6 +3,7 @@ from django.urls import path
 from .views import (
     MainPage,
     TypeAvrDetail,
+    ClassificationDetail,
     HelpView,
     AboutView,
     SearcheView,
@@ -26,6 +27,7 @@ app_name = 'system'
 urlpatterns = [
     path('', MainPage.as_view(), name='index'),
     path('detail/<slug:slug>/', TypeAvrDetail.as_view(), name='detail_system'),
+    path('detail-product/<slug:slug>/', ClassificationDetail.as_view(), name='detail_product'),
     path('helper/', HelpView.as_view(), name='helper'),
     path('about/', AboutView.as_view(), name='about'),
     path('search/', SearcheView.as_view(), name='search'),
