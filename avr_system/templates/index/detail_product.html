@@ -76,17 +76,17 @@
                 <p class="flex p-rows">
                     <b>Скачать файл конфигурации </b>
                     {% if product.classifications.first.file %}
-                    {% if user.is_authenticated %}
                     {% if product.access %}
                     <a href="{{ product.classifications.first.file.url }}" download>скачать</a>
-                    {% else %}
-                    <a href="{% url 'system:order' %}">Под заказ</a>
                     {% endif %}
                     {% else %}
+                    {% if not user.is_authenticated %}
                     <a href="{% url 'users:login' %}">Авторизация</a>
-                    {% endif %}
                     {% else %}
-                    <span>файл отсутствует</span>
+                    <span>
+                        <a href="{% url 'system:order' %}">Под заказ</a>
+                    </span>
+                    {% endif %}
                     {% endif %}
                 </p>
                 <hr class="hr">
