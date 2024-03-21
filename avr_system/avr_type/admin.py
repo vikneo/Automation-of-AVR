@@ -152,5 +152,18 @@ class OrderAdmin(admin.ModelAdmin):
     """
     
     """
-    list_display = ['id', 'system', 'name', 'status', 'created_at']
+    actions = [
+        'add_archive',
+        'remove_archive'
+    ]
+    @admin.action(description='Добавить в архив')
+    def add_archive(modeladmin: admin.ModelAdmin, request: HttpRequest, queryset: QuerySet):
+        queryset.update(access=True)
+
+    @admin.action(description='Убрать из архива')
+    def remove_archive(modeladmin: admin.ModelAdmin, request: HttpRequest, queryset: QuerySet):
+        queryset.update(access=False)
+
+    list_display = ['id', 'system', 'name', 'status', 'created_at', 'access']
     list_filter = ['name']
+    list_display_links = ['system']
