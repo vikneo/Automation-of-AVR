@@ -140,7 +140,7 @@ class Classification(models.Model):
     relay = models.ForeignKey("SmartRelay", on_delete=models.CASCADE, verbose_name='Тип ПЛК')
     access = models.BooleanField(default=False, verbose_name='Свободно')
     sell = models.BooleanField(default=True, verbose_name='Продажа')
-    macro_code = models.CharField(max_length=12, verbose_name='Код к макросам')
+    macro_code = models.CharField(max_length=12, verbose_name='Код к макросам', blank=True, default='')
 
     def __str__(self) -> str:
         return f'{self.name}'
