@@ -64,7 +64,11 @@ class AdminSmartRelay(admin.ModelAdmin):
     """
     Registers model the "SmartRelay" to admin panel
     """
-    list_display = ['brand', 'model']
+    actions = [
+        close_access,
+        open_access
+    ]
+    list_display = ['brand', 'model', 'access']
     list_display_links = ['model', ]
     prepopulated_fields = {'slug': ('model',)}
 
