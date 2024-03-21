@@ -188,10 +188,10 @@ class OrderView(MenuMixin, CreateView):
         name = form.cleaned_data['name']
         relay = form.cleaned_data['relay']
         comment = form.cleaned_data['comment']
-        description = form.cleaned_data['description']
-        sсheme = form.cleaned_data['scheme']
+        description = self.request.FILES.getlist('description') # form.cleaned_data['description']
+        sсheme = self.request.FILES.getlist('scheme') # form.cleaned_data['scheme']
 
-        order = Order.objects.create(
+        order = Order(
             user=user,
             system=type_avr,
             name=name,
@@ -208,9 +208,13 @@ class OrderView(MenuMixin, CreateView):
                 f"{'Лампа АВР готов' if form.cleaned_data['lamp_avr_ready'] else ''}",
                 f"{'Лампа АВР сработал' if form.cleaned_data['lamp_avr_work'] else ''}",
             ],
-            description=description,
-            scheme=sсheme,
         )
+        for des in description:
+            order.description = des
+        for schem in sсheme:
+            order.scheme = schem
+        order.save()
+
         self.send_mail_message(comment, order)
         messages.success(self.request, f'Ваша заявка создана.')
         
