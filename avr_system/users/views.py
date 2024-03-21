@@ -34,7 +34,7 @@ from avr_system.settings import EMAIL_HOST_USER
 
 class AdministrationView(MenuMixin, ListView):
     """
-    
+    Displaying all orders
     """
     model = Order
     template_name = 'profile/admin.html'

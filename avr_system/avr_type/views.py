@@ -222,7 +222,7 @@ class OrderView(MenuMixin, CreateView):
     
     def send_mail_message(self, comment, num_order):
         """
-        
+        send mail message
         """
         subject = f'Оформление заказа {num_order.id}'
         body = {
@@ -245,7 +245,7 @@ class OrderView(MenuMixin, CreateView):
 
 class OrderDetailView(MenuMixin, ListView):
     """
-    
+    Displaying detailed information about the order
     """
     model = Order
     template_name= 'orders/order_detail.html'
@@ -263,7 +263,7 @@ class OrderDetailView(MenuMixin, ListView):
 
 class SettingsView(PermissionRequiredMixin, ChangeListMixin, ListView):
     """
-    Класс SettingsView отображает страницу с настройками
+    The "SettingsView" class displays the settings page
     """
     model = Classification
     template_name = 'admin/settings.html'
@@ -280,7 +280,7 @@ class SettingsView(PermissionRequiredMixin, ChangeListMixin, ListView):
 
 class SiteName(ChangeListMixin, TemplateView):
     """
-    Класс SiteName позволяет задать новое название интернет магазина
+    The "SiteName" class allows you to set a new site name
     """
 
     template_name = 'admin/settings.html'
@@ -298,7 +298,7 @@ class SiteName(ChangeListMixin, TemplateView):
 
 class SetCountBanner(ChangeListMixin, TemplateView):
     """
-    Установка количеста отображаемых банеров
+    Setting the number of displayed banners
     """
     template_name = 'admin/settings.html'
 
@@ -316,7 +316,7 @@ class SetCountBanner(ChangeListMixin, TemplateView):
 
 class CacheSetupBannerView(ChangeListMixin, TemplateView):
     """
-    Класс CacheSetupBannerView позволяет задать или обновить время кэширования Баннера
+    The "CacheSetupBannerView" class allows you to set or update the Banner caching time
     """
 
     template_name = 'admin/settings.html'
@@ -336,7 +336,7 @@ class CacheSetupBannerView(ChangeListMixin, TemplateView):
 
 class CacheSetupSystemView(ChangeListMixin, TemplateView):
     """
-    Класс CacheSetupSystemView позволяет задать или обновить время кэширования типы АВР
+    The "CacheSetupSystemView" class allows you to set or update the caching time of the AVR types
     """
     template_name = 'admin/settings.html'
 
@@ -354,7 +354,7 @@ class CacheSetupSystemView(ChangeListMixin, TemplateView):
 
 class CacheSetupProductView(ChangeListMixin, TemplateView):
     """
-    Класс CacheSetupSystemView позволяет задать или обновить время кэширования типы АВР
+    The "CacheSetupSystemView" class allows you to set or update the caching time for product classification
     """
     template_name = 'admin/settings.html'
 
@@ -373,7 +373,7 @@ class CacheSetupProductView(ChangeListMixin, TemplateView):
     
 class ClearCacheAll(ChangeListMixin, TemplateView):
     """
-    Класс ClearCacheAll позволяет очистить весь кэш сайта
+    The "ClearCacheAll" class allows you to clear the entire site cache
     """
 
     template_name = 'admin/settings.html'
@@ -394,7 +394,7 @@ class ClearCacheAll(ChangeListMixin, TemplateView):
 
 class ClearCacheBanner(ChangeListMixin, TemplateView):
     """
-    Класс ClearCacheBanner позволяет очистить кэш банера
+    The "ClearCacheBanner" class allows you to clear the banner cache
     """
 
     template_name = 'admin/settings.html'
@@ -415,7 +415,7 @@ class ClearCacheBanner(ChangeListMixin, TemplateView):
 
 class ClearCacheSystem(ChangeListMixin, TemplateView):
     """
-    Класс ClearCacheBanner позволяет очистить кэш типов АВР
+    The "ClearCacheBanner" class allows you to clear the cache of AVR types
     """
 
     template_name = 'admin/settings.html'
@@ -436,7 +436,7 @@ class ClearCacheSystem(ChangeListMixin, TemplateView):
 
 class ClearCacheProduct(ChangeListMixin, TemplateView):
     """
-    Класс ClearCacheBanner позволяет очистить кэш продуктов с детальной информацией
+    The "ClearCacheBanner" class allows you to clear the cache of products with detailed information
     """
 
     template_name = 'admin/settings.html'

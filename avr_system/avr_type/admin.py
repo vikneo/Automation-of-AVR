@@ -150,7 +150,7 @@ class AdminAdvantage(admin.ModelAdmin):
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     """
-    
+    Registers model the "Order" to admin panel
     """
     actions = [
         'add_archive',
