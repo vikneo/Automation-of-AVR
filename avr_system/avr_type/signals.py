@@ -63,7 +63,7 @@ def clear_cache_banner(**kwargs) -> None:
 @receiver(pre_save, sender=Order)
 def get_status_order(instance, **kwargs) -> None:
     """
-    
+    Signal when saving an order, the status is automatically set
     """
     if not instance.status:
         instance.status = 'В обработке'
@@ -72,7 +72,7 @@ def get_status_order(instance, **kwargs) -> None:
 @receiver(post_save, sender=File)
 def get_file_save(instance, **kwargs) -> None:
     """
-    
+    The signal changes the order status if the file is configured
     """
     classif = Classification.objects.get(classifications=instance.id)
     order = Order.objects.get(name=classif)
