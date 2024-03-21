@@ -247,7 +247,6 @@ class OrderDetailView(MenuMixin, ListView):
     """
     Displaying detailed information about the order
     """
-    model = Order
     template_name= 'orders/order_detail.html'
     context_object_name = 'orders'
 
@@ -258,6 +257,9 @@ class OrderDetailView(MenuMixin, ListView):
             title='Детали заявки'
         )
         return context
+    
+    def get_queryset(self) -> QuerySet[Any]:
+        return Order.objects.filter(user=self.request.user.id)
 
 # ==================================== Settings in panel admin =========================================
 
