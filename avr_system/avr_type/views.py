@@ -259,7 +259,11 @@ class OrderDetailView(MenuMixin, ListView):
         return context
     
     def get_queryset(self) -> QuerySet[Any]:
-        return Order.objects.filter(user=self.request.user.id)
+        orders = Order.objects.filter(user=self.request.user.id)
+        if not orders:
+            messages.info(self.request, "Заказы отсутвуют")
+        return orders
+
 
 # ==================================== Settings in panel admin =========================================
 
