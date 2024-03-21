@@ -15,9 +15,30 @@
             <h2>Просмотр заказов</h2>
         </div>
         <div class="container">
-            <div style="width: 80%;">
+            <div>
                 <div class="product-detail-box">
-                    {{ orders }}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td><b>№</b></td>
+                                <td><b>Заказчик</b></td>
+                                <td><b>Название</b></td>
+                                <td><b>Описанием</b></td>
+                                <td><b>Схема</b></td>
+                                <td><b>Статус</b></td>
+                            </tr>
+                            {% for order in orders %}
+                            <tr>
+                                <td>{{ order.id }}</td>
+                                <td>{{ order.user }}</td>
+                                <td>{{ order.name }}</td>
+                                <td><a href="{{ order.description.url }}" target="_blank">смотреть</a></td>
+                                <td><a href="{{ order.scheme.url }}" target="_blank">смотреть</a></td>
+                                <td>{{ order.status }}</td>
+                            </tr>
+                            {% endfor %}
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>
