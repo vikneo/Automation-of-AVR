@@ -197,6 +197,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGFILE_ROOT = BASE_DIR / "loging"
 LOGFILE_URL = "/loging/"
+LOGFILE_NAME_INFO = "loging_info.txt"
+LOGFILE_NAME_WARNING = "loging_warning.txt"
 
 LOGFILE_SIZE = 5 * 1024 * 1024
 LOGFILE_COUNT = 10
@@ -214,50 +216,56 @@ LOGGING = {
             "style": "{",
         },
     },
-    # 'filters': {
-    #     'special': {
-    #         '()': 'project.logging.SpecialFilter',
-    #         'foo': 'bar',
-    #     },
-    #     'require_debug_true': {
-    #         '()': 'django.utils.log.RequireDebugTrue',
-    #     },
-    # },
+    'filters': {
+        # 'special': {
+        #     '()': 'project.logging.SpecialFilter',
+        #     'foo': 'bar',
+        # },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
     "handlers": {
         "console": {
             "level": "DEBUG",
-            # 'filters': ['require_debug_true', ],
+            'filters': ['require_debug_true', ],
             "class": "logging.StreamHandler",
             "formatter": "simple",
         },
         "mail_admins": {
             "level": "ERROR",
             "class": "django.utils.log.AdminEmailHandler",
-            # 'filters': ['special', ]
+            "formatter": "verbose",
+            # 'filters': ['require_debug_true']
         },
-        "logfile": {
+        "logfile_info": {
             "level": "INFO",
             "class": "logging.handlers.RotatingFileHandler",
+            "filename": LOGFILE_NAME_INFO,
             "maxBytes": LOGFILE_SIZE,
             "backupCount": LOGFILE_COUNT,
             "formatter": "verbose",
-            "filename": "loging.log",
+        },
+        "logfile_warning": {
+            "level": "WARNING",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": LOGFILE_NAME_WARNING,
+            "maxBytes": LOGFILE_SIZE,
+            "backupCount": LOGFILE_COUNT,
+            "formatter": "verbose",
         },
     },
     "loggers": {
         "django": {
-            "handlers": ["console"],
+            "handlers": ["console", "logfile_info"],
+            "level": "INFO",
             "propagate": True,
         },
         "django.request": {
-            "handlers": ["mail_admins"],
-            "level": "ERROR",
+            "handlers": ["mail_admins", "logfile_warning"],
+            "level": "WARNING",
             "propagate": False,
-        },
-        "myproject.custom": {
-            "handlers": ["console", "mail_admins", "logfile"],
-            "level": "INFO",
-            # "filters": ["special"],
+            'filters': ['require_debug_true', ]
         },
     },
 }

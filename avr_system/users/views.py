@@ -1,6 +1,6 @@
 from typing import Any
 from django.forms import BaseModelForm
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -29,6 +29,10 @@ from .forms import (
 )
 from utilits.mixins import MenuMixin
 from avr_system.settings import EMAIL_HOST_USER
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class RegisterUserView(MenuMixin, CreateView):
@@ -74,6 +78,7 @@ class ProfileDetailView(MenuMixin, DetailView):
             self.get_menu(),
             title='Профиль'
         )
+        logger.info('Загружена страница "%s"', context['title'])
         return context
 
 
@@ -268,6 +273,8 @@ class CallBackView(MenuMixin, FormView):
             recipient_list=[EMAIL_HOST_USER, ]
         )
         messages.success(self.request, 'Ваше письмо успешно отправлено')
+        logger.info(f"Пользователь {self.request.user} - отправил письмо. Тема: {subject}")
+
         return HttpResponseRedirect(reverse_lazy("system:index"))
 
 
@@ -287,9 +294,17 @@ class UserLoginView(MenuMixin, LoginView):
         )
         return context
 
+    def dispatch(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        logger.warning(f"Пользователь {self.request.user} - Вошел в систему")
+        return super().dispatch(request, *args, **kwargs)
+
 
 class UserLogoutView(LogoutView):
     """
     Log out
     """
     next_page = reverse_lazy('system:index')
+
+    def dispatch(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        logger.error(f"Пользователь {request.user} - Вышел из системы")
+        return super().dispatch(request, *args, **kwargs)
