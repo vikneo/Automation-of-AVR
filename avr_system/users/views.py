@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
-from django.views.generic import DetailView, CreateView, FormView, TemplateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, FormView, TemplateView, UpdateView
 from django.contrib.auth.views import (
     LoginView,
     LogoutView,
@@ -27,8 +27,26 @@ from .forms import (
     UserRasswordResetForm,
     ProfileUpdateForm
 )
+from avr_type.models import Order
 from utilits.mixins import MenuMixin
 from avr_system.settings import EMAIL_HOST_USER
+
+
+class AdministrationView(MenuMixin, ListView):
+    """
+    
+    """
+    model = Order
+    template_name = 'profile/admin.html'
+    context_object_name = 'orders'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            self.get_menu(),
+            title='Администратор'
+        )
+        return context
 
 
 class RegisterUserView(MenuMixin, CreateView):
