@@ -1,5 +1,5 @@
 from django.dispatch import receiver
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save, post_save
 from django.core.cache import cache
 
 from utilits.slugify import slugify
@@ -10,6 +10,7 @@ from .models import (
     SmartRelay,
     Banner,
     Order,
+    File,
 )
 
 
@@ -66,3 +67,18 @@ def get_status_order(instance, **kwargs) -> None:
     """
     if not instance.status:
         instance.status = 'В обработке'
+
+
+@receiver(post_save, sender=File)
+def get_file_save(instance, **kwargs) -> None:
+    """
+    
+    """
+    classif = Classification.objects.get(classifications=instance.id)
+    order = Order.objects.get(name=classif)
+    if instance.file:
+        order.status = 'Готов'
+        order.save()
+    else:
+        order.status = ''
+        order.save()
