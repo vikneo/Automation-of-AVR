@@ -173,6 +173,7 @@ class SmartRelay(models.Model):
     brand = models.CharField(max_length=20, verbose_name='Бренд', db_index=True)
     model = models.CharField(max_length=20, verbose_name='Модель', choices=TypeRelay)
     slug = models.SlugField(max_length=20, verbose_name='URL')
+    access = models.BooleanField(default=True, verbose_name='Доступ')
 
     def __str__(self) -> Any:
         return f'{self.model}'
