@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static i18n %}
+
+{% block title %} <title>{{ title }}</title> {% endblock %}
+
+{% block left_sidebar %}
+{% include 'profile/nav_left_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+{% include 'messages/message.html' %}
+<div class="s-section">
+    <div class="container-box" style=" background: #c7b9b938;">
+        <div class="h2-block decoration">
+            <h2>Просмотр заказов</h2>
+        </div>
+        <div class="container">
+            <div style="width: 80%;">
+                <div class="product-detail-box">
+                    {{ orders }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

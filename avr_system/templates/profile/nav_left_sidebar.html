@@ -6,5 +6,10 @@
         <p class="flex p-rows m-16">
             <a class="flex btn-redact" href="{% url 'system:order_history' %}" >Детали заказа</a>
         </p>
+        {% if user.is_staff %}
+        <p class="flex p-rows m-16">
+            <a class="flex btn-redact" href="{% url 'users:admin' user.pk %}" >Администрирование</a>
+        </p>
+        {% endif %}
     </div>
 </div>
