@@ -1,6 +1,7 @@
 from django.urls import path, include
 
 from .views import (
+    AdministrationView,
     ProfileDetailView,
     UserLoginView,
     UserLogoutView,
@@ -30,6 +31,7 @@ urlpatterns = [
          UserPasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),
          name='password_reset_complete'),
     path('account/<int:pk>/', ProfileDetailView.as_view(), name='account'),
+    path('account/<int:pk>/admin/', AdministrationView.as_view(), name='admin'),
     path('login/', UserLoginView.as_view(), name='login'),
     path('logout/', UserLogoutView.as_view(), name='logout'),
     path('register/', RegisterUserView.as_view(), name='register'),
