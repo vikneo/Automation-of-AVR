@@ -17,7 +17,7 @@
         <div class="container">
             <div>
                 <div class="product-detail-box">
-                    <table class="table">
+                    <table id="table" class="table">
                         <thead>
                             <tr>
                                 <td><b>№</b></td>
@@ -34,7 +34,15 @@
                                 <td>{{ order.name }}</td>
                                 <td><a href="{{ order.description.url }}" target="_blank">смотреть</a></td>
                                 <td><a href="{{ order.scheme.url }}" target="_blank">смотреть</a></td>
-                                <td>{{ order.status }}</td>
+                                <td id="status">{{ order.status }}</td>
+                                <script>
+                                    if (table.rows[1].cells[5].innerHTML === 'Готов') {
+                                        document.getElementById('status').innerHTML = `<span style="color: green;"><b>{{ order.status }}</b></span>`;
+                                    };
+                                    if (table.rows[1].cells[5].innerHTML === 'В обработке') {
+                                        document.getElementById('status').innerHTML = `<span style="color: orange;"><b>{{ order.status }}</b></span>`;
+                                    };
+                                </script>
                             </tr>
                             {% endfor %}
                         </thead>
