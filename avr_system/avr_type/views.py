@@ -284,12 +284,13 @@ class SettingsView(PermissionRequiredMixin, ChangeListMixin, ListView):
         return context
 
 
-class SiteName(ChangeListMixin, TemplateView):
+class SiteName(PermissionRequiredMixin, ChangeListMixin, TemplateView):
     """
     The "SiteName" class allows you to set a new site name
     """
 
     template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
 
     def post(self, request) -> HttpResponse:
         title_site = request.POST.get('title_site')
@@ -302,11 +303,12 @@ class SiteName(ChangeListMixin, TemplateView):
         return HttpResponseRedirect(reverse_lazy('system:settings'))
 
 
-class SetCountBanner(ChangeListMixin, TemplateView):
+class SetCountBanner(PermissionRequiredMixin, ChangeListMixin, TemplateView):
     """
     Setting the number of displayed banners
     """
     template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
 
     def post(self, request) -> HttpResponse:
         count_banner = request.POST.get('count_banner')
@@ -320,12 +322,13 @@ class SetCountBanner(ChangeListMixin, TemplateView):
         return HttpResponseRedirect(reverse_lazy('system:settings'))
 
 
-class CacheSetupBannerView(ChangeListMixin, TemplateView):
+class CacheSetupBannerView(PermissionRequiredMixin, ChangeListMixin, TemplateView):
     """
     The "CacheSetupBannerView" class allows you to set or update the Banner caching time
     """
 
     template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
 
     def post(self, request) -> HttpResponse:
         cache_time_banner = request.POST.get('cache_time_banner')
@@ -340,11 +343,12 @@ class CacheSetupBannerView(ChangeListMixin, TemplateView):
         return HttpResponseRedirect(reverse_lazy('system:settings'))
 
 
-class CacheSetupSystemView(ChangeListMixin, TemplateView):
+class CacheSetupSystemView(PermissionRequiredMixin, ChangeListMixin, TemplateView):
     """
     The "CacheSetupSystemView" class allows you to set or update the caching time of the AVR types
     """
     template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
 
     def post(self, request) -> HttpResponse:
         cache_time_system = request.POST.get('cache_time_system')
@@ -358,11 +362,12 @@ class CacheSetupSystemView(ChangeListMixin, TemplateView):
         return HttpResponseRedirect(reverse_lazy('system:settings'))
 
 
-class CacheSetupProductView(ChangeListMixin, TemplateView):
+class CacheSetupProductView(PermissionRequiredMixin, ChangeListMixin, TemplateView):
     """
     The "CacheSetupSystemView" class allows you to set or update the caching time for product classification
     """
     template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
 
     def post(self, request) -> HttpResponse:
         cache_time_product = request.POST.get('cache_time_product')
@@ -377,12 +382,13 @@ class CacheSetupProductView(ChangeListMixin, TemplateView):
 
 # =========================== Настройки по очистке кэша =================================
     
-class ClearCacheAll(ChangeListMixin, TemplateView):
+class ClearCacheAll(PermissionRequiredMixin, ChangeListMixin, TemplateView):
     """
     The "ClearCacheAll" class allows you to clear the entire site cache
     """
 
     template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -398,12 +404,13 @@ class ClearCacheAll(ChangeListMixin, TemplateView):
         return HttpResponseRedirect(reverse_lazy("system:settings"))
 
 
-class ClearCacheBanner(ChangeListMixin, TemplateView):
+class ClearCacheBanner(PermissionRequiredMixin, ChangeListMixin, TemplateView):
     """
     The "ClearCacheBanner" class allows you to clear the banner cache
     """
 
     template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -419,12 +426,13 @@ class ClearCacheBanner(ChangeListMixin, TemplateView):
         return HttpResponseRedirect(reverse_lazy("system:settings"))
 
 
-class ClearCacheSystem(ChangeListMixin, TemplateView):
+class ClearCacheSystem(PermissionRequiredMixin, ChangeListMixin, TemplateView):
     """
     The "ClearCacheBanner" class allows you to clear the cache of AVR types
     """
 
     template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -440,12 +448,13 @@ class ClearCacheSystem(ChangeListMixin, TemplateView):
         return HttpResponseRedirect(reverse_lazy("system:settings"))
 
 
-class ClearCacheProduct(ChangeListMixin, TemplateView):
+class ClearCacheProduct(PermissionRequiredMixin, ChangeListMixin, TemplateView):
     """
     The "ClearCacheBanner" class allows you to clear the cache of products with detailed information
     """
 
     template_name = 'admin/settings.html'
+    permission_required = 'authorization.view_storesettings'
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
