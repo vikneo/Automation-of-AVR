@@ -59,7 +59,8 @@ class ChangeListMixin:
             cache_banner=settings.get_cache_banner(time=False),
             cache_product=settings.get_cache_product_detail(time=False),
             cache_system=settings.get_cache_system(time=False),
-            num_banners=settings.get_count_banner(time=False),
+            num_banners=settings.get_count_banner(),
             cache_params=settings.get_cache_filter_params(time=False),
+            paginate_by = settings.get_paginate_by(),
         )
         return context

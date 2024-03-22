@@ -10,6 +10,7 @@ HOURS = 60 * 60
 DAYS = 60 * 60 * 24
 
 COUNT_BANNERS = 5
+PAGINATE = 15
 
 
 class Settings:
@@ -27,6 +28,7 @@ class Settings:
         self.__cache_product = DAYS  # 1 day
         self.__cache_system = DAYS  # 1 day
         self.__get_filter_params = DAYS  # 1 day
+        self.__paginate_by = PAGINATE
 
     @staticmethod
     def time_calculate(cache_time) -> str:
@@ -63,6 +65,12 @@ class Settings:
         """
 
         self.__site_name = name
+    
+    def set_paginate_by(self, count: int) -> None:
+        """
+        Устанавливает количество объектов отображаемых на странице
+        """
+        self.__paginate_by = int(count)
     
     def set_count_banner(self, count: int) -> None:
         """
@@ -115,7 +123,13 @@ class Settings:
 
         return self.__site_name
     
-    def get_count_banner(self, time: bool = True) -> int:
+    def get_paginate_by(self) -> int:
+        """
+        
+        """
+        return self.__paginate_by
+    
+    def get_count_banner(self) -> int:
         """
         Возвращает количество баннеров для показа
 
