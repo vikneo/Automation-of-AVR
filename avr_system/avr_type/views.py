@@ -126,7 +126,7 @@ class SearcheView(MenuMixin, ListView):
     # model = Classification
     template_name = 'index/search.html'
     context_object_name = 'searches'
-    paginate_by = 10
+    paginate_by = settings.get_paginate_by()
     allow_empty = True
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:

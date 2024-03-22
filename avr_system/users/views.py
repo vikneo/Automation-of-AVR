@@ -27,6 +27,7 @@ from .forms import (
     UserRasswordResetForm,
     ProfileUpdateForm
 )
+from avr_type.configs import settings
 from avr_type.models import Order
 from utilits.mixins import MenuMixin
 from avr_system.settings import EMAIL_HOST_USER
@@ -38,7 +39,7 @@ class AdministrationView(MenuMixin, ListView):
     """
     model = Order
     template_name = 'profile/admin.html'
-    paginate_by = 10
+    paginate_by = settings.get_paginate_by()
     context_object_name = 'orders'
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
