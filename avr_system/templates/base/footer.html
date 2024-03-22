@@ -10,15 +10,30 @@
                     </a>
                 </div>
                 <div>
-                    <ul>
+                    <ul class="flex footer-list">
                         {% for m in menu %}
-                        <li class="footer-list">
+                        <li class="p-3">
                             <a class="footer-link" href="{% url m.url %}">{{ m.name }}</a>
                         </li>
                         {% endfor %}
                     </ul>
                 </div>
-                <div>messager</div>
+                <div>
+                    <ul class="flex footer-list">
+                      <li class="p-1"><a href="#"><img
+                          src="{% static 'img/icons/tw.svg' %}" alt="tw.svg"/></a>
+                      </li>
+                      <li class="p-1"><a class="menu-link" href="#"><img
+                          src="{% static 'img/icons/in.svg' %}" alt="in.svg"/></a>
+                      </li>
+                      <li class="p-1"><a class="menu-link" href="#"><img
+                          src="{% static 'img/icons/pt.svg' %}" alt="pt.svg"/></a>
+                      </li>
+                      <li class="p-1"><a class="menu-link" href="#"><img
+                          src="{% static 'img/icons/mail.svg' %}" alt="mail.svg"/></a>
+                      </li>
+                    </ul>
+                  </div>
             </div>
             <hr>
             <div class="flex justify-content-center footer-root-padding">
