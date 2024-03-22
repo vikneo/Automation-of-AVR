@@ -38,6 +38,7 @@ class AdministrationView(MenuMixin, ListView):
     """
     model = Order
     template_name = 'profile/admin.html'
+    paginate_by = 10
     context_object_name = 'orders'
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
