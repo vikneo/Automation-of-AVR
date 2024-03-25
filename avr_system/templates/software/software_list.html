@@ -9,8 +9,53 @@
         <div class="h2-block decoration">
             <h2>{{ title }}</h2>
         </div>
-        <div>
-
+        {% for service in services %}
+        <table class="table">
+            <tr>
+                <td><b>{{ service.name }}</b></td>
+                <td>{{ service.description }}</td>
+                <td>
+                    <div>
+                        {% if service.softwares.file_service %}
+                        <a href="{{ service.softwares.file_service.url }}" download> скачать OwenLogic</a>
+                        {% endif %}
+                    </div>
+                    <div>
+                        {% if service.softwares.file_driver %}
+                        <a href="{{ service.softwares.file_driver.url }}" download>скачать драйверы</a>
+                        {% endif %}
+                    </div>
+                    <div>
+                        {% if service.softwares.file_instruction.url %}
+                        <a href="{{ service.softwares.file_instruction.url }}" target="_blank">читать инструкцию</a>
+                        {% endif %}
+                    </div>
+                </td>
+            </tr>
+        </table>
+        {% endfor %}
+        <div class="h2-block decoration">
+            <h2>Доп информация</h2>
+        </div>
+        <!-- <table class="table">
+            <tr>
+                <td>Официальный сайт Owen</td>
+                <td><a href="https://owen.ru/">Owen</a></td>
+            </tr>
+            <tr>
+                <td>Официальный сайт Shneider Electric</td>
+                <td><a href="https://www.se.com/il/en/">Shneider Electric</a></td>
+            </tr>
+            <tr>
+                <td>Официальный сайт ONI</td>
+                <td><a href="https://oni-system.com/promo/avr/">ONI</a></td>
+            </tr>
+        </table> -->
+        <!-- <div class="comment"></div> -->
+        <div class="flex p-4">
+            <p>
+               * Если у вас появились вопросы, можете воспользоваться <a href="{% url 'users:callback' %}">формой обратной связи</a>
+            </p>
         </div>
     </div>
 </div>
