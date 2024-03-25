@@ -31,7 +31,7 @@ def path_file_instruction(instance: 'FileSoftware', filename: str) -> str:
     :param filename: name file
     :return: str - path to save
     """
-    return f"software/{instance.file_service}/file_instruction/{filename}"
+    return f"software/{instance.file_instruction}/file_instruction/{filename}"
 
 
 class SoftWare(models.Model):
@@ -40,6 +40,7 @@ class SoftWare(models.Model):
     """
     name = models.CharField(max_length=100, verbose_name='Наименование')
     slug = models.SlugField(max_length=100, verbose_name='URL', db_index=True)
+    description = models.TextField(verbose_name='Описание')
     access = models.BooleanField(default=True, verbose_name='Доступ')
 
     def __str__(self) -> str:
@@ -55,7 +56,7 @@ class FileSoftware(models.Model):
     """
     The Class description the model the file for software.
     """
-    software = models.OneToOneField(SoftWare, on_delete=models.CASCADE, verbose_name='Сервисное ПО')
+    software = models.OneToOneField(SoftWare, on_delete=models.CASCADE, verbose_name='Сервисное ПО', related_name='softwares')
     file_service = models.FileField(upload_to=path_file_service, verbose_name='Файл ПО')
     file_driver = models.FileField(upload_to=path_file_driver, verbose_name='Драйвер', blank=True, null=True)
     file_instruction = models.FileField(upload_to=path_file_instruction, verbose_name='Инструкция', blank=True, null=True)
