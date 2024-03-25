@@ -32,3 +32,23 @@
     outline: 1px solid red;
     border-radius: 8px;
 }
+
+.td-1 {
+    width: 20%;
+}
+
+.td-2 {
+    width: 30%;
+}
+
+.td-3 {
+    width: 40%;
+}
+
+.td-4 {
+    width: 50%;
+}
+
+.td-5 {
+    width: 60%;
+}

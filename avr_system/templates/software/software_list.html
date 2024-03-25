@@ -12,21 +12,21 @@
         {% for service in services %}
         <table class="table">
             <tr>
-                <td><b>{{ service.name }}</b></td>
-                <td>{{ service.description }}</td>
+                <td class="td-1"><b>{{ service.name }}</b></td>
+                <td class="td-4">{{ service.description }}</td>
                 <td>
                     <div>
                         {% if service.softwares.file_service %}
-                        <a href="{{ service.softwares.file_service.url }}" download> скачать OwenLogic</a>
+                        <a href="{{ service.softwares.file_service.url }}" download> скачать {{ service.name }}</a>
                         {% endif %}
                     </div>
                     <div>
                         {% if service.softwares.file_driver %}
-                        <a href="{{ service.softwares.file_driver.url }}" download>скачать драйверы</a>
+                        <a href="{{ service.softwares.file_driver.url }}" download>скачать драйверы для USB</a>
                         {% endif %}
                     </div>
                     <div>
-                        {% if service.softwares.file_instruction.url %}
+                        {% if service.softwares.file_instruction %}
                         <a href="{{ service.softwares.file_instruction.url }}" target="_blank">читать инструкцию</a>
                         {% endif %}
                     </div>
