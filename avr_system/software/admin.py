@@ -32,7 +32,8 @@ class AdminSoftWare(admin.ModelAdmin):
         open_access
     ]
 
-    list_display = ['name', 'access']
+    list_display = ['id', 'name', 'access']
+    list_display_links = ['name',]
     list_filter = ['name', ]
     search_fields = ['name',]
-
+    prepopulated_fields = {'slug': ('name',)}
