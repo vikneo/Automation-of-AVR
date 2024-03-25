@@ -57,8 +57,8 @@ class FileSoftware(models.Model):
     """
     software = models.OneToOneField(SoftWare, on_delete=models.CASCADE, verbose_name='Сервисное ПО')
     file_service = models.FileField(upload_to=path_file_service, verbose_name='Файл ПО')
-    file_driver = models.FileField(upload_to=path_file_driver, verbose_name='Драйвер')
-    file_instruction = models.FileField(upload_to=path_file_instruction, verbose_name='Инструкция')
+    file_driver = models.FileField(upload_to=path_file_driver, verbose_name='Драйвер', blank=True, null=True)
+    file_instruction = models.FileField(upload_to=path_file_instruction, verbose_name='Инструкция', blank=True, null=True)
 
     def __str__(self) -> str:
         return f"{self.software}"
