@@ -38,8 +38,9 @@ class SoftWare(models.Model):
     """
     The Class description the model the software
     """
-    name = models.CharField(max_lenght=100, verbose_name='Наименование')
-    slug = models.SlugField(max_lenght=100, verbose_name='URL', index_db=True)
+    name = models.CharField(max_length=100, verbose_name='Наименование')
+    slug = models.SlugField(max_length=100, verbose_name='URL', db_index=True)
+    access = models.BooleanField(default=True, verbose_name='Доступ')
 
     def __str__(self) -> str:
         return f"{self.name}"
