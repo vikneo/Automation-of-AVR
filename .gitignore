@@ -59,7 +59,7 @@ coverage.xml
 cover/
 
 # Makefile
-# Makefile
+Makefile
 megano/Makefile
 ./Makefile
 
