@@ -1,14 +1,10 @@
 """
 The module for testing the models of the application
 """
-
-import tempfile
 from django.test import TestCase
 from django.db.models.query import QuerySet
 from django.contrib.auth import get_user_model
 from django.db import models
-
-from random import randint
 
 from avr_type.models import (
     TypeAVR, 
@@ -25,6 +21,18 @@ from avr_type.models import (
     advantage_icon_directory_path,
     )
 from users.models import Profile
+from software.models import (
+    SoftWare,
+    FileSoftware,
+    path_file_service,
+    path_file_driver,
+    path_file_instruction,
+    )
+
+import tempfile
+from random import randint
+
+
 
 NUM_FOR_TEST = 5
 _RANGE = 15
@@ -60,6 +68,7 @@ class TestModelMixin(TestCase):
     @classmethod
     def setUpTestData(cls) -> None:
         cls.icon = tempfile.NamedTemporaryFile(suffix=".jpg").name
+        cls.file= tempfile.NamedTemporaryFile(suffix=".doc").name
         cls.choice_relay = SmartRelay.TypeRelay
 
         for index in range(NUM_FOR_TEST):
@@ -83,6 +92,12 @@ class TestModelMixin(TestCase):
                 name=cls.set_random_chars(start=32, end=122),
                 photo=cls.icon,
                 description=f'Descriiption for elemet - {index}',
+            )
+        
+        for index in range(NUM_FOR_TEST):
+            SoftWare.objects.create(
+                name=cls.set_random_chars(start=32, end=122),
+                description=cls.set_random_chars(start=96, end=122),
             )
     
     @staticmethod
@@ -423,7 +438,7 @@ class ProfileTest(ModelMixin, TestCase):
 
 class AdvantageTestCase(ModelMixin, TestModelMixin):
     """
-    Test of the "Banner" model
+    Test of the "Advantage" model
     """
 
     def test_method_str(self) -> None:
@@ -584,3 +599,99 @@ class PathFileLogicTestCase(TestCase):
     """
     def setUp(self) -> None:
         path_file = path_file_logic()
+
+
+class SoftWareTestCase(ModelMixin, TestModelMixin):
+    """
+    Test of the "SoftWare" model
+    """
+    def test_count_create_software(self) -> None:
+        quantity = SoftWare.objects.all().count()
+        self.assertEqual(quantity, NUM_FOR_TEST)
+    
+    def test_method_str(self) -> None:
+        name = SoftWare.objects.get(id=2)
+        self.assertEqual(name.__str__(), name.name)
+    
+    def test_name_lable(self) -> None:
+        """
+        Тест текстовой метки поля "name"
+        """
+        name = self.get_select_element(SoftWare, 1)
+        responce = name._meta.get_field("name").verbose_name
+        self.assertEqual(responce, "Наименование")
+
+    def test_slug_lable(self) -> None:
+        """
+        Тест текстовой метки поля "slug"
+        """
+        slug = self.get_select_element(SoftWare, 1)
+        responce = slug._meta.get_field("slug").verbose_name
+        self.assertEqual(responce, "URL") 
+    
+    def test_description_lable(self) -> None:
+        """
+        Тест текстовой метки поля "description"
+        """
+        description = self.get_select_element(SoftWare, 1)
+        responce = description._meta.get_field("description").verbose_name
+        self.assertEqual(responce, "Описание")
+
+    def test_access_lable(self) -> None:
+        """
+        Тест текстовой метки поля "access"
+        """
+        access = self.get_select_element(SoftWare, 1)
+        responce = access._meta.get_field("access").verbose_name
+        self.assertEqual(responce, "Доступ")
+    
+    def test_add_software(self) -> None:
+        """
+        test for adding an software
+        """
+        add = SoftWare(
+            name="test_titale",
+        )
+        add.save()
+        quantity = self.get_queryset(SoftWare).count()
+        self.assertEqual(quantity, NUM_FOR_TEST + 1)
+
+    def test_deleted_software(self) -> None:
+        """
+        Test for deleted for software
+        """
+        self.get_select_element(SoftWare, 2).delete()
+        quantity = self.get_queryset(SoftWare).count()
+        self.assertEqual(quantity, NUM_FOR_TEST - 1)
+    
+    @staticmethod
+    def get_file_name(name: str) -> str:
+        """
+        Возвращает строку с именем файла
+        """
+        return name
+
+    def test_path_file_service(self) -> None:
+        """
+        Тест "path_file_service" на корректность пути для сохранения файла 
+        """
+        filename = self.get_file_name('test_file')
+        file_service = path_file_service(FileSoftware, filename)
+        self.assertTrue(file_service)
+
+    def test_path_file_driver(self) -> None:
+        """
+        Тест "path_file_driver" на корректность пути для сохранения файла 
+        """
+        filename = self.get_file_name('test_file')
+        file_service = path_file_driver(FileSoftware, filename)
+        self.assertTrue(file_service)
+
+    def test_path_file_instruction(self) -> None:
+        """
+        Тест "path_file_instruction" на корректность пути для сохранения файла 
+        """
+        filename = self.get_file_name('test_file')
+        file_service = path_file_instruction(FileSoftware, filename)
+        self.assertTrue(file_service)
+    
