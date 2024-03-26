@@ -288,7 +288,7 @@ class ClassificationTest(ModelMixin, TestModelMixin):
     def test_work_tp_label(self):
         work_tp = self.get_select_element(Classification, 1)
         self.assertEqual(
-            work_tp._meta.get_field("work_tp").verbose_name, "Режим работы тр-ров"
+            work_tp._meta.get_field("work_tp").verbose_name, "Работа тр-ров (параллель)"
         )
 
     def test_status_box_label(self):
@@ -324,7 +324,7 @@ class ClassificationTest(ModelMixin, TestModelMixin):
 
     def test_access_label(self):
         access = self.get_select_element(Classification, 1)
-        self.assertEqual(access._meta.get_field("access").verbose_name, "Доступ")
+        self.assertEqual(access._meta.get_field("access").verbose_name, "Свободно")
 
     def test_created_product(self):
         type_avr = self.get_select_element(TypeAVR, 3)
@@ -405,7 +405,7 @@ class ProfileTest(ModelMixin, TestCase):
 
     def test_get_absolute_url(self):
         profile = self.get_select_element(Profile, id=1)
-        self.assertEqual(profile.get_absolute_url(), "/user/account/")
+        self.assertEqual(profile.get_absolute_url(), "/user/account/1/")
 
     def test_update_user(self):
         last_name = "Poncrat"

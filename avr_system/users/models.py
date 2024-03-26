@@ -38,7 +38,7 @@ class Profile(models.Model):
         return self.user.username
     
     def get_absolute_url(self):
-        return reverse_lazy('users:account')
+        return reverse_lazy('users:account', kwargs={'pk': self.pk})
     
     class Meta:
         db_table = 'profies'
