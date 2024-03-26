@@ -684,14 +684,14 @@ class SoftWareTestCase(ModelMixin, TestModelMixin):
         Тест "path_file_driver" на корректность пути для сохранения файла 
         """
         filename = self.get_file_name('test_file')
-        file_service = path_file_driver(FileSoftware, filename)
-        self.assertTrue(file_service)
+        file_driver = path_file_driver(FileSoftware, filename)
+        self.assertTrue(file_driver)
 
     def test_path_file_instruction(self) -> None:
         """
         Тест "path_file_instruction" на корректность пути для сохранения файла 
         """
         filename = self.get_file_name('test_file')
-        file_service = path_file_instruction(FileSoftware, filename)
-        self.assertTrue(file_service)
+        file_instruction = path_file_instruction(FileSoftware, filename)
+        self.assertTrue(file_instruction)
     
