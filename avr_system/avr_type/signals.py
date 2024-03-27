@@ -75,10 +75,13 @@ def get_file_save(instance, **kwargs) -> None:
     The signal changes the order status if the file is configured
     """
     classif = Classification.objects.get(classifications=instance.id)
-    order = Order.objects.get(name=classif)
-    if instance.file:
-        order.status = 'Готов'
-        order.save()
-    else:
-        order.status = ''
-        order.save()
+    try:
+        order = Order.objects.get(name=classif)
+        if instance.file:
+            order.status = 'Готов'
+            order.save()
+        else:
+            order.status = ''
+            order.save()
+    except Exception as err:
+        pass
