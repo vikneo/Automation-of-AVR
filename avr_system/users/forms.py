@@ -1,7 +1,11 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, UserCreationForm
+from django.contrib.auth.forms import (
+    AuthenticationForm,
+    PasswordChangeForm,
+    UserCreationForm,
+)
 from django.utils.translation import gettext_lazy as _
 
 from .models import Profile
@@ -13,12 +17,15 @@ class UserFormAuth(AuthenticationForm):
     """
     User Authentication Form
     """
-    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
-    password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+
+    username = forms.CharField(
+        label="Логин", widget=forms.TextInput(attrs={"class": "form-input"})
+    )
+    password = forms.CharField(
+        label="Пароль", widget=forms.PasswordInput(attrs={"class": "form-input"})
+    )
     error_messages = {
-        "invalid_login": _(
-            "Комбинация %(username)s и пароля не найдена."
-        ),
+        "invalid_login": _("Комбинация %(username)s и пароля не найдена."),
         "inactive": _("Данный аккаунт заблокирован."),
     }
 
@@ -29,7 +36,7 @@ class UserFormAuth(AuthenticationForm):
         If the given user cannot log in, this method should raise a
         ``ValidationError``.
         """
-        username = self.cleaned_data['username']
+        username = self.cleaned_data["username"]
         if not User.objects.filter(username=username).exists():
             return username
         if Profile.objects.get(user__username=username).archive:
@@ -42,50 +49,39 @@ class UserFormAuth(AuthenticationForm):
 
     class Meta:
         model = User
-        fields = [
-            'username',
-            'password'
-        ]
+        fields = ["username", "password"]
 
 
 class RegisterUserForm(UserCreationForm):
     """
-    User Register Form 
+    User Register Form
     """
+
     username = forms.CharField(
         label=_("Логин"),
         widget=forms.TextInput(
-            attrs={
-                'class': 'form-input',
-                'placeholder': 'Не обязательное поле'
-            },
-        )
+            attrs={"class": "form-input", "placeholder": "Не обязательное поле"},
+        ),
     )
     password1 = forms.CharField(
         label=_("Пароль"),
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-input',
-                'placeholder': 'Обязательное поле',
+                "class": "form-input",
+                "placeholder": "Обязательное поле",
             },
         ),
     )
     password2 = forms.CharField(
         label=_("Повторить пароль"),
         widget=forms.PasswordInput(
-            attrs={
-                'class': 'form-input',
-                'placeholder': 'Обязательное поле'
-            },
+            attrs={"class": "form-input", "placeholder": "Обязательное поле"},
         ),
     )
     email = forms.CharField(
         label=_("Почта"),
         widget=forms.EmailInput(
-            attrs={
-                'class': 'form-input',
-                'placeholder': 'Обязательное поле'
-            },
+            attrs={"class": "form-input", "placeholder": "Обязательное поле"},
         ),
     )
 
@@ -103,28 +99,28 @@ class RegisterUserForm(UserCreationForm):
     """
 
     def clean_phone(self):
-        phone = self.cleaned_data['phone']
+        phone = self.cleaned_data["phone"]
         if Profile.objects.filter(phone=phone).exists():
             raise forms.ValidationError("Такой телефон уже существует")
         return phone
 
     def clean_username(self):
-        username = self.cleaned_data['username']
+        username = self.cleaned_data["username"]
         if User.objects.filter(username=username).exists():
             raise forms.ValidationError("Такой логин уже существует")
 
         return username
 
     def clean_email(self):
-        email = self.cleaned_data['email']
+        email = self.cleaned_data["email"]
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError("Данный email уже существует.")
 
         return email
 
     def clean_password2(self):
-        passw1 = self.cleaned_data['password1']
-        passw2 = self.cleaned_data['password2']
+        passw1 = self.cleaned_data["password1"]
+        passw2 = self.cleaned_data["password2"]
         if passw1 != passw2:
             raise forms.ValidationError("Пароли не совпадают")
         if len(passw1) < 6:
@@ -132,69 +128,88 @@ class RegisterUserForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = [
-            'username', 'email', 'password1', 'password2'
-        ]
+        fields = ["username", "email", "password1", "password2"]
 
 
 class UserRasswordResetForm(PasswordChangeForm):
-    """
-    
-    """
-    old_password = forms.CharField(label="Старый пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-    new_password1 = forms.CharField(label="Новый пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-    new_password2 = forms.CharField(label="Подтверждение пароля",
-                                    widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    """ """
+
+    old_password = forms.CharField(
+        label="Старый пароль", widget=forms.PasswordInput(attrs={"class": "form-input"})
+    )
+    new_password1 = forms.CharField(
+        label="Новый пароль", widget=forms.PasswordInput(attrs={"class": "form-input"})
+    )
+    new_password2 = forms.CharField(
+        label="Подтверждение пароля",
+        widget=forms.PasswordInput(attrs={"class": "form-input"}),
+    )
 
 
 class ProfileUpdateForm(forms.ModelForm):
-    """
-    
-    """
-    first_name = forms.CharField(label='Имя', widget=forms.TextInput(attrs={'class': 'form-input'}), required=False)
-    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput(attrs={'class': 'form-input'}), required=False)
-    email = forms.CharField(label='Почта', widget=forms.EmailInput(attrs={'class': 'form-input'}), required=False)
-    phone = forms.CharField(label='Телефон', widget=forms.TextInput(attrs={'class': 'form-input'}), required=False)
+    """ """
+
+    first_name = forms.CharField(
+        label="Имя",
+        widget=forms.TextInput(attrs={"class": "form-input"}),
+        required=False,
+    )
+    last_name = forms.CharField(
+        label="Фамилия",
+        widget=forms.TextInput(attrs={"class": "form-input"}),
+        required=False,
+    )
+    email = forms.CharField(
+        label="Почта",
+        widget=forms.EmailInput(attrs={"class": "form-input"}),
+        required=False,
+    )
+    phone = forms.CharField(
+        label="Телефон",
+        widget=forms.TextInput(attrs={"class": "form-input"}),
+        required=False,
+    )
     avatar = forms.ImageField(
-        label='Аватар',
+        label="Аватар",
         widget=forms.FileInput(
             attrs={
-                'class': 'form-input',
-                'id': "avatar",
-                'name': "avatar",
-                'type': "file",
-                'enctype': "multipart/form-data",
+                "class": "form-input",
+                "id": "avatar",
+                "name": "avatar",
+                "type": "file",
+                "enctype": "multipart/form-data",
             },
         ),
-        required=False
+        required=False,
     )
 
     class Meta:
         model = Profile
-        fields = ['avatar', 'phone']
+        fields = ["avatar", "phone"]
 
 
 class CallBackForm(forms.Form):
     """
     
     """
-    first_name = forms.CharField(label='Имя', widget=forms.TextInput(attrs={
-        'class': 'form-input',
-        'placeholder': 'Имя'
-    }))
-    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput(attrs={
-        'class': 'form-input',
-        'placeholder': 'Фамилия'
-    }))
-    email = forms.CharField(label='Почта', widget=forms.EmailInput(attrs={
-        'class': 'form-input',
-        'placeholder': 'Email'
-    }))
-    comments = forms.CharField(label='Текст сообщения', widget=forms.Textarea(attrs={
-        'class': 'form-input',
-        'rows': '6',
-        'placeholder': 'Текст сообщения'
-    }))
+    first_name = forms.CharField(
+        label="Имя",
+        widget=forms.TextInput(attrs={"class": "form-input", "placeholder": "Имя"}),
+    )
+    last_name = forms.CharField(
+        label="Фамилия",
+        widget=forms.TextInput(attrs={"class": "form-input", "placeholder": "Фамилия"}),
+    )
+    email = forms.CharField(
+        label="Почта",
+        widget=forms.EmailInput(attrs={"class": "form-input", "placeholder": "Email"}),
+    )
+    comments = forms.CharField(
+        label="Текст сообщения",
+        widget=forms.Textarea(
+            attrs={"class": "form-input", "rows": "6", "placeholder": "Текст сообщения"}
+        ),
+    )
 
     class Meta:
-        fields = ['first_name', 'last_name', 'email', 'comment']
+        fields = ["first_name", "last_name", "email", "comment"]
