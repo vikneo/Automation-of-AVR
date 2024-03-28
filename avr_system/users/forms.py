@@ -7,6 +7,7 @@ from django.contrib.auth.forms import (
     UserCreationForm,
 )
 from django.utils.translation import gettext_lazy as _
+from captcha.fields import CaptchaField
 
 from .models import Profile
 
@@ -146,7 +147,6 @@ class UserRasswordResetForm(PasswordChangeForm):
 
 class ProfileUpdateForm(forms.ModelForm):
     """ """
-
     first_name = forms.CharField(
         label="Имя",
         widget=forms.TextInput(attrs={"class": "form-input"}),
@@ -208,6 +208,7 @@ class CallBackForm(forms.Form):
             attrs={"class": "form-input", "rows": "6", "placeholder": "Текст сообщения"}
         ),
     )
+    captcha = CaptchaField(label='Капча')
 
     class Meta:
         fields = ["first_name", "last_name", "email", "comment"]
