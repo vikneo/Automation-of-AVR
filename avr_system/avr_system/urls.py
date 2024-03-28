@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('avr_type.urls')),
     path('system/', include('software.urls')),
     path('user/', include('users.urls')),
+    path('captcha/', include('captcha.urls')),
     path('', include('django.contrib.auth.urls')),
 ]
 
