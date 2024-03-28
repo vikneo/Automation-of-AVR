@@ -1,12 +1,17 @@
 from django import forms
 
-from .models import Classification
+from .models import Classification, TypeAVR, SmartRelay
 
 
 class OrderCreateForm(forms.ModelForm):
     """ """
-    name = forms.CharField(label='Название', widget=forms.TextInput(attrs={'class': 'form-input'}))
-
+    name = forms.CharField(
+        label='Название',
+        widget=forms.TextInput(attrs={
+            'class': 'form-input',
+            'placeholder': 'Название шкафа'
+            })
+        )
     comment = forms.CharField(
         label="Комментарий",
         widget=forms.Textarea(attrs={
@@ -23,6 +28,13 @@ class OrderCreateForm(forms.ModelForm):
     scheme = forms.CharField(
         label="Схема подключения", widget=forms.FileInput(attrs={"class": "form-input"})
     )
+
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        self.fields['type_avr'].empty_label = 'Выберите схему АВР'
+        self.fields['relay'].empty_label = 'Выберите тип логического реле'
+        self.fields['type_avr'].queryset = TypeAVR.objects.filter(access=True)
+        self.fields['relay'].queryset = SmartRelay.objects.filter(access=True)
 
     class Meta:
         model = Classification
