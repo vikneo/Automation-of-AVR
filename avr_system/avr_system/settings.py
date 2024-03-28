@@ -94,6 +94,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'imagekit',
     'software.apps.SoftwareConfig',
+    'captcha',
 ]
 
 MIDDLEWARE = [
