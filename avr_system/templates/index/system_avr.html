@@ -22,7 +22,7 @@
         <div class="flex flex-wrap">
             {% for system in systems %}
             <div class="card card-list" style="max-width: 17rem;">
-                <img src="{{ system.images.first.photo.url }}" class="card-img-top card-img" style="height: 160px;"
+                <img src="{{ system.images.first.photo.url }}" class="card-img-top card-img" style="width: 265px; height: 160px;"
                     alt="{{ system.name }}">
                 <div class="card-body card-link">
                     <a href="{% url 'system:detail_system' system.slug %}" class="card-link">
