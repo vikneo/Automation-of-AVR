@@ -203,18 +203,18 @@ nav, footer {
 
 @media (min-height:100px) {
     .container-box {
-        max-width: 320px;
+        min-height: 540px;
     }
 }
 
 @media (min-width:768px) {
     .container-box {
-        max-width: 750px;
+        width: 750px;
     }
 }
 @media (min-width:992px) {
     .container-box {
-        max-width: 908px;
+        width: 908px;
     }
 }
 /* @media (min-width:1200px) {
