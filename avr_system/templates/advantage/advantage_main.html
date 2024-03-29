@@ -1,8 +1,21 @@
 {% load static i18n %}
 
+<div class="flex flex-wrap">
+    {% for advantage in advantages %}
+    <div class="item-box">
+        <div class="flex item-wrap">
+            <div class="icon-block">
+                <img class="advant-img" src="{{ advantage.icon.url }}" alt="">
+            </div>
+            <div class="content-block">
+                {{ advantage }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
-{% for advantage in advantages %}
-<div class="item-box">
+<!-- <div class="item-box">
     <div class="flex advant-items">
         <div class="flex icon-block">
             <div class="advant-img-block">
@@ -13,5 +26,4 @@
             {{ advantage }}
         </div>
     </div>
-</div>
-{% endfor %}
+  </div> -->

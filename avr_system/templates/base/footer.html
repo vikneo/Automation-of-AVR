@@ -4,36 +4,34 @@
     <div class="flex footer-content">
         <div class="footer-pt-15">
             <div class="flex footer-fluid align-items">
-                <div>
-                    <a class="navbar-brand" href="{% url 'system:index' %}">
-                        Автоматизация для систем АВР
-                    </a>
-                </div>
+                <a class="navbar-brand" href="{% url 'system:index' %}">
+                    Автоматизация для систем АВР
+                </a>
                 <div>
                     <ul class="flex footer-list">
                         {% for m in menu %}
-                        <li class="p-3">
+                        <li class="p-1">
                             <a class="footer-link" href="{% url m.url %}">{{ m.name }}</a>
                         </li>
                         {% endfor %}
                     </ul>
                 </div>
                 <div>
-                    <ul class="flex footer-list">
-                      <li class="p-1"><a href="#" onclick="stopper()"><img
-                          src="{% static 'img/icons/tw.svg' %}" alt="tw.svg"/></a>
-                      </li>
-                      <li class="p-1"><a href="#" onclick="stopper()"><img
-                          src="{% static 'img/icons/in.svg' %}" alt="in.svg"/></a>
-                      </li>
-                      <li class="p-1"><a href="#" onclick="stopper()"><img
-                          src="{% static 'img/icons/pt.svg' %}" alt="pt.svg"/></a>
-                      </li>
-                      <li class="p-1"><a href="#" onclick="stopper()"><img
-                          src="{% static 'img/icons/mail.svg' %}" alt="mail.svg"/></a>
-                      </li>
+                    <ul class="flex footer-icon">
+                        <li class="p-1"><a href="#" onclick="stopper()"><img src="{% static 'img/icons/tw.svg' %}"
+                                    alt="tw.svg" /></a>
+                        </li>
+                        <li class="p-1"><a href="#" onclick="stopper()"><img src="{% static 'img/icons/in.svg' %}"
+                                    alt="in.svg" /></a>
+                        </li>
+                        <li class="p-1"><a href="#" onclick="stopper()"><img src="{% static 'img/icons/pt.svg' %}"
+                                    alt="pt.svg" /></a>
+                        </li>
+                        <li class="p-1"><a href="#" onclick="stopper()"><img src="{% static 'img/icons/mail.svg' %}"
+                                    alt="mail.svg" /></a>
+                        </li>
                     </ul>
-                  </div>
+                </div>
             </div>
             <hr>
             <div class="flex justify-content-center footer-root-padding">

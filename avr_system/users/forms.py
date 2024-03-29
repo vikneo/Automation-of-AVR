@@ -147,6 +147,11 @@ class UserRasswordResetForm(PasswordChangeForm):
 
 class ProfileUpdateForm(forms.ModelForm):
     """ """
+    username = forms.CharField(
+        label="Логин",
+        widget=forms.TextInput(attrs={"class": "form-input"}),
+        required=False,
+    )
     first_name = forms.CharField(
         label="Имя",
         widget=forms.TextInput(attrs={"class": "form-input"}),
@@ -183,7 +188,7 @@ class ProfileUpdateForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ["avatar", "phone"]
+        fields = ["username", "first_name", "last_name", "avatar", "phone"]
 
 
 class CallBackForm(forms.Form):
