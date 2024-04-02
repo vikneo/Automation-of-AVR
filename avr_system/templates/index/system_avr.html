@@ -6,40 +6,46 @@
 {% block title %} <title>{{ title }}</title> {% endblock %}
 
 {% block content %}
-{% include 'messages/message.html' %}
-{% block banner %}
-<div class="banner-box">
-    {% banner_main_page %}
-</div>
-{% endblock %}
-<div class="s-section">
-    <div class="container-box">
-        <div class="h2-block decoration">
-            <h2>Варианты исполнения</h2>
+    {% include 'messages/message.html' %}
+    {% block banner %}
+        <div id="screen" class="banner-box">
+            {% banner_main_page %}
         </div>
-        <!-- <div class="row row-cols-1 row-cols-md-3 g-4 row-m-3">
-        </div> -->
-        <div class="flex flex-wrap">
-            {% for system in systems %}
-            <div class="card card-list" style="max-width: 17rem;">
-                <img src="{{ system.images.first.photo.url }}" class="card-img-top card-img" style="width: 265px; height: 160px;"
-                    alt="{{ system.name }}">
-                <div class="card-body card-link">
-                    <a href="{% url 'system:detail_system' system.slug %}" class="card-link">
-                        <h5 class="card-title card-title-size">{{ system.name }}</h5>
-                    </a>
-                </div>
+        <script>
+            if (screen.width < 560) {
+                document.getElementById('screen').innerHTML = `<div style="display: none"></div>`;
+            }
+        </script>
+    {% endblock %}
+    <div class="s-section">
+        <div class="container-box">
+            <div class="h2-block decoration">
+                <h2>Варианты исполнения</h2>
             </div>
-            {% endfor %}
+            <!-- <div class="row row-cols-1 row-cols-md-3 g-4 row-m-3">
+            </div> -->
+            <div class="flex flex-wrap">
+                {% for system in systems %}
+                    <div class="card card-list" style="max-width: 17rem;">
+                        <img src="{{ system.images.first.photo.url }}" class="card-img-top card-img"
+                             style="width: 265px; height: 160px;"
+                             alt="{{ system.name }}">
+                        <div class="card-body card-link">
+                            <a href="{% url 'system:detail_system' system.slug %}" class="card-link">
+                                <h5 class="card-title card-title-size">{{ system.name }}</h5>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container-box advant-box">
+            <div class="h2-block decoration">
+                <h2>Преимущества</h2>
+            </div>
+            <div class="flex advant-wrap">
+                {% advantage_main_page %}
+            </div>
         </div>
     </div>
-    <div class="container-box advant-box">
-        <div class="h2-block decoration">
-            <h2>Преимущества</h2>
-        </div>
-        <div class="flex advant-wrap">
-            {% advantage_main_page %}
-        </div>
-    </div>
-</div>
 {% endblock %}
