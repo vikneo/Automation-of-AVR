@@ -55,3 +55,11 @@ function searchField () {
         form.onsubmit = function () { return false;}
         }
 }
+
+function mobileWin () {
+    console.log(screen.width)
+    if (screen.width < 560) {
+        document.getElementById('screen').innerHTML = `<div style="display: none"></div>`;
+        document.getElementById('advantage').innerHTML = `<div style="display: none"></div>`;
+    }
+}

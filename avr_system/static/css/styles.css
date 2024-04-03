@@ -39,6 +39,7 @@ select {
 }
 
 nav, footer {
+    min-width: 530px;
     background: rgb(108 108 112 / 52%);
     color: rgb(11 0 173 / 88%);
     /* background: rgb(11 0 173 / 88%); */
