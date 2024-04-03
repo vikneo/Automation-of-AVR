@@ -30,13 +30,19 @@
     /* justify-content: center; */
 }
 
+@media (min-width:500px) {
+    .form-block {
+        max-width: 450px;
+    }
+}
+
 .form-block {
     max-width: 630px;
     padding: 10px;
 }
 
 .form-label {
-    min-width: 13em;
+    min-width: 8em;
 }
 
 .form-error {
@@ -45,7 +51,7 @@
 }
 
 .form-input {
-    width: 400px;
+    width: 100%;
 }
 
 .span-name {

@@ -196,8 +196,8 @@ nav, footer {
 /* =========================== center_sidebar ======================== */
 
 .container-box {
-    margin-right: auto;
-    margin-left: auto;
+    /* margin-right: auto; */
+    /* margin-left: auto; */
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -208,6 +208,11 @@ nav, footer {
     }
 }
 
+@media (min-width:400px) {
+    .container-box {
+        width: 390px;
+    }
+}
 @media (min-width:768px) {
     .container-box {
         width: 750px;
@@ -218,11 +223,6 @@ nav, footer {
         width: 908px;
     }
 }
-/* @media (min-width:1200px) {
-    .container-box {
-        width: 1130px;
-    }
-} */
 
 .container-fluid {
      margin-right: auto;
@@ -390,7 +390,7 @@ nav, footer {
 /* ============================ block contsct ======================= */
 
 .contact-container {
-    width: 600px;
+    width: 100%;
 }
 
 .contact-row {
