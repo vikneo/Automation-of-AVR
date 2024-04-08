@@ -30,6 +30,19 @@ h2 {
     color: #000;
 }
 
+@media screen and (min-width:370px) {
+    .display {
+        flex-direction: column;
+    }
+    h2 {
+        font-size: 22px;
+    }
+}
+
+.display {
+    display: flex;
+}
+
 select {
     width: 400px;
 }
@@ -255,7 +268,7 @@ nav, footer {
 
 
 @media only screen and (max-width: 1200px) {
-    .h2-block.decoration h2 {
+    .h2-block.decoration {
         font-size: 30px;
         height: 80px;
         line-height: 62px;
