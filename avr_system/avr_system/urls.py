@@ -17,11 +17,19 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
+from rest_framework import routers
+
+from avr_type.api import TypeAVRViewSet
+
+router = routers.DefaultRouter()
+router.register('system', TypeAVRViewSet, basename='systems')
 
 urlpatterns = [
     path('system/admin/', admin.site.urls),
+    path('auth/', include('rest_framework.urls')),
     path("i18n", include('django.conf.urls.i18n')),
+    path('rest-api/', include(router.urls)),
     path('', include('avr_type.urls')),
     path('system/', include('software.urls')),
     path('user/', include('users.urls')),
