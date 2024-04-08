@@ -90,6 +90,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework',
+    'django_filters',
     'avr_type.apps.AvrTypeConfig',
     'users.apps.UsersConfig',
     'imagekit',
@@ -147,6 +149,16 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+REST_FRAMEWORK = {
+    # 'DEFAULT_PAGINATION_CLASS': 'configuration.config.CustomPagination',
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
