@@ -23,7 +23,7 @@
                             {% csrf_token %}
                             <td>
                                 <label for="title_site">
-                                    <li>{{ order}}:</li>
+                                    <span>{{ order}}:</span>
                                 </label>
                             <td>
                                 <span class="span-default">{{ order.system }}</span>
@@ -34,7 +34,7 @@
                             <td>
                                 <span class="span-default">{{ order.relay }}</span>
                             </td>
-                            <td class="flex td-input">
+                            <td class="td-input">
                                 <span class="span-default">{{ order.status }}</span>
                             </td>
                         </form>
