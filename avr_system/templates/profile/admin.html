@@ -10,7 +10,7 @@
 {% block content %}
 {% include 'messages/message.html' %}
 <div class="s-section">
-    <div class="container-box" style=" background: #c7b9b938;">
+    <div class="container-box mb-3" style=" background: #c7b9b938;">
         <div class="h2-block decoration">
             <h2>Просмотр заказов</h2>
         </div>
@@ -39,9 +39,6 @@
                                     if (table.rows[1].cells[5].innerHTML === 'Готов') {
                                         document.getElementById('status').innerHTML = `<span style="color: green;"><b>{{ order.status }}</b></span>`;
                                     };
-                                    if (table.rows[1].cells[5].innerHTML === 'В обработке') {
-                                        document.getElementById('status').innerHTML = `<span style="color: orange;"><b>{{ order.status }}</b></span>`;
-                                    };
                                 </script>
                             </tr>
                             {% endfor %}
@@ -51,6 +48,6 @@
             </div>
         </div>
     </div>
+    {% include 'index/paginator.html' %}
 </div>
-{% include 'index/paginator.html' %}
 {% endblock %}
