@@ -8,7 +8,6 @@
 {% endblock %}
 
 {% block content %}
-{% include 'messages/message.html' %}
 <div class="s-section">
     <div class="container-box mb-3" style=" background: #c7b9b938;">
         <div class="h2-block decoration">
@@ -23,7 +22,7 @@
                                 <td><b>№</b></td>
                                 <td><b>Заказчик</b></td>
                                 <td><b>Название</b></td>
-                                <td><b>Описанием</b></td>
+                                <td><b>Описание</b></td>
                                 <td><b>Схема</b></td>
                                 <td><b>Статус</b></td>
                             </tr>
@@ -38,6 +37,9 @@
                                 <script>
                                     if (table.rows[1].cells[5].innerHTML === 'Готов') {
                                         document.getElementById('status').innerHTML = `<span style="color: green;"><b>{{ order.status }}</b></span>`;
+                                    };
+                                    if (table.rows[1].cells[5].innerHTML === 'В обработке') {
+                                        document.getElementById('status').innerHTML = `<span style="color: orange;"><b>{{ order.status }}</b></span>`;
                                     };
                                 </script>
                             </tr>
