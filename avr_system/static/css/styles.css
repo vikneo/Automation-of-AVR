@@ -30,7 +30,7 @@ h2 {
     color: #000;
 }
 
-@media screen and (min-width:370px) {
+@media screen and (width < 400px) {
     .display {
         flex-direction: column;
     }
