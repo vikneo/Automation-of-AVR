@@ -27,6 +27,7 @@ class Settings:
         self.__cache_banner = SECOND * 10  # 10 min
         self.__cache_product = DAYS  # 1 day
         self.__cache_system = DAYS  # 1 day
+        self.__cache_relay = DAYS  # 1 day
         self.__get_filter_params = DAYS  # 1 day
         self.__paginate_by = PAGINATE
 
@@ -104,6 +105,15 @@ class Settings:
         """
 
         self.__cache_system = int(time_cache) * SECOND
+    
+    def set_cache_relay(self, time_cache: int) -> None:
+        """
+        Устанавливает время кэширования списка программируемых реле.
+
+        :param time_cache:  int время в минутах
+        """
+
+        self.__cache_relay = int(time_cache) * SECOND
 
     def set_cache_filter_params(self, time_cache: int) -> None:
         """
@@ -175,6 +185,19 @@ class Settings:
             return self.__cache_system
 
         return self.time_calculate(self.__cache_system)
+
+    def get_cache_relay(self, time: bool = True) -> int | str:
+        """
+        Возвращает время хранения кэша списка программируемых реле
+
+        :time: bool Если time == True, то время возвращается как число, иначе как форматированный вывод.
+        :return: int или str время в минутах.
+        """
+
+        if time:
+            return self.__cache_relay
+        
+        return self.time_calculate(self.__cache_relay)
 
     def get_cache_filter_params(self, time: bool = True) -> int | str:
         """
