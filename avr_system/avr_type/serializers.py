@@ -1,6 +1,10 @@
 from rest_framework import serializers
 
-from .models import TypeAVR, Classification
+from .models import (
+    TypeAVR,
+    Classification,
+    SmartRelay
+    )
 
 
 class TypeAVRSerializers(serializers.ModelSerializer):
@@ -29,4 +33,14 @@ class ProductSerializers(serializers.ModelSerializer):
             'signal_ozz',
             'comment',
             'relay',
+        ]
+
+
+class RelaySerializers(serializers.ModelSerializer):
+    class Meta:
+        model = SmartRelay
+        fields = [
+            'id',
+            'brand',
+            'model'
         ]
