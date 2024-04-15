@@ -1,4 +1,4 @@
-import os
+from rest_framework.generics import ListCreateAPIView
 from django.db.models.query import QuerySet
 from django.db.models import Q
 from django.http import Http404
@@ -12,6 +12,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.cache import cache
 
 from .models import TypeAVR, Classification, Order
+from .serializers import TypeAVRSerializers, ProductSerializers
 from.forms import OrderCreateForm
 from users.models import Profile
 from utilits.mixins import MenuMixin, ChangeListMixin
@@ -469,3 +470,15 @@ class ClearCacheProduct(PermissionRequiredMixin, ChangeListMixin, TemplateView):
 
         return HttpResponseRedirect(reverse_lazy("system:settings"))
       
+# =============================== REST API ======================================
+
+class TypeAVRListAPI(ListCreateAPIView):
+
+    queryset = TypeAVR.objects.all()
+    serializer_class = TypeAVRSerializers
+
+
+class ProductListAPI(ListCreateAPIView):
+
+    queryset = Classification.objects.all()
+    serializer_class = ProductSerializers
