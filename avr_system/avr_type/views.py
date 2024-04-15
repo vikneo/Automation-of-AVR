@@ -12,7 +12,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.cache import cache
 
 from .models import TypeAVR, Classification, Order
-from .serializers import TypeAVRSerializers
+from .serializers import TypeAVRSerializers, ProductSerializers
 from.forms import OrderCreateForm
 from users.models import Profile
 from utilits.mixins import MenuMixin, ChangeListMixin
@@ -476,3 +476,9 @@ class TypeAVRListAPI(ListCreateAPIView):
 
     queryset = TypeAVR.objects.all()
     serializer_class = TypeAVRSerializers
+
+
+class ProductListAPI(ListCreateAPIView):
+
+    queryset = Classification.objects.all()
+    serializer_class = ProductSerializers
