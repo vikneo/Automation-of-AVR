@@ -87,7 +87,7 @@ class Settings:
 
         self.__cache_banner = int(time_cache) * SECOND
 
-    def set_cache_product_detail(self, time_cache: int) -> None:
+    def set_cache_products(self, time_cache: int) -> None:
         """
         Устанавливает время кэширования детальной информации продукта.
 
@@ -150,7 +150,7 @@ class Settings:
 
         return self.time_calculate(self.__cache_banner)
 
-    def get_cache_product_detail(self, time: bool = True) -> int | str:
+    def get_cache_products(self, time: bool = True) -> int | str:
         """
         Возвращает время хранения кэша детальной информации Продукта.
 
