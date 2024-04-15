@@ -20,11 +20,16 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from avr_type.api import TypeAVRViewSet, ProductViewSet
+from avr_type.api import (
+    TypeAVRViewSet,
+    ProductViewSet,
+    RelayViewSet,
+    )
 
 router = routers.DefaultRouter()
 router.register('types', TypeAVRViewSet, basename='types')
 router.register('products', ProductViewSet, basename='products')
+router.register('relays', RelayViewSet, basename='relays')
 
 urlpatterns = [
     path('system/admin/', admin.site.urls),
