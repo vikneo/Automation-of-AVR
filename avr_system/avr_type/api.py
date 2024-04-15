@@ -52,4 +52,4 @@ class RelayViewSet(viewsets.ModelViewSet):
     permission_classes = (CustomPermissions, )
 
     def get_queryset(self):
-        return cache.get_or_set('relays', SmartRelay.objects.filter(access=True), 1024)
+        return cache.get_or_set('relays', SmartRelay.objects.filter(access=True), settings.get_cache_relay())
