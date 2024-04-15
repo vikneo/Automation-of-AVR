@@ -4,9 +4,21 @@ from rest_framework import viewsets
 from rest_framework.filters import OrderingFilter
 
 from .configs import settings
-from .models import TypeAVR, Classification
-from .filters import TypeAVRFilter, ProductFilter
-from .serializers import TypeAVRSerializers, ProductSerializers
+from .models import (
+    TypeAVR,
+    Classification,
+    SmartRelay,
+    )
+from .filters import (
+    TypeAVRFilter,
+    ProductFilter,
+    RelayFilter,
+    )
+from .serializers import (
+    TypeAVRSerializers,
+    ProductSerializers,
+    RelaySerializers,
+    )
 from .permissions import CustomPermissions
 
 
@@ -30,3 +42,14 @@ class ProductViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return cache.get_or_set('products', Classification.objects.filter(access=True), settings.get_cache_products())
+
+
+class RelayViewSet(viewsets.ModelViewSet):
+    serializer_class = RelaySerializers
+    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    ordering_fields = ['model', ]
+    filter_class = RelayFilter
+    permission_classes = (CustomPermissions, )
+
+    def get_queryset(self):
+        return cache.get_or_set('relays', SmartRelay.objects.filter(access=True), 1024)
