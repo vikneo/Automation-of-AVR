@@ -33,15 +33,7 @@
                                 <td>{{ order.name }}</td>
                                 <td><a href="{{ order.description.url }}" target="_blank">смотреть</a></td>
                                 <td><a href="{{ order.scheme.url }}" target="_blank">смотреть</a></td>
-                                <td id="status">{{ order.status }}</td>
-                                <script>
-                                    if (table.rows[1].cells[5].innerHTML === 'Готов') {
-                                        document.getElementById('status').innerHTML = `<span style="color: green;"><b>{{ order.status }}</b></span>`;
-                                    };
-                                    if (table.rows[1].cells[5].innerHTML === 'В обработке') {
-                                        document.getElementById('status').innerHTML = `<span style="color: orange;"><b>{{ order.status }}</b></span>`;
-                                    };
-                                </script>
+                                <td name="status" id="{{ order.status }}">{{ order.status }}</td>
                             </tr>
                             {% endfor %}
                         </thead>
@@ -49,6 +41,19 @@
                 </div>
             </div>
         </div>
+        <script>
+            let rows = document.getElementsByName('status')
+            for (let i = 0; i < rows.length; i++) {
+                let status_1 = table.rows[i + 1].cells[5].innerHTML
+                if (status_1 === 'Готов') {
+                    let elem = document.getElementById('Готов');
+                    elem.style.background = 'green';
+                } else {
+                    let elem = document.getElementById('В обработке');
+                    elem.style.background = 'orange';
+                };
+            }
+        </script>
     </div>
     {% include 'index/paginator.html' %}
 </div>
